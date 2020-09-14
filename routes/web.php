@@ -14,17 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
-<<<<<<< HEAD
+
 
 Route::get('admin/login','Admin\LoginController@login');//登录
 
-Route::get('admin/index','Admin\IndexController@index');//后台首页
-Route::get('admin/category','Admin\CateController@category');//分类
-
-
 Route::any('admin/users','Admin\UserController@users');//管理员添加
 Route::any('admin/users/index','Admin\UserController@index');//管理员展示
-=======
+
 Route::get('admin/index','Admin\IndexController@index');//首页
 Route::get('admin/category','Admin\CateController@category');//分类添加
 Route::get('admin/cate/index','Admin\CateController@index');//分类展示
@@ -35,4 +31,4 @@ Route::get('admin/brand/index','Admin\BrandController@index');//商品展示
 
 Route::get('admin/vip','Admin\VipController@vip');//vip添加
 Route::get('admin/vip/index','Admin\VipController@index');//vip展示
->>>>>>> 23f0176cc89947517d32b42ab0119e5b640f19ef
+
