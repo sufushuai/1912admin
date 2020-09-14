@@ -18,7 +18,7 @@
 <body class="hold-transition skin-red sidebar-mini">
   <!-- .box-body -->
                     <div class="box-header with-border">
-                        <h3 class="box-title">分类添加</h3>
+                        <h3 class="box-title">品牌添加</h3>
                     </div>
 
                     
@@ -30,16 +30,13 @@
 		<div >		
 			<table   width="300px">
 		      	<tr>
-		      		<td>分类名称</td>
+		      		<td>品牌名称</td>
 		      		<td><input  class="form-control" placeholder="品牌名称" >  </td>
 		      	</tr>		      	
 		      	<tr>
-		      		<td>父级分类</td>
+		      		<td>品牌logo</td>
 		      		<td>
-		      			<select name="" id="">
-		      				<option value="">--请选择--</option>
-		      				<option value=""></option>
-		      			</select>
+		      			<input  class="form-control" placeholder="品牌logo" >  
 		      		</td>
 		      	</tr>		      	
 			 </table>		

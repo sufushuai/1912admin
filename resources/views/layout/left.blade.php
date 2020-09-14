@@ -24,7 +24,7 @@
                     <li class="treeview">
                         <a href="#">
                             <i class="fa fa-folder"></i> 
-                            <span>商家管理</span>
+                            <span>分类管理</span>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-left pull-right"></i>
                             </span>
@@ -33,12 +33,12 @@
                 
                             <li id="admin-login">
                                 <a href="/admin/category" target="iframe">
-                                    <i class="fa fa-circle-o"></i>分类管理
+                                    <i class="fa fa-circle-o"></i>分类添加
                                 </a>
                             </li>
                             <li id="admin-login">
-                                <a href="seller.html" target="iframe">
-                                    <i class="fa fa-circle-o"></i>商家管理
+                                <a href="/admin/cate/index" target="iframe">
+                                    <i class="fa fa-circle-o"></i>分类展示
                                 </a>
                             </li>
                         </ul>                        
@@ -46,7 +46,7 @@
                     <li class="treeview">
                         <a href="#">
                             <i class="fa fa-folder"></i> 
-                            <span>商品管理</span>
+                            <span>品牌管理</span>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-left pull-right"></i>
                             </span>
@@ -54,37 +54,22 @@
                         <ul class="treeview-menu">
                 
                             <li id="admin-login">
-                                <a href="brand.html" target="iframe">
-                                    <i class="fa fa-circle-o"></i>品牌管理
+                                <a href="/admin/brand" target="iframe">
+                                    <i class="fa fa-circle-o"></i>品牌添加
                                 </a>
                             </li>
                             <li id="admin-login">
-                                <a href="specification.html" target="iframe">
-                                    <i class="fa fa-circle-o"></i>规格管理
+                                <a href="/admin/brand/index" target="iframe">
+                                    <i class="fa fa-circle-o"></i>品牌展示
                                 </a>
                             </li>                           
-                            <li id="admin-login">
-                                <a href="type_template.html" target="iframe">
-                                    <i class="fa fa-circle-o"></i>模板管理
-                                </a>
-                            </li>
-                            <li id="admin-login">
-                                <a href="item_cat.html" target="iframe">
-                                    <i class="fa fa-circle-o"></i>分类管理
-                                </a>
-                            </li>
-                            <li id="admin-login">
-                                <a href="goods.html" target="iframe">
-                                    <i class="fa fa-circle-o"></i>商品审核
-                                </a>
-                            </li>
                         </ul>                        
                     </li>
                     
                     <li class="treeview">
                         <a href="#">
                             <i class="fa fa-folder"></i> 
-                            <span>广告管理</span>
+                            <span>会员管理</span>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-left pull-right"></i>
                             </span>
@@ -92,13 +77,13 @@
                         <ul class="treeview-menu">
                 
                             <li id="admin-login">
-                                <a href="content_category.html" target="iframe">
-                                    <i class="fa fa-circle-o"></i>广告类型管理
+                                <a href="/admin/vip" target="iframe">
+                                    <i class="fa fa-circle-o"></i>会员添加
                                 </a>
                             </li>
                             <li id="admin-login">
-                                <a href="content.html" target="iframe">
-                                    <i class="fa fa-circle-o"></i>广告管理
+                                <a href="/admin/vip/index" target="iframe">
+                                    <i class="fa fa-circle-o"></i>会员展示
                                 </a>
                             </li>
                         </ul>                        

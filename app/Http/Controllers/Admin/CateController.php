@@ -10,4 +10,7 @@ class CateController extends Controller
     public function category(){
     	return view("admin.category");
     }
+    public function index(){
+    	return view("admin.cateindex");
+    }
 }
