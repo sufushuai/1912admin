@@ -45,6 +45,50 @@
                     </li>
                     <li class="treeview">
                         <a href="#">
+                            <i class="fa fa-folder"></i>
+                            <span>角色管理</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+
+                            <li id="admin-login">
+                                <a href="/admin/role" target="iframe">
+                                    <i class="fa fa-circle-o"></i>角色添加
+                                </a>
+                            </li>
+                            <li id="admin-login">
+                                <a href="/admin/role/index" target="iframe">
+                                    <i class="fa fa-circle-o"></i>角色展示
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-folder"></i>
+                            <span>权限管理</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+
+                            <li id="admin-login">
+                                <a href="/admin/based" target="iframe">
+                                    <i class="fa fa-circle-o"></i>权限添加
+                                </a>
+                            </li>
+                            <li id="admin-login">
+                                <a href="/admin/based/index" target="iframe">
+                                    <i class="fa fa-circle-o"></i>权限展示
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
                             <i class="fa fa-folder"></i> 
                             <span>分类管理</span>
                             <span class="pull-right-container">
@@ -106,6 +150,83 @@
                             <li id="admin-login">
                                 <a href="/admin/vip/index" target="iframe">
                                     <i class="fa fa-circle-o"></i>会员展示
+                                </a>
+                            </li>
+                        </ul>                        
+                    </li>
+
+                     <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-folder"></i> 
+                            <span>优惠券</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                
+                            <li id="admin-login">
+                                <a href="/admin/discount" target="iframe">
+                                    <i class="fa fa-circle-o"></i>优惠券添加
+                                </a>
+                            </li>
+                            <li id="admin-login">
+                                <a href="/admin/discount/index" target="iframe">
+                                    <i class="fa fa-circle-o"></i>优惠券展示
+                                </a>
+                            </li>
+                        </ul>                        
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-folder"></i> 
+                            <span>商品管理</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                
+                            <li id="admin-login">
+                                <a href="/admin/goods" target="iframe">
+                                    <i class="fa fa-circle-o"></i>商品添加
+                                </a>
+                            </li>
+                            <li id="admin-login">
+                                <a href="/admin/goods/index" target="iframe">
+                                    <i class="fa fa-circle-o"></i>商品展示
+                                </a>
+                            </li>
+                        </ul>                        
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-folder"></i> 
+                            <span>SKU</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                
+                            <li id="admin-login">
+                                <a href="/admin/sku/attr" target="iframe">
+                                    <i class="fa fa-circle-o"></i>属性名添加
+                                </a>
+                            </li>
+                            <li id="admin-login">
+                                <a href="/admin/sku/val" target="iframe">
+                                    <i class="fa fa-circle-o"></i>属性值添加
+                                </a>
+                            </li>
+                             <li id="admin-login">
+                                <a href="/admin/sku/sku" target="iframe">
+                                    <i class="fa fa-circle-o"></i>属性添加
+                                </a>
+                            </li>
+                            <li id="admin-login">
+                                <a href="/admin/sku/skuIndex" target="iframe">
+                                    <i class="fa fa-circle-o"></i>属性展示
                                 </a>
                             </li>
                         </ul>                        
