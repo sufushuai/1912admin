@@ -18,7 +18,7 @@ Route::get('/', function () {
 Route::get('admin/index','Admin\IndexController@index');//首页
 
 Route::get('admin/login','Admin\LoginController@login');//登录
-Route::post('admin/logindo','Admin\LoginController@logindo');//登录
+Route::post('admin/logindo','Admin\LoginController@logindo');//执行登录
 
 Route::any('admin/users','Admin\UserController@users');//管理员添加
 Route::any('admin/users/index','Admin\UserController@index');//管理员展示
