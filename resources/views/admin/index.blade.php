@@ -37,17 +37,16 @@
 
     <div class="wrapper">
 
-        <!-- 页面头部 -->
+
             <!-- 页面头部 /-->
         @include("layout.head")
-        <!-- 导航侧栏 -->
+
            <!-- 导航侧栏 /-->
         @include('layout.left')
         <!-- 内容区域 -->
         <div class="content-wrapper">
             <iframe width="100%" id="iframe" name="iframe"  onload="SetIFrameHeight()" frameborder="0"
                     src="home.html">
-
             </iframe>
 
         </div>
@@ -55,7 +54,7 @@
 
         <!-- 底部导航 -->
         @include("layout.foot")
-        <!-- 底部导航 /-->
+
 
     </div>
 

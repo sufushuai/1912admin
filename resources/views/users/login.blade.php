@@ -30,11 +30,11 @@
                         <h3>账户登录</h3>
                     </a>
                 </li>
-                <li>
-                <a href="#register" data-toggle="tab">
-                <h3>账号注册</h3>
-                </a>
-                </li>
+                {{--<li>--}}
+                {{--<a href="#register" data-toggle="tab">--}}
+                {{--<h3>账号注册</h3>--}}
+                {{--</a>--}}
+                {{--</li>--}}
             </ul>
             <div class="tab-content tab-wraped">
                 {{--<div id="index" class="tab-pane">--}}
@@ -42,12 +42,13 @@
                     {{--<img src="../img/wx_cz.jpg" />--}}
                 {{--</div>--}}
                 <div id="profile" class="tab-pane  active">
-                    <form class="sui-form">
+
+                    <form class="sui-form" action="{{url('admin/logindo')}}" method="post">
                         <div class="input-prepend"><span class="add-on loginname"></span>
-                            <input id="prependedInput" type="text" placeholder="邮箱/用户名/手机号" class="span2 input-xfat">
+                            <input id="prependedInput" type="text" name="admin_name" placeholder="邮箱/用户名/手机号" class="span2 input-xfat">
                         </div>
                         <div class="input-prepend"><span class="add-on loginpwd"></span>
-                            <input id="prependedInput" type="password" placeholder="请输入密码" class="span2 input-xfat">
+                            <input id="prependedInput" type="password" name="password" placeholder="请输入密码" class="span2 input-xfat">
                         </div>
                         <div class="setting">
                             <div id="slider">
@@ -56,41 +57,40 @@
                             </div>
                         </div>
                         <div class="logined">
-                            <a class="sui-btn btn-block btn-xlarge btn-danger" href="admin/index.html" target="_blank">登&nbsp;&nbsp;录</a>
+                            <button class="sui-btn btn-block btn-xlarge btn-danger" type="submit" id="but" target="_blank">登&nbsp;&nbsp;录</button>
                         </div>
                     </form>
 
                 </div>
             {{--注册--}}
-                <div id="register" class="tab-pane">
-                    <form class="sui-form">
-                        <div class="input-prepend"><span class="add-on loginname"></span>
-                            <input id="prependedInput" type="text" placeholder="用户名/手机号" class="span2 input-xfat">
-                        </div>
-                        <div class="input-prepend"><span class="add-on loginpwd"></span>
-                            <input id="prependedInput" type="pic_code" placeholder="图片验证码" class="span2 input-xfat">
-                        </div>
-                        <div class="input-prepend"><span class="add-on loginpwd"></span>
-                            <input id="prependedInput" type="password" placeholder="请输入密码" class="span2 input-xfat">
-                        </div>
-                        <div class="input-prepend"><span class="add-on loginpwd"></span>
-                            <input id="prependedInput" type="password_s" placeholder="请再次输入密码" class="span2 input-xfat">
-                        </div>
-                        <div class="input-prepend"><span class="add-on loginpwd"></span>
-                            <input id="prependedInput" type="tel_code" placeholder="手机验证码" class="span2 input-xfat">
-                        </div>
+                {{--<div id="register" class="tab-pane">--}}
+                    {{--<form class="sui-form">--}}
+                        {{--<div class="input-prepend"><span class="add-on loginname"></span>--}}
+                            {{--<input id="prependedInput" type="text" name="username" placeholder="用户名/手机号" class="span2 input-xfat">--}}
+                        {{--</div>--}}
+                        {{--<div class="input-prepend"><span class="add-on loginpwd"></span>--}}
+                            {{--<input id="prependedInput" type="pic_code" placeholder="图片验证码" class="span2 input-xfat">--}}
+                        {{--</div>--}}
+                        {{--<div class="input-prepend"><span class="add-on loginpwd"></span>--}}
+                            {{--<input id="prependedInput" type="password" placeholder="请输入密码" class="span2 input-xfat">--}}
+                        {{--</div>--}}
+                        {{--<div class="input-prepend"><span class="add-on loginpwd"></span>--}}
+                            {{--<input id="prependedInput" type="password_s" placeholder="请再次输入密码" class="span2 input-xfat">--}}
+                        {{--</div>--}}
+                        {{--<div class="input-prepend"><span class="add-on loginpwd"></span>--}}
+                            {{--<input id="prependedInput" type="tel_code" placeholder="手机验证码" class="span2 input-xfat">--}}
+                        {{--</div>--}}
 
-                        <div class="logined">
-                            <a class="sui-btn btn-block btn-xlarge btn-danger" href="admin/index.html" target="_blank">注&nbsp;&nbsp;册</a>
-                        </div>
-                    </form>
-                </div>
+                        {{--<div class="logined">--}}
+                            {{--<a class="sui-btn btn-block btn-xlarge btn-danger" href="admin/index.html" target="_blank">注&nbsp;&nbsp;册</a>--}}
+                        {{--</div>--}}
+                    {{--</form>--}}
+                {{--</div>--}}
             </div>
         </div>
         <div class="clearfix"></div>
     </div>
 </div>
-
 
 <!--foot-->
 <div class="py-container copyright">

@@ -17,11 +17,17 @@ Route::get('/', function () {
 
 
 Route::get('admin/login','Admin\LoginController@login');//登录
+<<<<<<< HEAD
+=======
+Route::post('admin/logindo','Admin\LoginController@logindo');//登录
+
+>>>>>>> 5ec27c613b0683d6e90e87ab9f9c8997da9ceef5
 Route::get('admin/index','Admin\IndexController@index');//首页
 
 Route::any('admin/users','Admin\UserController@users');//管理员添加
 Route::any('admin/users/index','Admin\UserController@index');//管理员展示
 
+<<<<<<< HEAD
 Route::any('admin/role','Admin\RoleController@role');//角色添加
 Route::any('admin/role/index','Admin\RoleController@index');//角色展示
 
@@ -36,6 +42,13 @@ Route::get('admin/cate/index','Admin\CateController@index');//分类展示
 
 Route::get('admin/brand','Admin\BrandController@brand');//品牌添加
 Route::get('admin/brand/index','Admin\BrandController@index');//品牌展示
+=======
+Route::get('admin/category','Admin\CateController@category');//分类添加
+Route::get('admin/cate/index','Admin\CateController@index');//分类展示
+
+Route::get('admin/brand','Admin\BrandController@brand');//商品添加
+Route::get('admin/brand/index','Admin\BrandController@index');//商品展示
+>>>>>>> 5ec27c613b0683d6e90e87ab9f9c8997da9ceef5
 
 Route::get('admin/vip','Admin\VipController@vip');//vip添加
 Route::get('admin/vip/index','Admin\VipController@index');//vip展示
