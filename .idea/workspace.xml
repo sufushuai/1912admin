@@ -2,10 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5feb6029-c84b-461a-9191-d6e81c7f4bcb" name="默认的" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/error/400.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/error/403.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/error/404.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/error/500.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/error/501.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/error/502.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/error/503.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/error/504.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/error/505.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/error/506.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/error/507.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/error/509.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/error/510.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/BrandController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/BrandController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CateController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CateController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/VipController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/VipController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/index.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/users/users.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/users/users.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layout/left.blade.php" afterPath="$PROJECT_DIR$/resources/views/layout/left.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/views/admin/brand.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/brand/brand.blade.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/views/admin/brandlist.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/brand/index.blade.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/views/admin/category.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/cate/category.blade.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/views/admin/cateindex.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/cate/index.blade.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/views/admin/vip.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/vip/vip.blade.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/views/admin/viplist.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/vip/index.blade.php" />
     </list>
     <ignored path="1912admin.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,8 +65,8 @@
       <file leaf-file-name="left.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/layout/left.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-25.5">
-              <caret line="34" column="53" selection-start-line="34" selection-start-column="53" selection-end-line="34" selection-end-column="53" />
+            <state vertical-scroll-proportion="39.0">
+              <caret line="20" column="62" selection-start-line="20" selection-start-column="62" selection-end-line="20" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -52,58 +75,38 @@
       <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/users/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.694445">
-              <caret line="20" column="29" selection-start-line="0" selection-start-column="0" selection-end-line="30" selection-end-column="7" />
+            <state vertical-scroll-proportion="-13.5">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="users.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="users.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/users/users.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.54319525">
-              <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
+            <state vertical-scroll-proportion="-9.222222">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="brandlist.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/brandlist.blade.php">
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="101" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.55266273">
+              <caret line="47" column="87" selection-start-line="47" selection-start-column="87" selection-end-line="47" selection-end-column="87" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="brand.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/brand.blade.php">
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/admin/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="11.25">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="head.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/layout/head.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-76.5">
-              <caret line="231" column="51" selection-start-line="231" selection-start-column="51" selection-end-line="231" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="foot.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/layout/foot.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="-2.5371902">
+              <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -119,7 +122,6 @@
       <list>
         <option value="$PROJECT_DIR$/resources/views/layout/foot.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/admin/AdminController.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layout/head.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/LoginController.php" />
         <option value="$PROJECT_DIR$/resources/views/users/login.blade.php" />
@@ -127,8 +129,14 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/layout/left.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/users/users.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/home.html" />
+        <option value="$PROJECT_DIR$/public/admin/home.html" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/BrandController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/CateController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/VipController.php" />
       </list>
     </option>
   </component>
@@ -138,6 +146,9 @@
   </component>
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
+  </component>
+  <component name="PhpServers">
+    <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
@@ -171,6 +182,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -239,55 +251,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="1912admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="1912admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="1912admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="1912admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="users" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -333,11 +297,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plugins" />
+              <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -441,7 +401,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -450,13 +409,19 @@
     <property name="js-jscs-nodeInterpreter" value="D:\大纲\node.exe" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\phpstudy_pro\WWW\1912shop\1912admin\resources\views\admin\users" />
-      <recent name="D:\phpstudy_pro\WWW\1912shop\1912admin\app\Http\Controllers" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\phpstudy_pro\WWW\1912shop\1912admin\public\admin" />
+      <recent name="D:\phpstudy_pro\WWW\1912shop\1912admin\app\Http\Controllers\Admin" />
+      <recent name="D:\phpstudy_pro\WWW\1912shop\1912admin\resources\views\admin" />
       <recent name="D:\phpstudy_pro\WWW\1912shop\1912admin\resources\views" />
       <recent name="D:\phpstudy_pro\WWW\1912shop\1912admin\app\Http\Controllers" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\phpstudy_pro\WWW\1912shop\1912admin\resources\views\admin\vip" />
+      <recent name="D:\phpstudy_pro\WWW\1912shop\1912admin\resources\views\admin\cate" />
+      <recent name="D:\phpstudy_pro\WWW\1912shop\1912admin\resources\views\admin\brand" />
+      <recent name="D:\phpstudy_pro\WWW\1912shop\1912admin\public" />
+      <recent name="D:\phpstudy_pro\WWW\1912shop\1912admin\resources\views" />
     </key>
   </component>
   <component name="RunManager">
@@ -490,6 +455,9 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="5feb6029-c84b-461a-9191-d6e81c7f4bcb" name="默认的" comment="" />
@@ -501,9 +469,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-10" y="0" width="1871" height="1042" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26554894" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26554894" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="版本控制" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -523,6 +491,14 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -531,6 +507,72 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="e#7#389#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layout/left.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="53" selection-start-line="34" selection-start-column="53" selection-end-line="34" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/users/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="29" selection-start-line="0" selection-start-column="0" selection-end-line="30" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/users/users.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/brand/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="101" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/brand/brand.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layout/head.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="231" column="51" selection-start-line="231" selection-start-column="51" selection-end-line="231" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layout/foot.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -571,7 +613,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.22366863">
           <caret line="65" column="33" selection-start-line="65" selection-start-column="33" selection-end-line="65" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -579,25 +620,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.38343194">
           <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="15" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.972221">
-          <caret line="61" column="7" selection-start-line="61" selection-start-column="7" selection-end-line="61" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/category.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/cate/category.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="21.75">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <marker date="1600091546627" expanded="true" signature="1538:1544" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -605,6 +634,45 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.75">
           <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/brand/brand.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layout/head.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="4.1218934">
+          <caret line="231" column="51" selection-start-line="231" selection-start-column="51" selection-end-line="231" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/brand/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.1633136">
+          <caret line="8" column="63" selection-start-line="8" selection-start-column="63" selection-end-line="8" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layout/foot.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DOMCore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30192962">
+          <caret line="267" column="2" selection-start-line="267" selection-start-column="2" selection-end-line="267" selection-end-column="2" />
           <folding />
         </state>
       </provider>
@@ -619,7 +687,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layout/foot.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/layout/left.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="39.0">
+          <caret line="20" column="62" selection-start-line="20" selection-start-column="62" selection-end-line="20" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/users/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.5">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/users/users.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.222222">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/IndexController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -627,50 +719,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layout/head.blade.php">
+    <entry file="file://$PROJECT_DIR$/public/admin/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-76.5">
-          <caret line="231" column="51" selection-start-line="231" selection-start-column="51" selection-end-line="231" selection-end-column="51" />
+        <state vertical-scroll-proportion="-2.5371902">
+          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/brand.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/VipController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="11.25">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.38343194">
+          <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/brandlist.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/CateController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="101" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.38343194">
+          <caret line="13" column="32" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layout/left.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/BrandController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-25.5">
-          <caret line="34" column="53" selection-start-line="34" selection-start-column="53" selection-end-line="34" selection-end-column="53" />
+        <state vertical-scroll-proportion="0.38343194">
+          <caret line="13" column="38" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/users/index.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.694445">
-          <caret line="20" column="29" selection-start-line="0" selection-start-column="0" selection-end-line="30" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/users/users.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54319525">
-          <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.55266273">
+          <caret line="47" column="87" selection-start-line="47" selection-start-column="87" selection-end-line="47" selection-end-column="87" />
           <folding />
         </state>
       </provider>

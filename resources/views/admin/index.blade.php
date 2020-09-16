@@ -16,21 +16,21 @@
     <link rel="stylesheet" href="/static/css/style.css">
     
     <script src="/static/plugins/jQuery/jquery-2.2.3.min.js"></script>
-    <script src="/static/plugins/jQueryUI/jquery-ui.min.js"></script>
+    {{--<script src="/static/plugins/jQueryUI/jquery-ui.min.js"></script>--}}
     <script src="/static/plugins/bootstrap/js/bootstrap.min.js"></script>
   
     <script src="/static/plugins/adminLTE/js/app.min.js"></script>
     
-    <script type="text/javascript">   
+    <script type="text/javascript">
          function SetIFrameHeight(){
               var iframeid=document.getElementById("iframe"); //iframe id
               if (document.getElementById){
-                iframeid.height =document.documentElement.clientHeight;                
+                iframeid.height =document.documentElement.clientHeight;
               }
          }
-    
-    </script>    
- 
+
+    </script>
+
 </head>
 
 <body class="hold-transition skin-green sidebar-mini" >
@@ -45,9 +45,11 @@
         @include('layout.left')
         <!-- 内容区域 -->
         <div class="content-wrapper">
-            <iframe width="100%" id="iframe" name="iframe"  onload="SetIFrameHeight()" 
-                    frameborder="0" src="home.html"></iframe>
- 
+            <iframe width="100%" id="iframe" name="iframe"  onload="SetIFrameHeight()" frameborder="0"
+                    src="home.html">
+
+            </iframe>
+
         </div>
         <!-- 内容区域 /-->
 

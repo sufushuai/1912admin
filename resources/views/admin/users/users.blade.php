@@ -16,6 +16,7 @@
 
 </head>
 <body class="hold-transition skin-red sidebar-mini">
+
 <!-- .box-body -->
 <div class="box-header with-border">
     <h3 class="box-title">管理员添加</h3>

@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 class VipController extends Controller
 {
      public function vip(){
-    	return view("admin.vip");
+    	return view("admin.vip.vip");
     }
      public function index(){
-    	return view("admin.viplist");
+    	return view("admin.vip.index");
     }
 }

@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 class BrandController extends Controller
 {
     public function brand(){
-    	return view("admin.brand");
+    	return view("admin.brand.brand");
     }
      public function index(){
-    	return view("admin.brandlist");
+    	return view("admin.brand.index");
     }
 }
