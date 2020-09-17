@@ -39,16 +39,15 @@ Route::any('/admin/category','Admin\CateController@category');//分类添加
 Route::any('/admin/cate/index','Admin\CateController@index');//分类展示
 
 
-<<<<<<< HEAD
+
 Route::any('/admin/brand','Admin\BrandController@brand');//品牌添加页面
 Route::any('/brand/add','Admin\BrandController@add');//品牌添加
-Route::any('/admin/brandimg','Admin\BrandController@brandimg');//图片添加
-=======
+Route::any('/brand/brandimg','Admin\BrandController@brandimg');//图片添加
+Route::any('/brand/edit','Admin\BrandController@edit');//修改页面
+Route::any('/brand/update','Admin\BrandController@update');//修改
+Route::any('/brand/index','Admin\BrandController@index');//品牌展示
+Route::any('/brand/destroy','Admin\BrandController@destroy');//品牌展示
 
-Route::any('/admin/brand','Admin\BrandController@brand');//品牌添加
-Route::any('/admin/brandimg','Admin\BrandController@brandimg');//品牌添加
->>>>>>> c104641208cdd58c0bad664f1aa3bf0ed5299063
-Route::any('/admin/brand/index','Admin\BrandController@index');//品牌展示
 
 
 Route::any('/admin/vip','Admin\VipController@vip');//vip添加
