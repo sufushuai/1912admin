@@ -29,17 +29,15 @@ Route::any('/admin/role/index','Admin\RoleController@index');//角色展示
 Route::any('/admin/based','Admin\BasedController@based');//权限添加
 Route::any('/admin/based/index','Admin\BasedController@index');//权限展示
 
-<<<<<<< HEAD
 Route::any('cate/create','Admin\CateController@create');//分类添加
 Route::any('cate/store','Admin\CateController@store');//添加逻辑
 Route::any('cate/delete','Admin\CateController@delete');//软删除
 Route::any('cate/index','Admin\CateController@index');//分类展示
 Route::any('cate/edit','Admin\CateController@edit');//分类修改
 Route::any('cate/update','Admin\CateController@update');//修改逻辑
-=======
 Route::any('/admin/category','Admin\CateController@category');//分类添加
 Route::any('/admin/cate/index','Admin\CateController@index');//分类展示
->>>>>>> 5d96aa77594c1d611097eb73498d45ba5596b174
+
 
 
 Route::any('/admin/brand','Admin\BrandController@brand');//品牌添加
