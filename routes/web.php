@@ -49,17 +49,17 @@ Route::any('/admin/goods/index','Admin\GoodsController@index');//商品展示
 Route::any('/admin/sku/attr','Admin\SkuController@attr');//属性名添加
 Route::any('/admin/sku/attrIndex','Admin\SkuController@index');//属性名展示
 Route::any('/admin/sku/attrDel/{id}','Admin\SkuController@attrDel');//属性名删除
-Route::any('/admin/sku/attrUp/{id}','Admin\SkuController@attrUP');//属性名编辑
+Route::any('/admin/sku/attrUp/{id}','Admin\SkuController@attrUp');//属性名编辑
 //属性值
 Route::any('/admin/sku/val','Admin\SkuController@val');//属性值添加
 Route::any('/admin/sku/valIndex','Admin\SkuController@valindex');//属性值展示
 Route::any('/admin/sku/valDel/{id}','Admin\SkuController@valDel');//属性名删除
-Route::any('/admin/sku/valUp/{id}','Admin\SkuController@valUP');//属性名编辑
+Route::any('/admin/sku/valUp/{id}','Admin\SkuController@valUp');//属性名编辑
 //属性
 Route::any('/admin/sku/sku','Admin\SkuController@sku');//属性添加
 Route::any('/admin/sku/skuIndex','Admin\SkuController@skuindex');//属性展示
 Route::any('/admin/sku/skuDel/{id}','Admin\SkuController@skuDel');//属性名删除
-Route::any('/admin/sku/skuUp/{id}','Admin\SkuController@skuUP');//属性名编辑
+Route::any('/admin/sku/skuUp/{id}','Admin\SkuController@skuUp');//属性名编辑
 
 //RBAC管理员
 Route::get('users/add','Admin\UserController@add');//添加
