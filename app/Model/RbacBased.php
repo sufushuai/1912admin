@@ -9,4 +9,5 @@ class RbacBased extends Model
     protected $table="rbac_based";
     protected $primaryKey="based_id";
     public $timestamps=false;
+    public $fillable=["based_name","url","pid"];
 }

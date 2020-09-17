@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>品牌管理</title>
     <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
-    <link rel="stylesheet" href="../plugins/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../plugins/adminLTE/css/AdminLTE.css">
-    <link rel="stylesheet" href="../plugins/adminLTE/css/skins/_all-skins.min.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
-    <script src="../plugins/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/admin/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/admin/plugins/adminLTE/css/AdminLTE.css">
+    <link rel="stylesheet" href="/admin/plugins/adminLTE/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="/admin/css/style.css">
+    <script src="/admin/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="/admin/plugins/bootstrap/js/bootstrap.min.js"></script>
 
 
 </head>
@@ -19,17 +19,13 @@
 <div class="box-header with-border">
     <h3 class="box-title">品牌管理</h3>
 </div>
-
 <div class="box-body">
-
     <!-- 数据表格 -->
     <div class="table-box">
-
         <!--工具栏-->
         <div class="pull-left">
             <div class="form-group form-inline">
                 <div class="btn-group">
-                    <button type="button" class="btn btn-default" title="新建" data-toggle="modal" data-target="#editModal" ><i class="fa fa-file-o"></i> 新建</button>
                     <button type="button" class="btn btn-default" title="删除" ><i class="fa fa-trash-o"></i> 删除</button>
                     <button type="button" class="btn btn-default" title="刷新" onclick="window.location.reload();"><i class="fa fa-refresh"></i> 刷新</button>
                 </div>
@@ -41,7 +37,6 @@
             </div>
         </div>
         <!--工具栏/-->
-
         <!--数据列表-->
         <table id="dataList" class="table table-bordered table-striped table-hover dataTable">
             <thead>
@@ -51,79 +46,57 @@
                 </th>
                 <th class="sorting_asc">品牌ID</th>
                 <th class="sorting">品牌名称</th>
-                <th class="sorting">品牌首字母</th>
+                <th class="sorting">品牌logo</th>
                 <th class="text-center">操作</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
+            @foreach($data as $k=>$v)
+            <tr brand_id={{$v->brand_id}}>
                 <td><input  type="checkbox" ></td>
-                <td>1</td>
-                <td>联想</td>
-                <td>L</td>
+                <td>{{$v->brand_id}}</td>
+                <td>{{$v->brand_name}}</td>
+                <td><img src="{{env('APP_UPL')}}{{$v->brand_logo}}" width="50" height="50"></td>
                 <td class="text-center">
-                    <button type="button" class="btn bg-olive btn-xs" data-toggle="modal" data-target="#editModal"  >修改</button>
+                    <button class="btn btn-primary" id="edit" type="button">修改</button>
+                    <button data-toggle="modal" onclick="" class="btn btn-danger del">删除</button>
                 </td>
             </tr>
-            <tr>
-                <td><input  type="checkbox"></td>
-                <td>2</td>
-                <td>华为</td>
-                <td>H</td>
-                <td class="text-center">
-                    <button type="button" class="btn bg-olive btn-xs" data-toggle="modal" data-target="#editModal"  >修改</button>
-                </td>
-            </tr>
-            <tr>
-                <td><input  type="checkbox"></td>
-                <td>3</td>
-                <td>三星</td>
-                <td>S</td>
-                <td class="text-center">
-                    <button type="button" class="btn bg-olive btn-xs" data-toggle="modal" data-target="#editModal"  >修改</button>
-                </td>
-            </tr>
+            @endforeach
             </tbody>
         </table>
         <!--数据列表/-->
-
-
     </div>
     <!-- 数据表格 /-->
-
-
-
-
 </div>
 <!-- /.box-body -->
+<script>
+    $(document).on('click','#edit',function(){
+        var brand_id = $(this).parents('tr').attr('brand_id');
+        location.href="/brand/edit?brand_id="+brand_id;
+    })
 
-<!-- 编辑窗口 -->
-<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog" >
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h3 id="myModalLabel">品牌编辑</h3>
-            </div>
-            <div class="modal-body">
-                <table class="table table-bordered table-striped"  width="800px">
-                    <tr>
-                        <td>品牌名称</td>
-                        <td><input  class="form-control" placeholder="品牌名称" >  </td>
-                    </tr>
-                    <tr>
-                        <td>首字母</td>
-                        <td><input  class="form-control" placeholder="首字母">  </td>
-                    </tr>
-                </table>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-success" data-dismiss="modal" aria-hidden="true">保存</button>
-                <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">关闭</button>
-            </div>
-        </div>
-    </div>
-</div>
-
+    //ajax删除
+    $(document).on('click','.del',function(){
+        var brand_id = $(this).parents('tr').attr('brand_id');
+        $.ajax({
+            type:"post",
+            dataType:"json",
+            url:"/brand/destroy",
+            data:{brand_id:brand_id},
+            success:function(res){
+                if(confirm("确定是否删除？")){
+                    if(res.code==200){
+                        alert("删除成功")
+                        location.href='/brand/index'
+                    }
+                }
+                if(res.code==1){
+                    alert(res.msg)
+                }
+            }
+        })
+    })
+</script>
 </body>
 </html>

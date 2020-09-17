@@ -20,6 +20,16 @@ Route::get('/admin/login','Admin\LoginController@login');//登录
 Route::post('/admin/logindo','Admin\LoginController@logindo');//执行登录
 
 
+Route::get('admin/login','Admin\LoginController@login');//登录
+
+
+Route::post('admin/logindo','Admin\LoginController@logindo');//登录
+
+
+Route::get('admin/index','Admin\IndexController@index');//首页
+Route::post('admin/logindo','Admin\LoginController@logindo');//执行登录
+
+
 Route::any('cate/create','Admin\CateController@create');//分类添加
 Route::any('cate/store','Admin\CateController@store');//添加逻辑
 Route::any('cate/delete','Admin\CateController@delete');//软删除
@@ -29,13 +39,39 @@ Route::any('cate/update','Admin\CateController@update');//修改逻辑
 Route::any('/admin/category','Admin\CateController@category');//分类添加
 Route::any('/admin/cate/index','Admin\CateController@index');//分类展示
 
+
+
+
+Route::any('/admin/brand','Admin\BrandController@brand');//品牌添加页面
+Route::any('/brand/add','Admin\BrandController@add');//品牌添加
+Route::any('/brand/brandimg','Admin\BrandController@brandimg');//图片添加
+Route::any('/brand/edit','Admin\BrandController@edit');//修改页面
+Route::any('/brand/update','Admin\BrandController@update');//修改
+Route::any('/brand/index','Admin\BrandController@index');//品牌展示
+Route::any('/brand/destroy','Admin\BrandController@destroy');//品牌展示
+
+
 Route::any('/admin/brand','Admin\BrandController@brand');//品牌添加页面
 Route::any('/brand/add','Admin\BrandController@add');//品牌添加
 Route::any('/admin/brandimg','Admin\BrandController@brandimg');//图片添加
 Route::any('/admin/brand/index','Admin\BrandController@index');//品牌展示
 
+
 Route::any('/admin/vip','Admin\VipController@vip');//vip添加
 Route::any('/admin/vip/index','Admin\VipController@index');//vip展示
+
+Route::get('admin/vip','Admin\VipController@vip');//vip添加
+Route::get('admin/vip/index','Admin\VipController@index');//vip展示
+
+Route::get('admin/discount','Admin\DiscountController@discount');//优惠券添加
+Route::any('discount/adddo','Admin\DiscountController@adddo');//添加
+Route::any('discount/del','Admin\DiscountController@del');//删除
+Route::any('discount/update/{id}','Admin\DiscountController@update');//修改
+Route::any('discount/updatedo','Admin\DiscountController@updatedo');//修改
+Route::get('admin/discount/index','Admin\DiscountController@index');//优惠券展示
+
+Route::get('admin/goods','Admin\GoodsController@goods');//商品添加
+Route::get('admin/goods/index','Admin\GoodsController@index');//商品展示
 
 Route::any('/admin/discount','Admin\DiscountController@discount');//优惠券添加
 Route::any('/admin/discount/index','Admin\DiscountController@index');//优惠券展示
@@ -73,7 +109,7 @@ Route::any('based/add','Admin\BasedController@add');//添加
 Route::any('based/do_add','Admin\BasedController@do_add');//执行添加
 Route::any('based/index','Admin\BasedController@index');//首页
 Route::any('based/del','Admin\BasedController@del');//删除
-Route::any('based/edit','Admin\BasedController@edit');//修改
+Route::any('based/edit/{based_id}','Admin\BasedController@edit');//修改
 Route::any('based/update','Admin\BasedController@update');//执行修改
 //RBAC角色
 Route::any('role/create', 'Admin\RoleController@create');//添加

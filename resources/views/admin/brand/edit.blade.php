@@ -30,9 +30,11 @@
                     <div class="row data-type">
                         <div class="col-md-2 title">品牌名称</div>
                         <div class="col-md-10 data">
-                            <input type="text" class="form-control"  placeholder="品牌名称" name="brand_name" value="">
+                            <input type="text" class="form-control"  placeholder="品牌名称" name="brand_name" value="{{$brand->brand_name}}">
+                            <input type="hidden" name="brand_id" value="{{$brand->brand_id}}">
                         </div>
-                        <div class="showimg"></div>
+                        <div class="showimg" value="{{$brand->brand_logo}}" ></div>
+                        <img src="{{env('APP_UPL')}}{{$brand->brand_logo}}" width="50px" height="50px">
                         <div class="col-md-2 title">品牌logo</div>
                         <div class="col-md-10 data">
                             <input type="file" class="form-control"  id="uploadify" placeholder="品牌logo" name="brand_logos" value="">
@@ -44,34 +46,35 @@
         </div>
     </div>
     <div class="btn-toolbar list-toolbar">
-        <button class="btn btn-primary" id="button" type="button">提交</button>
+        <button class="btn btn-primary" id="button" type="button">修改</button>
     </div>
 
 </section>
 <script>
     $(document).ready(function(){
-         $("#uploadify").uploadify({
-             uploader: "/brand/brandimg",
-             swf: "/admin/uploadify/uploadify.swf",
-             onUploadSuccess:function(res,data,msg){
+        $("#uploadify").uploadify({
+            uploader: "/brand/brandimg",
+            swf: "/admin/uploadify/uploadify.swf",
+            onUploadSuccess:function(res,data,msg){
                 var imgPath = data;
                 var imgstr = "<img src='"+imgPath+"'  controls='controls' style='width:80px;height:60px;'>";
                 $("input[name='brand_logo']").val(imgPath);
                 $(".showimg").append(imgstr);
-             }
-         })
+            }
+        })
     });
     $(document).on('click','#button',function(){
         var brand_name = $('input[name="brand_name"]').val();
         var brand_logo = $('input[name="brand_logo"]').val();
+        var brand_id   = $('input[name="brand_id"]').val();
         $.ajax({
             type:"post",
             dataType:"json",
-            url:"/brand/add",
-            data:{brand_name:brand_name,brand_logo:brand_logo},
+            url:"/brand/update",
+            data:{brand_name:brand_name,brand_logo:brand_logo,brand_id:brand_id},
             success:function(res){
                 if(res.code==200){
-                    alert("添加成功")
+                    alert("修改成功")
                     location.href='/brand/index'
                 }
                 if(res.code==1){

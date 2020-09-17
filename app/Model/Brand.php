@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Brand extends Model
 {
-    protected $table = 'shop_brand';
-    protected  $timestamp = false;
-    protected  $guarded = [];
+    protected $table="shop_brand";
+    protected $primaryKey="brand_id";
+    public $timestamps=false;
 }
