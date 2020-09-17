@@ -17,7 +17,7 @@
 <body class="hold-transition skin-red sidebar-mini" >
 <!-- 正文区域 -->
 <div class="btn-toolbar list-toolbar">
-    <a class="btn btn-primary"  href="/admin/sku/valIndex"><i class="fa fa-save"></i>属性值展示</a>
+    <a class="btn btn-primary"  href="/admin/sku/valIndex"><i class="fa fa-save"></i>返回</a>
 </div>
 <div class="box-header with-border">
     <h1 class="box-title">属性值添加</h1>
@@ -31,8 +31,9 @@
                     <div class="row data-type">
                         <div class="col-md-2 title">属性值名称</div>
                         <div class="col-md-10 data">
-                            <input type="text" class="form-control"  placeholder="属性值名称" name="val_name">
+                            <input type="text" class="form-control"  placeholder="属性值名称" name="val_name" value="{{$data->val_name}}">
                         </div>
+                        <input type="hidden"  name="val_id" value="{{$data->val_id}}">
 
                     </div>
                 </div>
@@ -40,7 +41,7 @@
         </div>
     </div>
     <div class="btn-toolbar list-toolbar">
-        <button class="btn btn-primary" id="but"><i class="fa fa-save"></i>提交</button>
+        <button class="btn btn-primary" id="but"><i class="fa fa-save"></i>修改</button>
     </div>
 </section>
 <!-- 正文区域 /-->
@@ -49,15 +50,15 @@
 <script>
     $("#but").bind('click',function(){
         var val_name=$("input[name='val_name']").val()
-
+        var val_id=$("input[name='val_id']").val()
         if(val_name==''){
             alert('必填');
             return false;
         }
-//        alert(val_name)
+//        alert(attr_name)
 //        return false;
         $.ajax({
-            url:"/admin/sku/val",
+            url:"/admin/sku/valUp/".val_id,
             type:'post',
             data:{'val_name':val_name},
             dataType:'json',
