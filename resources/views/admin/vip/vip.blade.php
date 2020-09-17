@@ -49,8 +49,7 @@
 <!-- 正文区域 /-->
 </body>
 </html>
-<<<<<<< HEAD
-=======
+
 <script>
     $(document).ready(function(){
         $("#vip_logo").uploadify({
@@ -62,4 +61,4 @@
         })
     })
 </script>
->>>>>>> b8fcc4b9f462b312a42f70377d77d65dfec401d1
+
