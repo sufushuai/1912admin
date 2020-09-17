@@ -27,16 +27,16 @@
                     <div class="row data-type">
                         <div class="col-md-2 title">分类名称</div>
                         <div class="col-md-10 data">
-                            <input type="text" class="form-control"  placeholder="分类名称" name="cate_name" value="">
+                            <input type="hidden" class="cate_id" value="{{$edit_info->cate_id}}">
+                            <input type="text" class="form-control"  placeholder="分类名称" name="cate_name" value="{{$edit_info->cate_name}}">
                         </div>
-                        <div class="col-md-2 title">下拉菜单</div>
+                        <div class="col-md-2 title">分类菜单</div>
                         <div class="col-md-10 data">
-                            <select class="form-control" name="p_id">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
+                            <select class="form-control" id="p_id" name="p_id">
+                                <option value="0">--顶级分类--</option>
+                                @foreach($info as $k=>$v)
+                                    <option value="{{$v->cate_id}}"><?php echo str_repeat('&nbsp;&nbsp;&nbsp;&nbsp;',$v['level']) ?>{{$v->cate_name}}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
@@ -45,9 +45,32 @@
         </div>
     </div>
     <div class="btn-toolbar list-toolbar">
-        <button class="btn btn-primary"><i class="fa fa-save"></i>提交</button>
+        <button class="btn btn-primary" id="edit">修改</button>
     </div>
 </section>
 <!-- 正文区域 /-->
 </body>
 </html>
+<script>
+    $(document).on('click','#edit',function(){
+        var cate_id=$(".cate_id").val();
+        var cate_name=$("input[name='cate_name']").val();
+        var p_id=$("#p_id").val();
+        $.ajax({
+            "url":"update",
+            "type":"post",
+            "data":{cate_name:cate_name,p_id:p_id,cate_id:cate_id},
+            "dataType":"json",
+            "async":"true",
+            success:function(res){
+                if(res.code==200){
+                    alert("修改成功");
+                    location.href="/cate/index";
+                }
+                if(res.code==1){
+                    alert(res.msg);
+                }
+            }
+        })
+    })
+</script>
