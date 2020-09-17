@@ -51,6 +51,9 @@ Route::any('/admin/goods/index','Admin\GoodsController@index');//商品展示
 // sku
 Route::any('/admin/sku/attr','Admin\SkuController@attr');//属性名添加
 Route::any('/admin/sku/attrIndex','Admin\SkuController@index');//属性名展示
+Route::any('/admin/sku/attrDel/{id}','Admin\SkuController@attrDel');//属性名删除
+Route::any('/admin/sku/attrUp/{id}','Admin\SkuController@attrUP');//属性名编辑
+
 Route::any('/admin/sku/val','Admin\SkuController@val');//属性值添加
 Route::any('/admin/sku/valIndex','Admin\SkuController@valindex');//属性值展示
 Route::any('/admin/sku/sku','Admin\SkuController@sku');//属性添加

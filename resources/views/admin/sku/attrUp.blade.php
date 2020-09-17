@@ -4,7 +4,7 @@
     <!-- 页面meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>VIP添加</title>
+    <title>属性名添加</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
     <link rel="stylesheet" href="/admin/plugins/bootstrap/css/bootstrap.min.css">
@@ -13,15 +13,15 @@
     <link rel="stylesheet" href="/admin/css/style.css">
     <script src="/admin/plugins/jQuery/jquery-2.2.3.min.js"></script>
     <script src="/admin/plugins/bootstrap/js/bootstrap.min.js"></script>
-
-    <script src="/admin/uploadify/jquery.js"></script>
-    <link rel="stylesheet" href="/admin/uploadify/uploadify.css">
-    <script src="/admin/uploadify/jquery.uploadify.js"></script>
 </head>
 <body class="hold-transition skin-red sidebar-mini" >
 <!-- 正文区域 -->
+<div class="btn-toolbar list-toolbar">
+    <a class="btn btn-primary"  href="/admin/sku/attrIndex"><i class="fa fa-save"></i>返回</a>
+</div>
 <div class="box-header with-border">
-    <h1 class="box-title">VIP添加</h1>
+    <h1 class="box-title">属性名添加</h1>
+
 </div>
 <section class="content">
     <div class="box-body">
@@ -29,36 +29,47 @@
             <div class="tab-content">
                 <div class="tab-pane active" id="home">
                     <div class="row data-type">
-                        <div class="col-md-2 title">会员名称</div>
+                        <div class="col-md-2 title">属性名名称</div>
                         <div class="col-md-10 data">
-                            <input type="text" class="form-control"  placeholder="会员名称" name="vip_name" value="">
+                            <input type="text" class="form-control"  placeholder="属性名名称" name="attr_name" value="{{$data->attr_name}}">
                         </div>
-                        <div class="col-md-2 title">会员图标</div>
-                        <div class="col-md-10 data">
-                            <input type="file" class="form-control" id="vip_logo"  placeholder="会员logo" name="vip_logo" value="">
-                        </div>
+                        <input type="hidden"  name="attr_id" value="{{$data->attr_id}}">
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="btn-toolbar list-toolbar">
-        <button class="btn btn-primary"><i class="fa fa-save"></i>提交</button>
+        <button class="btn btn-primary" id="but"><i class="fa fa-save"></i>提交</button>
     </div>
 </section>
 <!-- 正文区域 /-->
 </body>
 </html>
-
 <script>
-    $(document).ready(function(){
-        $("#vip_logo").uploadify({
-            uploader:"/uploads",
-            swf:"/admin/uploadify/uploadify.swf",
-            onUploadSuccess:function(res,data,msg){
+    $("#but").bind('click',function(){
+        var attr_name=$("input[name='attr_name']").val()
+        var attr_id=$("input[name='attr_id']").val()
+        if(attr_name==''){
+            alert('必填');
+            return false;
+        }
+//        alert(attr_name)
+//        return false;
+        $.ajax({
+            url:"/admin/sku/attrUp/".attr_id,
+            type:'post',
+            data:{'attr_name':attr_name},
+            dataType:'json',
+            success:function(res){
+                if(res.error==0){
+                    alert(res.msg);
+                }else{
+                    alert(res.msg);
+                }
 
             }
         })
     })
 </script>
-
