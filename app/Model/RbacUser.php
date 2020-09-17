@@ -4,7 +4,7 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class AdminUser extends Model
+class RbacUser extends Model
 {
     protected $table="rbac_admin";
     protected $primaryKey="admin_id";

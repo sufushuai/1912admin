@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Model\AdminUser;
+use App\Model\RbacUser;
 
 class LoginController extends Controller
 {
@@ -19,7 +19,7 @@ class LoginController extends Controller
 
             return response(['error'=>1,'msg'=>'不能为空']);
         }
-        $data=AdminUser::where('admin_name','=',"$admin_name")->first();
+        $data=RbacUser::where('admin_name','=',"$admin_name")->first();
         if($data){
             if($password!=$data['password']){
 
