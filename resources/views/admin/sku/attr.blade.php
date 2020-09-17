@@ -16,8 +16,12 @@
 </head>
 <body class="hold-transition skin-red sidebar-mini" >
 <!-- 正文区域 -->
+<div class="btn-toolbar list-toolbar">
+    <a class="btn btn-primary"  href="/admin/sku/attrIndex"><i class="fa fa-save"></i>属性名展示</a>
+</div>
 <div class="box-header with-border">
     <h1 class="box-title">属性名添加</h1>
+
 </div>
 <section class="content">
     <div class="box-body">
@@ -27,7 +31,7 @@
                     <div class="row data-type">
                         <div class="col-md-2 title">属性名名称</div>
                         <div class="col-md-10 data">
-                            <input type="text" class="form-control"  placeholder="属性名名称" name="attr_name" value="">
+                            <input type="text" class="form-control"  placeholder="属性名名称" name="attr_name">
                         </div>
 
                     </div>
@@ -36,9 +40,35 @@
         </div>
     </div>
     <div class="btn-toolbar list-toolbar">
-        <button class="btn btn-primary"><i class="fa fa-save"></i>提交</button>
+        <button class="btn btn-primary" id="but"><i class="fa fa-save"></i>提交</button>
     </div>
 </section>
 <!-- 正文区域 /-->
 </body>
 </html>
+<script>
+    $("#but").bind('click',function(){
+        var attr_name=$("input[name='attr_name']").val()
+
+        if(attr_name==''){
+            alert('必填');
+            return false;
+        }
+//        alert(attr_name)
+//        return false;
+        $.ajax({
+            url:"/admin/sku/attr",
+            type:'post',
+            data:{'attr_name':attr_name},
+            dataType:'json',
+            success:function(res){
+                if(res.error==0){
+                    alert(res.msg);
+                }else{
+                    alert(res.msg);
+                }
+
+            }
+        })
+    })
+</script>

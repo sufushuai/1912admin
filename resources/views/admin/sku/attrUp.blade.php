@@ -4,7 +4,7 @@
     <!-- 页面meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>属性值添加</title>
+    <title>属性名添加</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
     <link rel="stylesheet" href="/admin/plugins/bootstrap/css/bootstrap.min.css">
@@ -17,10 +17,10 @@
 <body class="hold-transition skin-red sidebar-mini" >
 <!-- 正文区域 -->
 <div class="btn-toolbar list-toolbar">
-    <a class="btn btn-primary"  href="/admin/sku/valIndex"><i class="fa fa-save"></i>属性值展示</a>
+    <a class="btn btn-primary"  href="/admin/sku/attrIndex"><i class="fa fa-save"></i>返回</a>
 </div>
 <div class="box-header with-border">
-    <h1 class="box-title">属性值添加</h1>
+    <h1 class="box-title">属性名添加</h1>
 
 </div>
 <section class="content">
@@ -29,10 +29,11 @@
             <div class="tab-content">
                 <div class="tab-pane active" id="home">
                     <div class="row data-type">
-                        <div class="col-md-2 title">属性值名称</div>
+                        <div class="col-md-2 title">属性名名称</div>
                         <div class="col-md-10 data">
-                            <input type="text" class="form-control"  placeholder="属性值名称" name="val_name">
+                            <input type="text" class="form-control"  placeholder="属性名名称" name="attr_name" value="{{$data->attr_name}}">
                         </div>
+                        <input type="hidden"  name="attr_id" value="{{$data->attr_id}}">
 
                     </div>
                 </div>
@@ -48,18 +49,18 @@
 </html>
 <script>
     $("#but").bind('click',function(){
-        var val_name=$("input[name='val_name']").val()
-
-        if(val_name==''){
+        var attr_name=$("input[name='attr_name']").val()
+        var attr_id=$("input[name='attr_id']").val()
+        if(attr_name==''){
             alert('必填');
             return false;
         }
-//        alert(val_name)
+//        alert(attr_name)
 //        return false;
         $.ajax({
-            url:"/admin/sku/val",
+            url:"/admin/sku/attrUp/".attr_id,
             type:'post',
-            data:{'val_name':val_name},
+            data:{'attr_name':attr_name},
             dataType:'json',
             success:function(res){
                 if(res.error==0){

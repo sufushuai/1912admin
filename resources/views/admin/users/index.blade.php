@@ -23,10 +23,84 @@
 
 
 <!-- /.box-body -->
+    <div class="box-body">
 
+        <!-- 数据表格 -->
+        <div class="table-box">
+
+            <!--工具栏-->
+            <div class="box-tools pull-right">
+                <div class="has-feedback">
+                    管理员名称：<input >
+                    <button class="btn btn-default" >查询</button>
+                </div>
+            </div>
+            <!--工具栏/-->
+
+            <!--数据列表-->
+            <table id="dataList" class="table table-bordered table-striped table-hover dataTable">
+                <thead>
+                <tr>
+                    <th class="" style="padding-right:0px">
+                        <input id="selall" type="checkbox" class="icheckbox_square-blue">
+                    </th>
+                    <th class="sorting_asc">管理员ID</th>
+                    <th class="sorting">管理员名称</th>
+                    <th class="sorting">管理员状态</th>
+                    <th class="sorting">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($data as $k=>$v)
+                    <tr admin_id="{{$v->admin_id}}">
+                        <td><input type="checkbox"></td>
+                        <td>{{$v->admin_id}}</td>
+                        <td>{{$v->admin_name}}</td>
+                        <td>{{$v->is_del==1?"普通管理员":"超级管理员"}}</td>
+                        <td><button class="del btn bg-olive btn-xs" >删除</button>
+                            <button class="edit btn bg-olive btn-xs">修改</button>
+                        </td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
+            <!--数据列表/-->
+        </div>
+        <!-- 数据表格 /-->
+    </div>
+    <!-- /.box-body -->
 <!-- 编辑窗口 -->
 
 </div>
 
 </body>
 </html>
+<script src="/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.del').click(function(){
+            var _this=$(this);
+            var admin_id=_this.parents('tr').attr('admin_id');
+            $.ajax({
+                url:'/users/del',
+                data:{admin_id:admin_id},
+                type:'post',
+                dataType:'json',
+                success:function(res){
+                    if(res.errno==200){
+                        alert('删除成功');
+                        location.href="/users/index";
+                    }else{
+                        alert('操作失败');
+                    }
+                }
+            })
+        })
+        $(".edit").click(function(){
+            var _this=$(this);
+            var admin_id=_this.parents('tr').attr('admin_id');
+            location.href="/users/edit/"+admin_id;
+        })
+    })
+</script>
+

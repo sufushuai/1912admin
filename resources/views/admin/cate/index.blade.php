@@ -65,7 +65,7 @@
                     {{$v->p_id}}
                 </td>
                 <td class="text-center">
-                    <button type="button" class="btn bg-olive btn-xs del" >删除</button>
+                    <button type="button" class="btn bg-olive btn-xs del" onclick="" >删除</button>
                     <button type="button" class="btn bg-olive btn-xs edit" >修改</button>
                 </td>
             </tr>
@@ -92,8 +92,10 @@
             "async":"true",
             "dataType":"json",
             success:function(res){
-                if(res.code==200){
-                    alert("删除成功")
+                if(confirm("确定删除吗")){
+                    if(res.code==200){
+                        alert("删除成功")
+                    }
                 }
                 if(res.code==1){
                     alert(res.msg)
