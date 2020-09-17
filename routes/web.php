@@ -29,8 +29,6 @@ Route::any('cate/update','Admin\CateController@update');//修改逻辑
 Route::any('/admin/category','Admin\CateController@category');//分类添加
 Route::any('/admin/cate/index','Admin\CateController@index');//分类展示
 
-<<<<<<< HEAD
-
 
 Route::any('/admin/brand','Admin\BrandController@brand');//品牌添加页面
 Route::any('/brand/add','Admin\BrandController@add');//品牌添加
@@ -40,12 +38,6 @@ Route::any('/brand/update','Admin\BrandController@update');//修改
 Route::any('/brand/index','Admin\BrandController@index');//品牌展示
 Route::any('/brand/destroy','Admin\BrandController@destroy');//品牌展示
 
-=======
-Route::any('/admin/brand','Admin\BrandController@brand');//品牌添加页面
-Route::any('/brand/add','Admin\BrandController@add');//品牌添加
-Route::any('/admin/brandimg','Admin\BrandController@brandimg');//图片添加
-Route::any('/admin/brand/index','Admin\BrandController@index');//品牌展示
->>>>>>> 76675c891b74060d038cf274916113b0875b98a1
 
 Route::any('/admin/vip','Admin\VipController@vip');//vip添加
 Route::any('/admin/vip/index','Admin\VipController@index');//vip展示

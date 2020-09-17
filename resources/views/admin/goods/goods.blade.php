@@ -75,23 +75,23 @@
                         </div>
                         <div class="col-md-2 title">是否展示</div>
                         <div class="col-md-10 data">
-                            <input type="radio" name="is_show"  checked>是
-                            <input type="radio" name="is_show"          >否
+                            <input type="radio" name="is_show" value="1" checked>是
+                            <input type="radio" name="is_show" value="1"     >否
                         </div>
                         <div class="col-md-2 title">是否热门</div>
                         <div class="col-md-10 data">
-                            <input type="radio" name="is_hot"  checked>是
-                            <input type="radio" name="is_hot"          >否
+                            <input type="radio" name="is_hot" value="1" checked>是
+                            <input type="radio" name="is_hot"  value="2"        >否
                         </div>
                         <div class="col-md-2 title">是否上架</div>
                         <div class="col-md-10 data">
-                            <input type="radio" name="is_on"  checked>是
-                            <input type="radio" name="is_on"          >否
+                            <input type="radio" name="is_on" value="1" checked>是
+                            <input type="radio" name="is_on" value="2"         >否
                         </div>
                         <div class="col-md-2 title">是否新品</div>
                         <div class="col-md-10 data">
-                            <input type="radio" name="is_new"  checked>是
-                            <input type="radio" name="is_new"          >否
+                            <input type="radio" name="is_new" value="1" checked>是
+                            <input type="radio" name="is_new" value="2"         >否
                         </div>
                     </div>
                 </div>
@@ -99,7 +99,7 @@
         </div>
     </div>
     <div class="btn-toolbar list-toolbar">
-        <button class="btn btn-primary"><i class="fa fa-save"></i>提交</button>
+        <button class="btn btn-primary" id="button">提交</button>
     </div>
 </section>
 <!-- 正文区域 /-->
