@@ -98,12 +98,12 @@
                         <ul class="treeview-menu">
                 
                             <li id="admin-login">
-                                <a href="/admin/category" target="iframe">
+                                <a href="/cate/create" target="iframe">
                                     <i class="fa fa-circle-o"></i>分类添加
                                 </a>
                             </li>
                             <li id="admin-login">
-                                <a href="/admin/cate/index" target="iframe">
+                                <a href="/cate/index" target="iframe">
                                     <i class="fa fa-circle-o"></i>分类展示
                                 </a>
                             </li>

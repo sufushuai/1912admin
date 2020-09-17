@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="/admin/css/style.css">
     <script src="/admin/plugins/jQuery/jquery-2.2.3.min.js"></script>
     <script src="/admin/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/admin/uploadify/jquery.js"></script>
+    <link rel="stylesheet" href="/admin/uploadify/uploadify.css">
+    <script src="/admin/uploadify/jquery.uploadify.js"></script>
 </head>
 <body class="hold-transition skin-red sidebar-mini" >
 <!-- 正文区域 -->
@@ -29,9 +32,11 @@
                         <div class="col-md-10 data">
                             <input type="text" class="form-control"  placeholder="品牌名称" name="brand_name" value="">
                         </div>
+                        <div class="showimg"></div>
                         <div class="col-md-2 title">品牌logo</div>
                         <div class="col-md-10 data">
-                            <input type="file" class="form-control"  placeholder="品牌logo" name="brand_logo" value="">
+                            <input type="file" class="form-control"  id="uploadify" placeholder="品牌logo" name="brand_logos" value="">
+                            <input type="hidden" name="brand_logo">
                         </div>
                     </div>
                 </div>
@@ -39,9 +44,36 @@
         </div>
     </div>
     <div class="btn-toolbar list-toolbar">
-        <button class="btn btn-primary"><i class="fa fa-save"></i>提交</button>
+        <button class="btn btn-primary" id="button" type="button">提交</button>
     </div>
+
 </section>
-<!-- 正文区域 /-->
+<script>
+    $(document).ready(function(){
+         $("#uploadify").uploadify({
+             uploader: "/admin/brandimg",
+             swf: "/admin/uploadify/uploadify.swf",
+             onUploadSuccess:function(res,data,msg){
+                var imgPath = data;
+                var imgstr = "<img src='"+imgPath+"'  controls='controls' style='width:80px;height:60px;'>";
+                $("input[name='brand_logo']").val(imgPath);
+                $(".showimg").append(imgstr);
+             }
+         })
+    });
+    $(document).on('click','#button',function(){
+        var brand_name = $('input[name="brand_name"]').val();
+        var brand_logo = $('input[name="brand_logo"]').val();
+        $.ajax({
+            type:"post",
+            dataType:"json",
+            url:"/brand/add",
+            data:{brand_name:brand_name,brand_logo:brand_logo},
+            success:function(res){
+                console.log(res)
+            }
+        })
+    })
+</script>
 </body>
 </html>

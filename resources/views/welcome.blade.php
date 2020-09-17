@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    我是苏富贵  我胖我骄傲
+                    奥利给
                 </div>
 
                 <div class="links">
