@@ -15,13 +15,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('admin/index','Admin\IndexController@index');//首页
 
 Route::get('admin/login','Admin\LoginController@login');//登录
+
 
 Route::post('admin/logindo','Admin\LoginController@logindo');//登录
 
 
 Route::get('admin/index','Admin\IndexController@index');//首页
+Route::post('admin/logindo','Admin\LoginController@logindo');//执行登录
 
 Route::any('admin/users','Admin\UserController@users');//管理员添加
 Route::any('admin/users/index','Admin\UserController@index');//管理员展示
@@ -31,8 +34,6 @@ Route::any('admin/role/index','Admin\RoleController@index');//角色展示
 
 Route::any('admin/based','Admin\BasedController@based');//权限添加
 Route::any('admin/based/index','Admin\BasedController@index');//权限展示
-
-
 
 Route::get('admin/category','Admin\CateController@category');//分类添加
 Route::get('admin/cate/index','Admin\CateController@index');//分类展示
@@ -45,6 +46,10 @@ Route::get('admin/vip','Admin\VipController@vip');//vip添加
 Route::get('admin/vip/index','Admin\VipController@index');//vip展示
 
 Route::get('admin/discount','Admin\DiscountController@discount');//优惠券添加
+Route::any('discount/adddo','Admin\DiscountController@adddo');//添加
+Route::any('discount/del','Admin\DiscountController@del');//删除
+Route::any('discount/update/{id}','Admin\DiscountController@update');//修改
+Route::any('discount/updatedo','Admin\DiscountController@updatedo');//修改
 Route::get('admin/discount/index','Admin\DiscountController@index');//优惠券展示
 
 Route::get('admin/goods','Admin\GoodsController@goods');//商品添加
