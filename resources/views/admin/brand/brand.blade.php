@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="/admin/css/style.css">
     <script src="/admin/plugins/jQuery/jquery-2.2.3.min.js"></script>
     <script src="/admin/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/admin/uploadify/jquery.js"></script>
+    <link rel="stylesheet" href="/admin/uploadify/uploadify.css">
+    <script src="/admin/uploadify/jquery.uploadify.js"></script>
 </head>
 <body class="hold-transition skin-red sidebar-mini" >
 <!-- 正文区域 -->
@@ -31,7 +34,7 @@
                         </div>
                         <div class="col-md-2 title">品牌logo</div>
                         <div class="col-md-10 data">
-                            <input type="file" class="form-control"  placeholder="品牌logo" name="brand_logo" value="">
+                            <input type="file" class="form-control"  id="uploadify" placeholder="品牌logo" name="brand_logo" value="">
                         </div>
                     </div>
                 </div>
@@ -42,6 +45,21 @@
         <button class="btn btn-primary"><i class="fa fa-save"></i>提交</button>
     </div>
 </section>
-<!-- 正文区域 /-->
+<script>
+    $(document).ready(function(){
+         $("#uploadify").uploadify({
+             uploader: "/uploads",
+             swf: "/admin/uploadify/uploadify.swf",
+             onUploadSuccess:function(res,data,msg){
+
+             }
+         })
+    });
+
+    $('button').click(function(){
+        var brand_name = $('input[name="brand_name"]').val();
+        var brand_n = $('input[name="brand_name"]').val();
+    })
+</script>
 </body>
 </html>
