@@ -38,7 +38,7 @@ class CateController extends CommonController
      *  分类展示
      */
     public function index(){
-        $cateinfo=CategoryModel::get();
+        $cateinfo=CategoryModel::where(["status"=>1])->get();
         $info=$this->getCateInfo($cateinfo);
 
     	return view("admin.cate.index",compact("info"));
