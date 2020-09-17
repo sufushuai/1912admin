@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class BasedController extends Controller
 {
-    public function based(){
+    public function add(){
     	return view("admin.based.based");
     }
     public function index(){

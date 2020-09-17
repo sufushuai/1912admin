@@ -16,8 +16,12 @@
 </head>
 <body class="hold-transition skin-red sidebar-mini" >
 <!-- 正文区域 -->
+<div class="btn-toolbar list-toolbar">
+    <a class="btn btn-primary"  href="/admin/sku/valIndex"><i class="fa fa-save"></i>属性值展示</a>
+</div>
 <div class="box-header with-border">
     <h1 class="box-title">属性值添加</h1>
+
 </div>
 <section class="content">
     <div class="box-body">
@@ -27,7 +31,7 @@
                     <div class="row data-type">
                         <div class="col-md-2 title">属性值名称</div>
                         <div class="col-md-10 data">
-                            <input type="text" class="form-control"  placeholder="属性值名称" name="val_name" value="">
+                            <input type="text" class="form-control"  placeholder="属性值名称" name="val_name">
                         </div>
 
                     </div>
@@ -36,9 +40,35 @@
         </div>
     </div>
     <div class="btn-toolbar list-toolbar">
-        <button class="btn btn-primary"><i class="fa fa-save"></i>提交</button>
+        <button class="btn btn-primary" id="but"><i class="fa fa-save"></i>提交</button>
     </div>
 </section>
 <!-- 正文区域 /-->
 </body>
 </html>
+<script>
+    $("#but").bind('click',function(){
+        var val_name=$("input[name='val_name']").val()
+
+        if(val_name==''){
+            alert('必填');
+            return false;
+        }
+//        alert(val_name)
+//        return false;
+        $.ajax({
+            url:"/admin/sku/val",
+            type:'post',
+            data:{'val_name':val_name},
+            dataType:'json',
+            success:function(res){
+                if(res.error==0){
+                    alert(res.msg);
+                }else{
+                    alert(res.msg);
+                }
+
+            }
+        })
+    })
+</script>

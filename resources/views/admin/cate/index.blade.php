@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <!-- 页面meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>商品分类管理</title>
+    <title>分类展示</title>
+    <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
-    <link rel="stylesheet" href="../plugins/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../plugins/adminLTE/css/AdminLTE.css">
-    <link rel="stylesheet" href="../plugins/adminLTE/css/skins/_all-skins.min.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
-    <script src="../plugins/bootstrap/js/bootstrap.min.js"></script>
-
+    <link rel="stylesheet" href="/admin/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/admin/plugins/adminLTE/css/AdminLTE.css">
+    <link rel="stylesheet" href="/admin/plugins/adminLTE/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="/admin/css/style.css">
+    <script src="/admin/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="/admin/plugins/bootstrap/js/bootstrap.min.js"></script>
 </head>
 
 <body class="hold-transition skin-red sidebar-mini" >
@@ -25,17 +24,6 @@
 </div>
 
 <div class="box-body">
-    <ol class="breadcrumb">
-        <li>
-            <a href="#" >顶级分类列表</a>
-        </li>
-        <li>
-            <a href="#" >珠宝</a>
-        </li>
-        <li>
-            <a href="#" >银饰</a>
-        </li>
-    </ol>
 
     <!-- 数据表格 -->
     <div class="table-box">
@@ -57,103 +45,66 @@
         <table id="dataList" class="table table-bordered table-striped table-hover dataTable">
             <thead>
             <tr>
-                <th class="" style="padding-right:0px">
-                    <input type="checkbox" class="icheckbox_square-blue">
-                </th>
                 <th class="sorting_asc">分类ID</th>
                 <th class="sorting">分类名称</th>
-                <th class="sorting">类型模板ID</th>
+                <th class="sorting">PID</th>
 
                 <th class="text-center">操作</th>
             </tr>
             </thead>
             <tbody>
-            <tr >
-                <td><input  type="checkbox" ></td>
-                <td>982</td>
-                <td>吊坠/项链</td>
+            @foreach($info as $k=>$v)
+            <tr cate_id={{$v->cate_id}}>
+                <td>{{$v->cate_id}}</td>
+
                 <td>
-                    11
+                    <?php echo str_repeat('&nbsp;&nbsp;&nbsp;&nbsp;',$v['level']) ?>{{$v['cate_name']}}
+                </td>
+
+                <td>
+                    {{$v->p_id}}
                 </td>
                 <td class="text-center">
-                    <button type="button" class="btn bg-olive btn-xs" >查询下级</button>
-                    <button type="button" class="btn bg-olive btn-xs" data-toggle="modal" data-target="#editModal" >修改</button>
+                    <button type="button" class="btn bg-olive btn-xs del" onclick="" >删除</button>
+                    <button type="button" class="btn bg-olive btn-xs edit" >修改</button>
                 </td>
             </tr>
-            <tr >
-                <td><input  type="checkbox"> </td>
-                <td>983</td>
-                <td>手镯/手链/脚链</td>
-                <td>
-                    11
-                </td>
-                <td class="text-center">
-                    <button type="button" class="btn bg-olive btn-xs" >查询下级</button>
-                    <button type="button" class="btn bg-olive btn-xs" data-toggle="modal" data-target="#editModal" >修改</button>
-                </td>
-            </tr>
-            <tr >
-                <td><input  type="checkbox" ></td>
-                <td>984</td>
-                <td>戒指/耳饰</td>
-                <td>
-                    11
-                </td>
-                <td class="text-center">
-                    <button type="button" class="btn bg-olive btn-xs" >查询下级</button>
-                    <button type="button" class="btn bg-olive btn-xs" data-toggle="modal" data-target="#editModal" >修改</button>
-                </td>
-            </tr>
+                @endforeach
             </tbody>
+
         </table>
-        <!--数据列表/-->
 
     </div>
-    <!-- 数据表格 /-->
-
-
-
 
 </div>
 <!-- /.box-body -->
 
 
-<!-- 编辑窗口 -->
-<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog" >
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h3 id="myModalLabel">商品分类编辑</h3>
-            </div>
-            <div class="modal-body">
-
-                <table class="table table-bordered table-striped"  width="800px">
-                    <tr>
-                        <td>上级商品分类</td>
-                        <td>
-                            珠宝 >>  银饰
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>商品分类名称</td>
-                        <td><input  class="form-control" placeholder="商品分类名称">  </td>
-                    </tr>
-                    <tr>
-                        <td>类型模板</td>
-                        <td>
-                            <input select2 config="options['type_template']" placeholder="商品类型模板" class="form-control" type="text"/>
-                        </td>
-                    </tr>
-                </table>
-
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-success" data-dismiss="modal" aria-hidden="true">保存</button>
-                <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">关闭</button>
-            </div>
-        </div>
-    </div>
-</div>
 </body>
 </html>
+<script>
+    $(document).on('click','.del',function(){
+        var cate_id=$(this).parents('tr').attr('cate_id');
+        $.ajax({
+            "url":"delete",
+            "type":"post",
+            "data":{cate_id:cate_id},
+            "async":"true",
+            "dataType":"json",
+            success:function(res){
+                if(confirm("确定删除吗")){
+                    if(res.code==200){
+                        alert("删除成功")
+                    }
+                }
+                if(res.code==1){
+                    alert(res.msg)
+                }
+            }
+        })
+    })
+    $(document).on('click','.edit',function(){
+        var cate_id=$(this).parents('tr').attr('cate_id');
+        location.href="/cate/edit?cate_id="+cate_id;
+    })
+</script>
