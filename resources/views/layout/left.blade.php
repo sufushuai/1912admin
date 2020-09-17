@@ -32,12 +32,12 @@
                         <ul class="treeview-menu">
 
                             <li id="admin-login">
-                                <a href="/admin/users" target="iframe">
+                                <a href="/users/add" target="iframe">
                                     <i class="fa fa-circle-o"></i>管理员添加
                                 </a>
                             </li>
                             <li id="admin-login">
-                                <a href="/admin/users/index" target="iframe">
+                                <a href="/users/index" target="iframe">
                                     <i class="fa fa-circle-o"></i>管理员展示
                                 </a>
                             </li>
@@ -54,12 +54,12 @@
                         <ul class="treeview-menu">
 
                             <li id="admin-login">
-                                <a href="/admin/role" target="iframe">
+                                <a href="/role/create" target="iframe">
                                     <i class="fa fa-circle-o"></i>角色添加
                                 </a>
                             </li>
                             <li id="admin-login">
-                                <a href="/admin/role/index" target="iframe">
+                                <a href="/role/index" target="iframe">
                                     <i class="fa fa-circle-o"></i>角色展示
                                 </a>
                             </li>
@@ -76,12 +76,12 @@
                         <ul class="treeview-menu">
 
                             <li id="admin-login">
-                                <a href="/admin/based" target="iframe">
+                                <a href="/based/add" target="iframe">
                                     <i class="fa fa-circle-o"></i>权限添加
                                 </a>
                             </li>
                             <li id="admin-login">
-                                <a href="/admin/based/index" target="iframe">
+                                <a href="/based/index" target="iframe">
                                     <i class="fa fa-circle-o"></i>权限展示
                                 </a>
                             </li>
