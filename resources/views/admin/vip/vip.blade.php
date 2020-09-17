@@ -13,6 +13,10 @@
     <link rel="stylesheet" href="/admin/css/style.css">
     <script src="/admin/plugins/jQuery/jquery-2.2.3.min.js"></script>
     <script src="/admin/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="/admin/uploadify/jquery.js"></script>
+    <link rel="stylesheet" href="/admin/uploadify/uploadify.css">
+    <script src="/admin/uploadify/jquery.uploadify.js"></script>
 </head>
 <body class="hold-transition skin-red sidebar-mini" >
 <!-- 正文区域 -->
@@ -27,11 +31,11 @@
                     <div class="row data-type">
                         <div class="col-md-2 title">会员名称</div>
                         <div class="col-md-10 data">
-                            <input type="text" class="form-control"  placeholder="品牌名称" name="vip_name" value="">
+                            <input type="text" class="form-control"  placeholder="会员名称" name="vip_name" value="">
                         </div>
                         <div class="col-md-2 title">会员图标</div>
                         <div class="col-md-10 data">
-                            <input type="file" class="form-control"  placeholder="品牌logo" name="vip_logo" value="">
+                            <input type="file" class="form-control" id="vip_logo"  placeholder="会员logo" name="vip_logo" value="">
                         </div>
                     </div>
                 </div>
@@ -45,3 +49,14 @@
 <!-- 正文区域 /-->
 </body>
 </html>
+<script>
+    $(document).ready(function(){
+        $("#vip_logo").uploadify({
+            uploader:"/uploads",
+            swf:"/admin/uploadify/uploadify.swf",
+            onUploadSuccess:function(res,data,msg){
+
+            }
+        })
+    })
+</script>
