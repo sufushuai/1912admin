@@ -2,12 +2,62 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5feb6029-c84b-461a-9191-d6e81c7f4bcb" name="默认的" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin/img/uploadify-cancel.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/0224d3286a5fbd0392bf6c4b253134db.android" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/0224d3286a5fbd0392bf6c4b253134db.jpeg!large" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/1898d8766dc383ff813400850702904e.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/1d53b1c424a048c007a21aa07b5cb023.jpeg!large" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/31696a1e90057cc37c941bd4eb8dc9a8.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/42afa67e852cd686157665c5553a213f.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/4cfe4d05d6042870484fb90ea3aa8ca5.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/4fe0e9338ae9fcbb34f031f50d75e9be.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/52e6b1d5689cc07730ca965ea073bb89.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/5f37a8afdee7f3fea1219ab0cbc06ee3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/6326bbaafbecbfc3fbfdf2a1a1180b4c.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/6ce65362d087e6c032aed86ffa391878.android" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/6ce65362d087e6c032aed86ffa391878.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/7fca5e2dc96ce5b7e461a6c50cdfb523.jpeg!large" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/8a94fd123766a0fafdb986db2385fcf4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/8dda7fb2dae965109d62a75519f4e4b4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/94d6bdd911873f282d7d30f10271aec0.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/99898405d3b359c2804bab0bef7b3166.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/ab7c7a6a6b48e903b932b8618a15f263.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/b489e2572519d39f35184f7820d42c55.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/bda1e1492516519703c2877e7d3e4aac.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/c710046811427ce95c92c6af61089ac2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/cbe48f4f56116b09e70bf08f836135ef.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/cf2361515b9936deb6c48c9e35d14755.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/db9f65395f0017fbfa044f68a6ae5c45.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/e767cc77dcccfa0dd054125ff39c7875.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/e91ecef5ecc275cc5552a17922ec78d2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/f0195ee98c8b47e9da075fe53c01be8e.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/f6aab26371b457ba2dd9c683dcab9746.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/CommonController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Model/Brand.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Model/CategoryModel.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Model/RbacAdminRole.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Model/RbacBased.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Model/RbacRole.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Model/RbacRoleBased.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/admin/cate/edit.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/admin/users/edit.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SkuController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SkuController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/sku/attr.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/sku/attr.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/sku/attrindex.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/sku/attrindex.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/vip/vip.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/vip/vip.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/BasedController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/BasedController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/BrandController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/BrandController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CateController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CateController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/RoleController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/RoleController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Model/RbacUser.php" afterPath="$PROJECT_DIR$/app/Model/RbacUser.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/filesystems.php" afterPath="$PROJECT_DIR$/config/filesystems.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/brand/brand.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/brand/brand.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/cate/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/cate/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/users/users.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/users/users.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layout/left.blade.php" afterPath="$PROJECT_DIR$/resources/views/layout/left.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/views/admin/cate/category.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/cate/create.blade.php" />
     </list>
     <ignored path="1912admin.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,11 +79,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="web.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6804734">
-              <caret line="56" column="62" selection-start-line="56" selection-start-column="62" selection-end-line="56" selection-end-column="62" />
+            <state vertical-scroll-proportion="-10.5">
+              <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+              <folding>
+                <element signature="e#7#389#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.6295857">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -118,6 +180,7 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/SkuController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/sku/attrUp.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
       </list>
     </option>
   </component>
@@ -127,9 +190,6 @@
   </component>
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
-  </component>
-  <component name="PhpServers">
-    <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
@@ -493,9 +553,6 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="5feb6029-c84b-461a-9191-d6e81c7f4bcb" name="默认的" comment="" />
@@ -506,7 +563,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
+    <frame x="-11" y="-11" width="1942" height="1042" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29322916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -529,14 +586,6 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
-  <component name="Vcs.Log.UiProperties">
-    <option name="RECENTLY_FILTERED_USER_GROUPS">
-      <collection />
-    </option>
-    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-      <collection />
-    </option>
-  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -557,7 +606,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="65" selection-start-line="20" selection-start-column="65" selection-end-line="20" selection-end-column="65" />
-          <folding />
+          <folding>
+            <element signature="e#7#389#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -569,19 +620,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/cate/category.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="55" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#7#389#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -638,7 +683,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="51" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
-          <folding />
+          <folding>
+            <element signature="e#7#389#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -787,14 +834,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/cate/category.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.526658">
-          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/admin/uploadify/jquery.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-21.22209">
@@ -926,8 +965,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6804734">
-          <caret line="56" column="62" selection-start-line="56" selection-start-column="62" selection-end-line="56" selection-end-column="62" />
+        <state vertical-scroll-proportion="-10.5">
+          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+          <folding>
+            <element signature="e#7#389#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.6295857">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
