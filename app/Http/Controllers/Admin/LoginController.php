@@ -13,6 +13,7 @@ class LoginController extends Controller
     }
 
     public function logindo(Request $request){
+
         $admin_name=$request->post('admin_name');
         $password=$request->post('password');
         if(empty($admin_name)|empty($password)){
@@ -27,6 +28,7 @@ class LoginController extends Controller
             }
             return redirect('admin/index');
         }
+        return response(['error'=>3,'msg'=>'用户不存在']);
     }
 
 
