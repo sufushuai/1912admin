@@ -180,10 +180,10 @@ class SkuController extends Controller
     //属性展示
     public function skuindex(){
         $attrVal=new SkuAttrVal();
-        $data=$attrVal->leftjoin('shop_goods','shop_attr_val.goods_id','=','shop_goods.goods_id')
-            ->leftjoin('shop_attr','shop_attr_val.attr_id','=','shop_attr.attr_id')
-            ->leftjoin('shop_val','shop_attr_val.val_id','=','shop_val.val_id')
-            ->get();
+        $data=$attrVal->leftjoin('shop_goods','sku_attr_val.goods_id','=','shop_goods.goods_id')
+            ->leftjoin('sku_attr','sku_attr_val.attr_id','=','sku_attr.attr_id')
+            ->leftjoin('sku_val','sku_attr_val.val_id','=','sku_val.val_id')
+            ->paginate(5);
         //dd($data);
     	return view("admin.sku.skuindex",['data'=>$data]);
     }

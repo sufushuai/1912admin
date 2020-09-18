@@ -42,9 +42,9 @@
 
                         <div class="col-md-2 title">属性名</div>
                         <div class="col-md-10 data">
-
                                 @foreach($attr as $v)
-                                    <input type="checkbox" value="{{$v->attr_id}}">{{$v->attr_name}}
+                                    <input type="checkbox" value="{{$v->attr_id}}" >
+                                {{$v->attr_name}}
                                     @endforeach
                         </div>
 
@@ -66,6 +66,7 @@
                         </div>
 
                     </div>
+
                 </div>
             </div>
         </div>
