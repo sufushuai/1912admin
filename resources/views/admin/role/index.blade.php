@@ -38,12 +38,21 @@
                 </div>
             </div>
         </div>
+        <div class="box-tools pull-right">
+            <div class="has-feedback">
+                角色名称：<input >
+                <button class="btn btn-default" >查询</button>
+            </div>
+        </div>
 
 
         <!--数据列表-->
         <table id="dataList" class="table table-bordered table-striped table-hover dataTable">
             <thead>
             <tr>
+                <th class="" style="padding-right:0px">
+                    <input id="selall" type="checkbox" class="icheckbox_square-blue">
+                </th>
                 <th class="sorting_asc">角色ID</th>
                 <th class="sorting">角色名称</th>
                 <th class="text-center">操作</th>
@@ -52,6 +61,7 @@
             <tbody>
             @foreach($data as $k=>$v)
                 <tr role_id="{{$v->role_id}}">
+                    <td><input type="checkbox"></td>
                     <td>{{$v->role_id}}</td>
                     <td>
                         {{$v->role_name}}
