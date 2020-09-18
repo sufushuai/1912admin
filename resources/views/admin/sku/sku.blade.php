@@ -42,22 +42,17 @@
 
                         <div class="col-md-2 title">属性名</div>
                         <div class="col-md-10 data">
-                            <select name="attr_id">
-                                <option>-请选择-</option>
+
                                 @foreach($attr as $v)
-                                <option value="{{$v->attr_id}}">{{$v->attr_name}}</option>
+                                    <input type="checkbox" value="{{$v->attr_id}}">{{$v->attr_name}}
                                     @endforeach
-                            </select>
                         </div>
 
                         <div class="col-md-2 title">属性值</div>
                         <div class="col-md-10 data">
-                            <select name="val_id">
-                                <option>-请选择-</option>
                                 @foreach($val as $v)
-                                    <option value="{{$v->val_id}}">{{$v->val_name}}</option>
+                                    <input type="checkbox" value="{{$v->val_id}}">{{$v->val_name}}
                                 @endforeach
-                            </select>
                         </div>
 
                         <div class="col-md-2 title">商品库存</div>
