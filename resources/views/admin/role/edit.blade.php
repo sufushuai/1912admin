@@ -27,7 +27,8 @@
                     <div class="row data-type">
                         <div class="col-md-2 title">角色名称</div>
                         <div class="col-md-10 data">
-                            <input type="text" class="form-control"  placeholder=角色名称 name="role_name" id="role_name" value="">
+                            <input type="hidden" id="role_id" value="{{$role_Info->role_id}}">
+                            <input type="text" class="form-control"  placeholder=角色名称 name="role_name" id="role_name" value="{{$role_Info->role_name}}">
                         </div>
                     </div>
                 </div>
@@ -35,7 +36,7 @@
         </div>
     </div>
     <div class="btn-toolbar list-toolbar">
-        <button class="btn btn-primary" id="add"><i class="fa fa-save"></i>添加</button>
+        <button class="btn btn-primary" id="edit"><i class="fa fa-save"></i>修改</button>
     </div>
 </section>
 
@@ -44,23 +45,20 @@
 <script src="/jquery.min.js"></script>
 <script>
     $(document).ready(function() {
-        $('#add').click(function () {
+        $('#edit').click(function () {
             var role_name = $("#role_name").val();
-            if(role_name==""){
-                alert("角色名称不能为空");
-                return false;
-            }
+           var role_id=$("#role_id").val();
             $.ajax({
                 type: "post",
-                url: "/role/store",
-                data: {role_name: role_name},
+                url: "/role/update",
+                data: {role_name: role_name,role_id:role_id},
                 dataType: "json",
                 success: function (res) {
                     if (res.errno == 200) {
-                        alert('添加成功');
+                        alert('修改成功');
                         location.href = "/role/index";
                     } else {
-                        alert('添加失败');
+                        alert('修改失败');
                     }
                 }
             })
