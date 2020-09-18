@@ -236,7 +236,7 @@
                                 </a>
                             </li>
                             <li id="admin-login">
-                                <a href="/admin/goods/index" target="iframe">
+                                <a href="/goods/index" target="iframe">
                                     <i class="fa fa-circle-o"></i>商品展示
                                 </a>
                             </li>

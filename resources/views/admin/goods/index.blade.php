@@ -8,12 +8,12 @@
     <title>商品管理</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
-    <link rel="stylesheet" href="../plugins/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../plugins/adminLTE/css/AdminLTE.css">
-    <link rel="stylesheet" href="../plugins/adminLTE/css/skins/_all-skins.min.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
-    <script src="../plugins/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/admin/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/admin/plugins/adminLTE/css/AdminLTE.css">
+    <link rel="stylesheet" href="/admin/plugins/adminLTE/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="/admin/css/style.css">
+    <script src="/admin/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="/admin/plugins/bootstrap/js/bootstrap.min.js"></script>
 
 </head>
 
@@ -21,7 +21,7 @@
 <!-- .box-body -->
 
 <div class="box-header with-border">
-    <h3 class="box-title">商品审核</h3>
+    <h3 class="box-title">商品展示</h3>
 </div>
 
 <div class="box-body">
@@ -34,9 +34,6 @@
             <div class="form-group form-inline">
                 <div class="btn-group">
                     <button type="button" class="btn btn-default" title="删除" ><i class="fa fa-trash-o"></i> 删除</button>
-                    <button type="button" class="btn btn-default" title="审核通过" ><i class="fa fa-check"></i> 审核通过</button>
-                    <button type="button" class="btn btn-default" title="驳回" ><i class="fa fa-ban"></i> 驳回</button>
-                    <button type="button" class="btn btn-default" title="刷新" ><i class="fa fa-refresh"></i> 刷新</button>
                 </div>
             </div>
         </div>
@@ -57,69 +54,41 @@
                 </th>
                 <th class="sorting_asc">商品ID</th>
                 <th class="sorting">商品名称</th>
-                <th class="sorting">商品价格</th>
-                <th class="sorting">一级分类</th>
-                <th class="sorting">二级分类</th>
-                <th class="sorting">三级分类</th>
-                <th class="sorting">状态</th>
+                <th class="sorting">商品分类</th>
+                <th class="sorting">品牌分类</th>
+                <th class="sorting">商品图片</th>
+                <th class="sorting">商品相册</th>
+                <th class="sorting">商品简介</th>
+                <th class="sorting">商品返还积分</th>
+                <th class="sorting">是否展示</th>
+                <th class="sorting">是否热卖</th>
+                <th class="sorting">是否上架</th>
+                <th class="sorting">是否新品</th>
                 <th class="text-center">操作</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
+            @foreach($data as $k=>$v)
+            <tr goods_id = {{$v->goods_id}}>
                 <td><input type="checkbox"></td>
-                <td>1</td>
-                <td>华为Mete8</td>
-                <td>3020</td>
-                <td>数码产品</td>
-                <td>手机</td>
-                <td>国产手机</td>
-                <td>
-		                                  	<span>
-		                                  		申请中
-		                                  	</span>
-
-                </td>
+                <td>{{$v->goods_id}}</td>
+                <td>{{$v->goods_name}}</td>
+                <td>{{$v->cate_id}}</td>
+                <td>{{$v->brand_id}}</td>
+                <td>@if($v->goods_img)<img src="{{env('APP_UPL')}}{{$v->goods_img}}" width="50" height="50">@endif</td>
+                <td>{{$v->goods_images}}</td>
+                <td>{{$v->goods_desc}}</td>
+                <td>{{$v->goods_score}}</td>
+                <td>{{$v->is_show==1?"是":"否"}}</td>
+                <td>{{$v->is_hot==1?"是":"否"}}</td>
+                <td>{{$v->is_on==1?"是":"否"}}</td>
+                <td>{{$v->is_new==1?"是":"否"}}</td>
                 <td class="text-center">
-                    <button type="button" class="btn bg-olive btn-xs" >详情</button>
+                    <button class="btn btn-primary" id="edit" type="button">修改</button>
+                    <button data-toggle="modal" onclick="" class="btn btn-danger del">删除</button>
                 </td>
             </tr>
-            <tr>
-                <td><input type="checkbox"></td>
-                <td>2</td>
-                <td>三星手雷</td>
-                <td>1080</td>
-                <td>数码产品</td>
-                <td>手机</td>
-                <td>进口手机</td>
-                <td>
-
-		                                  	<span>
-		                                  		已驳回
-		                                  	</span>
-                </td>
-                <td class="text-center">
-                    <button type="button" class="btn bg-olive btn-xs" >详情</button>
-                </td>
-            </tr>
-            <tr>
-                <td><input type="checkbox"></td>
-                <td>3</td>
-                <td>小米6S</td>
-                <td>999</td>
-                <td>数码产品</td>
-                <td>手机</td>
-                <td>国产手机</td>
-                <td>
-
-		                                  	<span>
-		                                  		审核通过
-		                                  	</span>
-                </td>
-                <td class="text-center">
-                    <button type="button" class="btn bg-olive btn-xs" >详情</button>
-                </td>
-            </tr>
+             @endforeach
             </tbody>
         </table>
         <!--数据列表/-->
@@ -131,7 +100,34 @@
 
 </div>
 <!-- /.box-body -->
+<script>
+    $(document).on('click','#edit',function(){
+        var goods_id = $(this).parents('tr').attr('goods_id');
+        location.href="/goods/edit?goods_id="+goods_id;
+    })
 
+    //ajax删除
+    $(document).on('click','.del',function(){
+        var goods_id = $(this).parents('tr').attr('goods_id');
+        $.ajax({
+            type:"post",
+            dataType:"json",
+            url:"/goods/destroy",
+            data:{goods_id:goods_id},
+            success:function(res){
+                if(confirm("确定是否删除？")){
+                    if(res.code==200){
+                        alert("删除成功")
+                        location.href='/goods/index'
+                    }
+                }
+                if(res.code==1){
+                    alert(res.msg)
+                }
+            }
+        })
+    })
+</script>
 </body>
 
 </html>

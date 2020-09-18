@@ -30,13 +30,15 @@
                     <div class="row data-type">
                         <div class="col-md-2 title">商品名称</div>
                         <div class="col-md-10 data">
-                            <input type="text" class="form-control"  placeholder="商品名称" name="goods_name" value="">
+                            <input type="text" class="form-control"  placeholder="商品名称" name="goods_name" value="{{$goods->goods_name}}">
+                            <input type="hidden" name="goods_id" value="{{$goods->goods_id}}">
+
                         </div>
                         <div class="col-md-2 title">商品分类</div>
                         <div class="col-md-10 data">
                             <select class="form-control" name="cate_id" id="cate_id">
                                 @foreach($info as $k=>$v)
-                                    <option value="{{$v->cate_id}}"><?php echo str_repeat('&nbsp;&nbsp;&nbsp;&nbsp;',$v['level']) ?>{{$v->cate_name}}</option>
+                                    <option value="{{$v->cate_id}}" {{$v->cate_id==$goods['goods_id']?'selected':''}}><?php echo str_repeat('&nbsp;&nbsp;&nbsp;&nbsp;',$v['level']) ?>{{$v->cate_name}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -44,15 +46,19 @@
                         <div class="col-md-10 data">
                             <select class="form-control" name="brand_id" id="brand_id">
                                 @foreach($brand as $k=>$v)
-                                <option value="{{$v->brand_id}}">{{$v->brand_name}}</option>
+                                    <option value="{{$v->brand_id}}" {{$v->brand_id==$goods['goods_id']?'selected':''}}>{{$v->brand_name}}</option>
                                 @endforeach
                             </select>
                         </div>
-                        <div class="showimg"></div>
+                        <div class="showimg" value="{{$goods->goods_img}}" ></div>
+                        <div class="col-md-10 data">
+                            @if($goods->goods_img)<img src="{{env('APP_UPL')}}{{$goods->goods_img}}" width="50px" height="50px">@endif
+                        </div>
                         <div class="col-md-2 title">商品图片</div>
                         <div class="col-md-10 data">
                             <input type="file" class="form-control" id="uploadify" placeholder="商品图片"  value="">
                             <input type="hidden" name="goods_img">
+{{--                            @if($brand->brand_logo)<img src="{{env('UPLOADS_URL')}}{{$brand->brand_logo}}" width="50" height="50">@endif--}}
                         </div>
                         <div class="col-md-2 title">商品相册</div>
                         <div class="col-md-10 data">
@@ -60,31 +66,31 @@
                         </div>
                         <div class="col-md-2 title">商品简介</div>
                         <div class="col-md-10 data">
-                            <textarea name="goods_desc" id="" cols="30" rows="10"></textarea>
+                            <textarea name="goods_desc" id="" cols="30" rows="10">{{$goods->goods_desc}}</textarea>
                         </div>
                         <div class="col-md-2 title">商品返还积分</div>
                         <div class="col-md-10 data">
-                            <input type="text" class="form-control"  placeholder="商品返还积分" name="goods_score" value="">
+                            <input type="text" class="form-control"  placeholder="商品返还积分" name="goods_score" value="{{$goods->goods_score}}">
                         </div>
                         <div class="col-md-2 title">是否展示</div>
                         <div class="col-md-10 data">
-                            <input type="radio" name="is_show" value="1" checked>是
-                            <input type="radio" name="is_show" value="2" >否
+                            <input type="radio"   name="is_show" value="1" @if($goods->is_show==1) checked @endif>是
+                            <input type="radio"   name="is_show" value="2" @if($goods->is_show==2) checked @endif>否
                         </div>
                         <div class="col-md-2 title">是否热门</div>
                         <div class="col-md-10 data">
-                            <input type="radio" name="is_hot" value="1" checked>是
-                            <input type="radio" name="is_hot"  value="2">否
+                            <input type="radio" name="is_hot" value="1" @if($goods->is_hot==1) checked @endif>是
+                            <input type="radio" name="is_hot"  value="2" @if($goods->is_hot==2) checked @endif>否
                         </div>
                         <div class="col-md-2 title">是否上架</div>
                         <div class="col-md-10 data" id="is_on">
-                            <input type="radio" name="is_on" value="1" checked>是
-                            <input type="radio" name="is_on" value="2">否
+                            <input type="radio" name="is_on" value="1" @if($goods->is_on==1) checked @endif>是
+                            <input type="radio" name="is_on" value="2" @if($goods->is_on==2) checked @endif>否
                         </div>
                         <div class="col-md-2 title">是否新品</div>
                         <div class="col-md-10 data">
-                            <input type="radio" name="is_new" value="1" checked>是
-                            <input type="radio" name="is_new" value="2">否
+                            <input type="radio" name="is_new" value="1" @if($goods->is_new==1) checked @endif>是
+                            <input type="radio" name="is_new" value="2" @if($goods->is_new==2) checked @endif>否
                         </div>
                     </div>
                 </div>
@@ -92,7 +98,7 @@
         </div>
     </div>
     <div class="btn-toolbar list-toolbar">
-        <button class="btn btn-primary" id="button" type="button">提交</button>
+        <button class="btn btn-primary" id="button" type="button">修改</button>
     </div>
 </section>
 <script>
@@ -120,18 +126,20 @@
         var is_hot = $('input[name="is_hot"]:checked').val();
         var is_on = $('input[name="is_on"]:checked').val();
         var is_new = $('input[name="is_new"]:checked').val();
+        var goods_id = $('input[name="goods_id"]').val();
+
         $.ajax({
             type:"post",
             dataType:"json",
-            url:"/goods/add",
+            url:"/goods/update",
             data:{goods_name:goods_name,cate_id:cate_id,
                 brand_id:brand_id, goods_img:goods_img,
                 goods_images:goods_images,goods_desc:goods_desc,
                 goods_score:goods_score,is_show:is_show,
-                is_hot:is_hot,is_on:is_on,is_new:is_new},
+                is_hot:is_hot,is_on:is_on,is_new:is_new,goods_id:goods_id},
             success:function(res){
                 if(res.code==200){
-                    alert("添加成功")
+                    alert("修改成功")
                     location.href='/goods/index'
                 }
                 if(res.code==1){

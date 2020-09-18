@@ -40,7 +40,7 @@ class UserController extends Controller
      * 展示页面
      */
     public function index(){
-        $data=RbacUser::get();
+        $data=RbacUser::paginate(3);
         return view('admin/users/index',compact('data'));
     }
 
