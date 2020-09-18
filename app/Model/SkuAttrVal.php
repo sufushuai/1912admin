@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class SkuAttrVal extends Model
 {
-    protected $table="shop_attr_val";
+    protected $table="sku_attr_val";
     protected $primaryKey="attr_val_id";
     public $timestamps=false;
     protected $guarded=[];

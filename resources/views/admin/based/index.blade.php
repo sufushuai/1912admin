@@ -66,7 +66,7 @@
                 @endforeach
                 </tbody>
             </table>
-            {{ $data->links() }}
+            {{ $data->links()}}
             <!--数据列表/-->
         </div>
         <!-- 数据表格 /-->

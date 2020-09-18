@@ -49,7 +49,7 @@ class BasedController extends Controller
      */
     public function index(Request $request){
 
-        $data=RbacBased::paginate(5);
+        $data=RbacBased::paginate(3);
 
         if($data){
             return view('admin.based.index',['data'=>$data]);
