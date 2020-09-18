@@ -20,10 +20,6 @@ Route::get('/admin/login','Admin\LoginController@login');//登录
 Route::post('/admin/logindo','Admin\LoginController@logindo');//执行登录
 
 
-
-
-
-
 Route::any('cate/create','Admin\CateController@create');//分类添加
 Route::any('cate/store','Admin\CateController@store');//添加逻辑
 Route::any('cate/delete','Admin\CateController@delete');//软删除
@@ -32,17 +28,12 @@ Route::any('cate/edit','Admin\CateController@edit');//分类修改
 Route::any('cate/update','Admin\CateController@update');//修改逻辑
 
 
-
-
-
-
 Route::any('/brand/add','Admin\BrandController@add');//品牌添加
 Route::any('/brand/brandimg','Admin\BrandController@brandimg');//图片添加
 Route::any('/brand/edit','Admin\BrandController@edit');//修改页面
 Route::any('/brand/update','Admin\BrandController@update');//修改
 Route::any('/brand/index','Admin\BrandController@index');//品牌展示
 Route::any('/brand/destroy','Admin\BrandController@destroy');//品牌展示
-
 
 
 Route::any('/admin/vip','Admin\VipController@vip');//vip添加
