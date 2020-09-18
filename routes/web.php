@@ -20,6 +20,7 @@ Route::get('/admin/login','Admin\LoginController@login');//登录
 Route::post('/admin/logindo','Admin\LoginController@logindo');//执行登录
 
 
+
 Route::any('cate/create','Admin\CateController@create');//分类添加
 Route::any('cate/store','Admin\CateController@store');//添加逻辑
 Route::any('cate/delete','Admin\CateController@delete');//软删除
@@ -28,6 +29,8 @@ Route::any('cate/edit','Admin\CateController@edit');//分类修改
 Route::any('cate/update','Admin\CateController@update');//修改逻辑
 
 
+//品牌管理
+Route::any('/admin/brand','Admin\BrandController@brand');//品牌添加页面
 Route::any('/brand/add','Admin\BrandController@add');//品牌添加
 Route::any('/brand/brandimg','Admin\BrandController@brandimg');//图片添加
 Route::any('/brand/edit','Admin\BrandController@edit');//修改页面
@@ -37,7 +40,15 @@ Route::any('/brand/destroy','Admin\BrandController@destroy');//品牌展示
 
 
 Route::any('/admin/vip','Admin\VipController@vip');//vip添加
+Route::any('/admin/vip/adddo','Admin\VipController@adddo');//vip添加
 Route::any('/admin/vip/index','Admin\VipController@index');//vip展示
+
+Route::any('/admin/vip/del','Admin\VipController@del');//vip删除
+Route::any('/admin/vip/uploads','Admin\VipController@uploads');//vip图片上传
+Route::any('/admin/vip/update/{id}','Admin\VipController@update');//vip修改
+Route::any('/admin/vip/updatedo','Admin\VipController@updatedo');//vip修改
+
+
 
 Route::get('admin/discount','Admin\DiscountController@discount');//优惠券添加
 Route::any('discount/adddo','Admin\DiscountController@adddo');//添加
@@ -45,6 +56,12 @@ Route::any('discount/del','Admin\DiscountController@del');//删除
 Route::any('discount/update/{id}','Admin\DiscountController@update');//修改
 Route::any('discount/updatedo','Admin\DiscountController@updatedo');//修改
 Route::get('admin/discount/index','Admin\DiscountController@index');//优惠券展示
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 8b023dd049b3201e22b250e834bd2dfe833f9764
 //商品管理
 Route::any('/admin/goods','Admin\GoodsController@goods');//商品添加页面
 Route::any('/goods/add','Admin\GoodsController@add');//商品添加
@@ -53,6 +70,23 @@ Route::any('/goods/edit','Admin\GoodsController@edit');//商品修改页面
 Route::any('/goods/update','Admin\GoodsController@update');//商品修改
 Route::any('/goods/destroy','Admin\GoodsController@destroy');//商品修改
 Route::any('/goods/index','Admin\GoodsController@index');//商品展示
+<<<<<<< HEAD
+=======
+
+
+Route::any('/admin/goods','Admin\GoodsController@goods');//商品添加
+Route::any('/admin/goods/index','Admin\GoodsController@index');//商品展示
+
+Route::any('/admin/ad','Admin\AdController@ad');//广告添加
+Route::any('/admin/ad/index','Admin\AdController@index');//广告展示
+
+Route::any('/admin/foot','Admin\FootController@foot');//友情链接添加
+Route::any('/admin/foot/index','Admin\FootController@index');//友情链接展示
+
+
+
+
+>>>>>>> 8b023dd049b3201e22b250e834bd2dfe833f9764
 // sku
 //属性名
 Route::any('/admin/sku/attr','Admin\SkuController@attr');//属性名添加

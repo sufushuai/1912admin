@@ -42,16 +42,16 @@
 
                         <div class="col-md-2 title">属性名</div>
                         <div class="col-md-10 data">
-
                                 @foreach($attr as $v)
-                                    <input type="checkbox" value="{{$v->attr_id}}">{{$v->attr_name}}
+                                    <input type="checkbox" value="{{$v->attr_id}}" id="attr_id">
+                                {{$v->attr_name}}
                                     @endforeach
                         </div>
 
                         <div class="col-md-2 title">属性值</div>
                         <div class="col-md-10 data">
                                 @foreach($val as $v)
-                                    <input type="checkbox" value="{{$v->val_id}}">{{$v->val_name}}
+                                    <input type="checkbox" value="{{$v->val_id}}" id="var_id">{{$v->val_name}}
                                 @endforeach
                         </div>
 
@@ -66,6 +66,7 @@
                         </div>
 
                     </div>
+
                 </div>
             </div>
         </div>
@@ -80,10 +81,12 @@
 <script>
     $("#but").bind('click',function(){
         var goods_id=$("select[name='goods_id']").val()
-        var attr_id=$("select[name='attr_id']").val()
-        var val_id=$("select[name='val_id']").val()
+        var attr_id=$("#attr_id").val()
+        var val_id=$("#val_id").val()
         var goods_num=$("input[name='goods_num']").val()
         var goods_price=$("input[name='goods_price']").val()
+        console.log(attr_id);
+
 
         if(goods_id==''){
             alert('商品名不能为空');
@@ -113,6 +116,7 @@
             data:{'attr_id':attr_id,'val_id':val_id,'goods_id':goods_id,'goods_num':goods_num,'goods_price':goods_price},
             dataType:'json',
             success:function(res){
+                console.log(res)
                 if(res.error==0){
                     alert(res.msg);
                 }else{

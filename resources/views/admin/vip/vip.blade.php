@@ -31,11 +31,14 @@
                     <div class="row data-type">
                         <div class="col-md-2 title">会员名称</div>
                         <div class="col-md-10 data">
-                            <input type="text" class="form-control"  placeholder="会员名称" name="vip_name" value="">
+                            <input type="text" class="form-control"  placeholder="会员名称" name="vip_name" >
                         </div>
+                        <div class="showimg"></div>
                         <div class="col-md-2 title">会员图标</div>
                         <div class="col-md-10 data">
                             <input type="file" class="form-control" id="vip_logo"  placeholder="会员logo" name="vip_logo" value="">
+                            <input type="hidden" id="vip_logo">
+                            <span class="showimg"></span>
                         </div>
                     </div>
                 </div>
@@ -43,22 +46,45 @@
         </div>
     </div>
     <div class="btn-toolbar list-toolbar">
-        <button class="btn btn-primary"><i class="fa fa-save"></i>提交</button>
+        <button ><input type="button" class="btn" value="提交"></button>
     </div>
 </section>
 <!-- 正文区域 /-->
 </body>
 </html>
-
-<script>
-    $(document).ready(function(){
-        $("#vip_logo").uploadify({
-            uploader:"/uploads",
-            swf:"/admin/uploadify/uploadify.swf",
-            onUploadSuccess:function(res,data,msg){
-
+<script type="text/javascript">
+    $(document).on("click",".btn",function(){
+        var vip_name = $("input[name='vip_name']").val();
+        var vip_logo = $("#vip_logo").val();
+        // console.log(vip_name)
+        // console.log(vip_img)
+        $.ajax({
+            url:"/admin/vip/adddo",
+            data:{vip_name:vip_name,vip_logo:vip_logo},
+            dataType:"json",
+            type:"post",
+            success:function(res){
+                if(res.code==0){
+                    alert(res.mag)
+                    location.href="/admin/vip/index"
+                }
             }
         })
     })
 </script>
 
+<script>
+    $(document).ready(function(){
+        $("#vip_logo").uploadify({
+            uploader:"/admin/vip/uploads",
+            swf:"/admin/uploadify/uploadify.swf",
+            onUploadSuccess:function(res,data,msg){
+                var imgPath  = data;
+                var imgstr = "<img src='"+imgPath+"' controls='controls' style='width:80px;height:60px;'>";
+                $("#vip_logo").val(imgPath);
+                $(".showimg").append(imgstr);
+                
+            }
+        })
+    })
+</script>

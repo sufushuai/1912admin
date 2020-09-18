@@ -38,6 +38,12 @@
                         <div class="col-md-10 data">
                             <input type="text" class="form-control"  placeholder="优惠金额" name="money" value="">
                         </div>
+                        <div class="col-md-2 title">过期时间</div>
+                        <div class="col-md-10 data">
+                            <input type ="date" name ="time_out" value ="<？php echo date（'Y-m-d'）;？&"/>
+                        </div>
+
+
                     </div>
                 </div>
             </div>
@@ -55,11 +61,12 @@
             // alert(11);
             var goods_id = $("select[name='goods_id']").val();
             var money = $("input[name='money']").val();
+            var time_out = $("input[name='time_out']").val();
              // console.log("goods_id");
             // console.log("money");
             $.ajax({
                 url:"/discount/adddo",
-                data:{goods_id:goods_id,money:money},
+                data:{goods_id:goods_id,money:money,time_out:time_out},
                 type:"post",
                 dataType:"json",
                 success:function(res){

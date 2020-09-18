@@ -28,16 +28,20 @@
                         <input type="hidden" name="dis_id" value="{{$data->dis_id}}">
                         <div class="col-md-2 title">商品id</div>
                         <div class="col-md-10 data">
-                            <select name="goods_id" id="">
+                            <select name="goods_id" id="{{$data->goods_id}}">
                                 <option value="">--请选择--</option>
                                 @foreach($datas as $v)
-                                <option value="{{$v->goods_id}}"  $v['goods_id']==$data['goods_id']?"selected":"">{{$v->goods_name}}</option>
+                                <option value="{{$v->goods_id}}"  {{$v['goods_id']==$data['goods_id']?"selected":""}}>{{$v->goods_name}}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="col-md-2 title">优惠金额</div>
                         <div class="col-md-10 data">
                             <input type="text" class="form-control"  placeholder="优惠金额" name="money"  value="{{$data->money}}">
+                        </div>
+                         <div class="col-md-2 title">过期时间</div>
+                        <div class="col-md-10 data">
+                            <input type ="date" name ="time_out" value ="<？php echo date（'Y-m-d'）;？&"/>
                         </div>
                     </div>
                 </div>
@@ -53,24 +57,27 @@
 </html>
 <script>
     $(document).on('click','.btn',function(){
-            // alert(11);
-            var dis_id = $("input[name='dis_id']").val();
-            var goods_id = $("select[name='goods_id']").val();
-            var money = $("input[name='money']").val();
-             // console.log("goods_id");
+             //alert(11);
+             var dis_id = $("input[name='dis_id']").val();
+             //console.log(dis_id);
+             var goods_id = $("select[name='goods_id']").val();
+             var money = $("input[name='money']").val();
+             var time_out = $("input[name='time_out']").val();
+              //console.log(goods_id);
             // console.log("money");
             $.ajax({
                 url:"/discount/updatedo",
-                data:{goods_id:goods_id,money:money,dis_id:dis_id},
+                data:{goods_id:goods_id,money:money,dis_id:dis_id,time_out:time_out},
                 type:"post",
                 dataType:"json",
-                // success:function(res){
-                //     alert(111);
-                //     if(res.code=='0'){
-                //         alert(res.mag)
-                //         location.href='/admin/discount/index'
-                //     }
-                // }
+                 success:function(res){
+                     //alert(res);
+                    if(res.code=='0'){
+                        alert(res.mag)
+                        location.href='/admin/discount/index'
+                    }
+                 }
             })
+           
     })
 </script>

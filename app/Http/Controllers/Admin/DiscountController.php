@@ -19,17 +19,20 @@ class DiscountController extends Controller
 
     	$goods_id = request()->post('goods_id');
     	$money = request()->post('money');
+        $time_out = request()->post('time_out');
+        // dd($time_out);
     	
     	$data = [
     		'goods_id'=>$goods_id,
-    		'money'=>$money
+    		'money'=>$money,
+            'time_out'=>strtotime($time_out),
     	];
     	// dd($data);
     	$DisModel = new DiscountModel;
     	$DisModel->goods_id=$data['goods_id'];
     	$DisModel->money=$data['money'];
     	$DisModel->add_time=time();
-    	$DisModel->time_out=time()+60*60*24*30;
+    	$DisModel->time_out=$data['time_out'];
     	$res = $DisModel->save();
     	
     	// dd($res);
@@ -68,26 +71,28 @@ class DiscountController extends Controller
     }
 
     public function updatedo(){
-        $goods_id = request()->post('goods_id');
+        $goods_id=request()->post('goods_id');
+        $dis_id = request()->post('dis_id');
+        $time_out = request()->post('time_out');
+        //dd($dis_id);
         $money = request()->post('money');
         
         $data = [
             'goods_id'=>$goods_id,
-            'money'=>$money
+            'money'=>$money,
+            'add_time'=>time(),
+            'time_out'=>strtotime($time_out),
         ];
-        // dd($data);
+        $where=[
+            ['dis_id','=',$dis_id]
+        ];
         $DisModel = new DiscountModel;
-        $DisModel->goods_id=$data['goods_id'];
-        $DisModel->money=$data['money'];
-        $DisModel->add_time=time();
-        $DisModel->time_out=time()+60*60*24*30;
-        $res = $DisModel->update();
-        
-        // dd($res);
-        if($res){
-            return['code'=>'0','mag'=>"成功"];
-        }else{
-            return['code'=>'1','mag'=>"失败"];
-        }
-    }
+        $res = DiscountModel::where($where)->update($data);
+        //dd($res);
+           if($res){
+                return['code'=>'0','mag'=>"修改成功"];
+            }else{
+                return['code'=>'1','mag'=>"修改失败"];
+            }
+         }
 }

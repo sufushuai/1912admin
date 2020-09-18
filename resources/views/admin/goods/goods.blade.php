@@ -69,7 +69,7 @@
                         <div class="col-md-2 title">是否展示</div>
                         <div class="col-md-10 data">
                             <input type="radio" name="is_show" value="1" checked>是
-                            <input type="radio" name="is_show" value="2">否
+                            <input type="radio" name="is_show" value="2" >否
                         </div>
                         <div class="col-md-2 title">是否热门</div>
                         <div class="col-md-10 data">
@@ -116,10 +116,10 @@
         var goods_images = $('input[name="goods_images"]').val();
         var goods_desc = $('textarea[name="goods_desc"]').val();
         var goods_score = $('input[name="goods_score"]').val();
-        var is_show = $('input[name="is_show"]').val();
-        var is_hot = $('input[name="is_hot"]').val();
-        var is_on = $('input[name="is_on"]').val();
-        var is_new = $('input[name="is_new"]').val();
+        var is_show = $('input[name="is_show"]:checked').val();
+        var is_hot = $('input[name="is_hot"]:checked').val();
+        var is_on = $('input[name="is_on"]:checked').val();
+        var is_new = $('input[name="is_new"]:checked').val();
         $.ajax({
             type:"post",
             dataType:"json",

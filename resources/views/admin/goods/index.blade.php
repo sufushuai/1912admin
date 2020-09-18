@@ -39,8 +39,10 @@
         </div>
         <div class="box-tools pull-right">
             <div class="has-feedback">
-                商品名称：<input >
-                <button class="btn btn-default" >查询</button>
+                <form >
+                商品名称：<input type="text" name="name" placeholder="请输入商品名称关键字" value="{{$query['name']??''}}">
+                <button class="btn btn-default" type="submit">查询</button>
+                </form >
             </div>
         </div>
         <!--工具栏/-->
@@ -75,20 +77,21 @@
                 <td>{{$v->goods_name}}</td>
                 <td>{{$v->cate_id}}</td>
                 <td>{{$v->brand_id}}</td>
-                <td><img src="{{env('APP_UPL')}}{{$v->goods_img}}" width="50" height="50"></td>
+                <td>@if($v->goods_img)<img src="{{env('APP_UPL')}}{{$v->goods_img}}" width="50" height="50">@endif</td>
                 <td>{{$v->goods_images}}</td>
                 <td>{{$v->goods_desc}}</td>
                 <td>{{$v->goods_score}}</td>
-                <td>{{$v->is_show}}</td>
-                <td>{{$v->is_hot}}</td>
-                <td>{{$v->is_on}}</td>
-                <td>{{$v->is_new}}</td>
+                <td>{{$v->is_show==1?"是":"否"}}</td>
+                <td>{{$v->is_hot==1?"是":"否"}}</td>
+                <td>{{$v->is_on==1?"是":"否"}}</td>
+                <td>{{$v->is_new==1?"是":"否"}}</td>
                 <td class="text-center">
                     <button class="btn btn-primary" id="edit" type="button">修改</button>
                     <button data-toggle="modal" onclick="" class="btn btn-danger del">删除</button>
                 </td>
             </tr>
              @endforeach
+            <tr><td colspan="5">{{$data->appends($query)->links()}}</td></tr>
             </tbody>
         </table>
         <!--数据列表/-->
