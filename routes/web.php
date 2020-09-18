@@ -55,7 +55,6 @@ Route::any('discount/update/{id}','Admin\DiscountController@update');//修改
 Route::any('discount/updatedo','Admin\DiscountController@updatedo');//修改
 Route::get('admin/discount/index','Admin\DiscountController@index');//优惠券展示
 
-
 Route::any('/admin/goods','Admin\GoodsController@goods');//商品添加
 Route::any('/admin/goods/index','Admin\GoodsController@index');//商品展示
 
