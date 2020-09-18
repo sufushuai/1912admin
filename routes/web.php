@@ -20,15 +20,6 @@ Route::get('/admin/login','Admin\LoginController@login');//登录
 Route::post('/admin/logindo','Admin\LoginController@logindo');//执行登录
 
 
-Route::get('admin/login','Admin\LoginController@login');//登录
-
-
-Route::post('admin/logindo','Admin\LoginController@logindo');//登录
-
-
-Route::get('admin/index','Admin\IndexController@index');//首页
-Route::post('admin/logindo','Admin\LoginController@logindo');//执行登录
-
 
 Route::any('cate/create','Admin\CateController@create');//分类添加
 Route::any('cate/store','Admin\CateController@store');//添加逻辑
@@ -58,10 +49,12 @@ Route::any('/admin/brand/index','Admin\BrandController@index');//品牌展示
 
 
 Route::any('/admin/vip','Admin\VipController@vip');//vip添加
+Route::any('/admin/vip/adddo','Admin\VipController@adddo');//vip添加
 Route::any('/admin/vip/index','Admin\VipController@index');//vip展示
-
-Route::get('admin/vip','Admin\VipController@vip');//vip添加
-Route::get('admin/vip/index','Admin\VipController@index');//vip展示
+Route::any('/admin/vip/del','Admin\VipController@del');//vip删除
+Route::any('/admin/vip/uploads','Admin\VipController@uploads');//vip图片上传
+Route::any('/admin/vip/update/{id}','Admin\VipController@update');//vip修改
+Route::any('/admin/vip/updatedo','Admin\VipController@updatedo');//vip修改
 
 Route::get('admin/discount','Admin\DiscountController@discount');//优惠券添加
 Route::any('discount/adddo','Admin\DiscountController@adddo');//添加
@@ -70,14 +63,6 @@ Route::any('discount/update/{id}','Admin\DiscountController@update');//修改
 Route::any('discount/updatedo','Admin\DiscountController@updatedo');//修改
 Route::get('admin/discount/index','Admin\DiscountController@index');//优惠券展示
 
-Route::get('admin/goods','Admin\GoodsController@goods');//商品添加
-Route::get('admin/goods/index','Admin\GoodsController@index');//商品展示
-
-Route::any('/admin/discount','Admin\DiscountController@discount');//优惠券添加
-Route::any('/admin/discount/index','Admin\DiscountController@index');//优惠券展示
-
-Route::any('/admin/goods','Admin\GoodsController@goods');//商品添加
-Route::any('/admin/goods/index','Admin\GoodsController@index');//商品展示
 
 
 // sku

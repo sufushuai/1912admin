@@ -4,7 +4,7 @@
     <!-- 页面meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>VIP添加</title>
+    <title>VIP修改</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
     <link rel="stylesheet" href="/admin/plugins/bootstrap/css/bootstrap.min.css">
@@ -21,7 +21,7 @@
 <body class="hold-transition skin-red sidebar-mini" >
 <!-- 正文区域 -->
 <div class="box-header with-border">
-    <h1 class="box-title">VIP添加</h1>
+    <h1 class="box-title">VIP修改</h1>
 </div>
 <section class="content">
     <div class="box-body">
@@ -29,9 +29,10 @@
             <div class="tab-content">
                 <div class="tab-pane active" id="home">
                     <div class="row data-type">
+                        <input type="hidden" name="vip_id" value="{{$data->vip_id}}">
                         <div class="col-md-2 title">会员名称</div>
                         <div class="col-md-10 data">
-                            <input type="text" class="form-control"  placeholder="会员名称" name="vip_name" >
+                            <input type="text" class="form-control"  placeholder="会员名称" name="vip_name" value="{{$data->vip_name}}">
                         </div>
                         <div class="showimg"></div>
                         <div class="col-md-2 title">会员图标</div>
@@ -54,13 +55,15 @@
 </html>
 <script type="text/javascript">
     $(document).on("click",".btn",function(){
+        var vip_id = $("input[name='vip_id']").val();
+        // console.log(vip_id);
         var vip_name = $("input[name='vip_name']").val();
         var vip_logo = $("#vip_logo").val();
         // console.log(vip_name)
         // console.log(vip_img)
         $.ajax({
-            url:"/admin/vip/adddo",
-            data:{vip_name:vip_name,vip_logo:vip_logo},
+            url:"/admin/vip/updatedo",
+            data:{vip_name:vip_name,vip_logo:vip_logo,vip_id:vip_id},
             dataType:"json",
             type:"post",
             success:function(res){
@@ -82,6 +85,7 @@
                 var imgPath  = data;
                 var imgstr = "<img src='"+imgPath+"' controls='controls' style='width:80px;height:60px;'>";
                 $("#vip_logo").val(imgPath);
+                // $("input[name='img_path']").val(imgPath);
                 $(".showimg").append(imgstr);
                 
             }
