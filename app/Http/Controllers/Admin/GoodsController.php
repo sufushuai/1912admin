@@ -65,8 +65,16 @@ class GoodsController extends CommonController
     }
     //商品展示
     public function index(){
-        $data = GoodsModel::where(['is_del'=>1])->get();
-    	return view("admin.goods.index",["data"=>$data]);
+        $name = request()->name;
+        $where=[];
+        if($name){
+            $where[] = ['goods_name','like',"%$name%"];
+        }
+        $data = GoodsModel::where($where)->where(['is_del'=>1])->paginate(5);
+
+        //$data = GoodsModel::where(['is_del'=>1],$where)->paginate(5);
+        $query = request()->all();
+    	return view("admin.goods.index",["data"=>$data,"query"=>$query]);
     }
     //商品修改页面
     public function edit(Request $request){
