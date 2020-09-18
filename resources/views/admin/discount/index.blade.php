@@ -51,7 +51,8 @@
                 <th class="sorting_asc">id</th>
                 <th class="sorting">商品</th>
                 <th class="sorting">优惠金额</th>
-
+                <th class="sorting">添加时间</th>
+                <th class="sorting">过期时间</th>
                 <th class="text-center">操作</th>
             </tr>
             </thead>
@@ -65,6 +66,8 @@
                 <td>
                     {{$v->money}}
                 </td>
+                <td>{{ date( "Y-m-d h-i", $v->add_time)}}</td>
+                <td>{{ date( "Y-m-d h-i", $v->time_out)}}</td>
                 <td class="text-center">
                     <button type="button" class="btn bg-olive btn-xs del" dis_id="{{$v->dis_id}}" >删除</button>
                     <button type="button" class="btn bg-olive btn-xs" data-toggle="modal" data-target="#editModal"><a href="{{url('/discount/update/'.$v->dis_id)}}">编辑</a></button>
@@ -87,42 +90,7 @@
 
 
 <!-- 编辑窗口 -->
-<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog" >
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h3 id="myModalLabel">商品分类编辑</h3>
-            </div>
-            <div class="modal-body">
 
-                <table class="table table-bordered table-striped"  width="800px">
-                    <tr>
-                        <td>上级商品分类</td>
-                        <td>
-                            珠宝 >>  银饰
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>商品分类名称</td>
-                        <td><input  class="form-control" placeholder="商品分类名称">  </td>
-                    </tr>
-                    <tr>
-                        <td>类型模板</td>
-                        <td>
-                            <input select2 config="options['type_template']" placeholder="商品类型模板" class="form-control" type="text"/>
-                        </td>
-                    </tr>
-                </table>
-
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-success" data-dismiss="modal" aria-hidden="true">保存</button>
-                <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">关闭</button>
-            </div>
-        </div>
-    </div>
-</div>
 </body>
 </html>
 <script>
