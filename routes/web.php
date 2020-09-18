@@ -103,7 +103,7 @@ Route::any('based/add','Admin\BasedController@add');//添加
 Route::any('based/do_add','Admin\BasedController@do_add');//执行添加
 Route::any('based/index','Admin\BasedController@index');//首页
 Route::any('based/del','Admin\BasedController@del');//删除
-Route::any('based/edit','Admin\BasedController@edit');//修改
+Route::any('based/edit/{based_id}','Admin\BasedController@edit');//修改
 Route::any('based/update','Admin\BasedController@update');//执行修改
 //RBAC角色
 Route::any('role/create', 'Admin\RoleController@create');//添加
