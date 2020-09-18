@@ -36,7 +36,7 @@ Route::any('cate/update','Admin\CateController@update');//修改逻辑
 Route::any('/admin/category','Admin\CateController@category');//分类添加
 Route::any('/admin/cate/index','Admin\CateController@index');//分类展示
 
-
+//品牌管理
 Route::any('/admin/brand','Admin\BrandController@brand');//品牌添加页面
 Route::any('/brand/add','Admin\BrandController@add');//品牌添加
 Route::any('/brand/brandimg','Admin\BrandController@brandimg');//图片添加
@@ -50,8 +50,6 @@ Route::any('/brand/destroy','Admin\BrandController@destroy');//品牌展示
 Route::any('/admin/vip','Admin\VipController@vip');//vip添加
 Route::any('/admin/vip/index','Admin\VipController@index');//vip展示
 
-Route::get('admin/vip','Admin\VipController@vip');//vip添加
-Route::get('admin/vip/index','Admin\VipController@index');//vip展示
 
 Route::get('admin/discount','Admin\DiscountController@discount');//优惠券添加
 Route::any('discount/adddo','Admin\DiscountController@adddo');//添加
@@ -61,10 +59,7 @@ Route::any('discount/updatedo','Admin\DiscountController@updatedo');//修改
 Route::get('admin/discount/index','Admin\DiscountController@index');//优惠券展示
 
 
-
-Route::any('/admin/discount','Admin\DiscountController@discount');//优惠券添加
-Route::any('/admin/discount/index','Admin\DiscountController@index');//优惠券展示
-
+//商品管理
 Route::any('/admin/goods','Admin\GoodsController@goods');//商品添加
 Route::any('/goods/goodsimg','Admin\GoodsController@goodsimg');//商品添加
 Route::any('/goods/add','Admin\GoodsController@add');//商品添加
