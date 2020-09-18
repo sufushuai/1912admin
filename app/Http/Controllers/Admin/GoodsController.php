@@ -68,7 +68,7 @@ class GoodsController extends CommonController
         $data = GoodsModel::where(['is_del'=>1])->get();
     	return view("admin.goods.index",["data"=>$data]);
     }
-    //品牌修改页面
+    //商品修改页面
     public function edit(Request $request){
         $brand = Brand::get();
         $cate = CategoryModel::get();
@@ -77,7 +77,7 @@ class GoodsController extends CommonController
         $goods = GoodsModel::where('goods_id',$goods_id)->first();
         return view('admin.goods.edit',['brand'=>$brand,'info'=>$info,'goods'=>$goods]);
     }
-    //品牌修改
+    //商品修改
     public function update(){
         $goods_name = request()->post("goods_name");
         $cate_id = request()->post("cate_id");
@@ -91,7 +91,6 @@ class GoodsController extends CommonController
         $is_on = request()->post("is_on");
         $is_new = request()->post("is_new");
         $goods_id = request()->post("goods_id");
-
         //dd($is_show);die;
         $data = [
             "goods_name"=>$goods_name,
@@ -114,7 +113,6 @@ class GoodsController extends CommonController
             return $this->error("修改失败");
         }
     }
-
     //商品删除
     public function destroy(){
         $goods_id = request()->post('goods_id');
