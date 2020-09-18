@@ -47,12 +47,16 @@ class BasedController extends Controller
     /**
      * 权限节点的列表
      */
-    public function index(Request $request){
-
-        $data=RbacBased::paginate(3);
-
+    public function index(){
+        $based_name = request()->based_name;
+        $where=[];
+        if($based_name){
+            $where[]=['based_name','like',"%$based_name%"];
+        }
+        $data=RbacBased::where($where)->paginate(3);
+        $query = request()->all();
         if($data){
-            return view('admin.based.index',['data'=>$data]);
+            return view('admin.based.index',['data'=>$data,'query'=>$query]);
         }
     }
 
@@ -106,6 +110,19 @@ class BasedController extends Controller
 
         if($res!==false){
             return $this->response(200,'success');
+        }else{
+            return $this->response(1,'fail');
+        }
+    }
+    /**
+     * @return array
+     * 批量删除
+     */
+    public function bdel(){
+        $based_id=request()->post('strIds');
+        $res=RbacBased::destroy($based_id);
+        if($res){
+            return $this->response(200,'ok');
         }else{
             return $this->response(1,'fail');
         }
