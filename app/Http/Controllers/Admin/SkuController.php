@@ -77,29 +77,32 @@ class SkuController extends Controller
     public function val(request $request){
         if($request->ajax()&&$request->post()){
             $val_name=$request->post('val_name');
+            $attr_id=$request->post('attr_id');
             //dd($val_name);
             $first=SkuVal::where('val_name','=',$val_name)->first();
             if($first){
                 return json_encode(['error'=>2,'msg'=>'属性值已存在']);
             }
 
-            $where= [
+            $data= [
                 'val_name'=>$val_name,
+                'attr_id'=>$attr_id,
                 'add_time'=>time()
             ];
 
-            $res=SkuVal::create($where);
+            $res=SkuVal::create($data);
 
             if($res){
                 return json_encode(['error'=>0,'msg'=>'添加成功']);
             }
             return json_encode(['error'=>1,'msg'=>'添加失败']);
         }
-    	return view("admin.sku.val");
+        $skuattr=SkuAttr::where(["is_del"=>1])->get();
+    	return view("admin.sku.val",compact("skuattr"));
     }
     //属性值展示
      public function valindex(){
-         $val=SkuVal::where(['is_del'=>1])->get();
+         $val=SkuVal::where(['is_del'=>1])->paginate(5);
 
     	 return view("admin.sku.valindex",['val'=>$val]);
     }
@@ -118,9 +121,11 @@ class SkuController extends Controller
     public function valUp(request $request,$id){
         if(request()->ajax()&&$request->post()){
             $val_name=$request->post('val_name');
+            $attr_id=$request->post('attr_id');
 
             $where= [
                 'val_name'=>$val_name,
+                'attr_id'=>$attr_id,
                 'up_time'=>time()
             ];
 
@@ -133,7 +138,8 @@ class SkuController extends Controller
         }
 
         $data=SkuVal::where('val_id',$id)->first();
-        return view("admin.sku.valUp",['data'=>$data]);
+        $skuattr=SkuAttr::where(["is_del"=>1])->get();
+        return view("admin.sku.valUp",['data'=>$data,'skuattr'=>$skuattr]);
     }
 
 

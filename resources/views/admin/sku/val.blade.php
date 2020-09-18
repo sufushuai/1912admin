@@ -33,7 +33,15 @@
                         <div class="col-md-10 data">
                             <input type="text" class="form-control"  placeholder="属性值名称" name="val_name">
                         </div>
-
+                        <div class="col-md-2 title">属性名</div>
+                        <div class="col-md-10 data">
+                            <select name="attr_id" class="form-control" >
+                                <option value="0">--请选择--</option>
+                                @foreach($skuattr as $k=>$v)
+                                    <option value="{{$v->attr_id}}">{{$v->attr_name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -49,9 +57,9 @@
 <script>
     $("#but").bind('click',function(){
         var val_name=$("input[name='val_name']").val()
-
+        var attr_id=$("select[name='attr_id']").val()
         if(val_name==''){
-            alert('必填');
+            alert('属性值必填');
             return false;
         }
 //        alert(val_name)
@@ -59,7 +67,7 @@
         $.ajax({
             url:"/admin/sku/val",
             type:'post',
-            data:{'val_name':val_name},
+            data:{'val_name':val_name,attr_id:attr_id},
             dataType:'json',
             success:function(res){
                 if(res.error==0){
