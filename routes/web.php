@@ -19,8 +19,7 @@ Route::get('/admin/index','Admin\IndexController@index');//首页
 Route::get('/admin/login','Admin\LoginController@login');//登录
 Route::post('/admin/logindo','Admin\LoginController@logindo');//执行登录
 
-
-
+//商品分类管理
 Route::any('cate/create','Admin\CateController@create');//分类添加
 Route::any('cate/store','Admin\CateController@store');//添加逻辑
 Route::any('cate/delete','Admin\CateController@delete');//软删除
@@ -39,17 +38,17 @@ Route::any('/brand/index','Admin\BrandController@index');//品牌展示
 Route::any('/brand/destroy','Admin\BrandController@destroy');//品牌展示
 
 
+//VIP管理
 Route::any('/admin/vip','Admin\VipController@vip');//vip添加
 Route::any('/admin/vip/adddo','Admin\VipController@adddo');//vip添加
 Route::any('/admin/vip/index','Admin\VipController@index');//vip展示
-
 Route::any('/admin/vip/del','Admin\VipController@del');//vip删除
 Route::any('/admin/vip/uploads','Admin\VipController@uploads');//vip图片上传
 Route::any('/admin/vip/update/{id}','Admin\VipController@update');//vip修改
 Route::any('/admin/vip/updatedo','Admin\VipController@updatedo');//vip修改
 
 
-
+//优惠券管理
 Route::get('admin/discount','Admin\DiscountController@discount');//优惠券添加
 Route::any('discount/adddo','Admin\DiscountController@adddo');//添加
 Route::any('discount/del','Admin\DiscountController@del');//删除
@@ -69,12 +68,14 @@ Route::any('/goods/destroy','Admin\GoodsController@destroy');//商品修改
 Route::any('/goods/index','Admin\GoodsController@index');//商品展示
 
 
-Route::any('/admin/goods','Admin\GoodsController@goods');//商品添加
-Route::any('/admin/goods/index','Admin\GoodsController@index');//商品展示
-
+//广告管理
 Route::any('/admin/ad','Admin\AdController@ad');//广告添加
 Route::any('/admin/ad/index','Admin\AdController@index');//广告展示
+Route::any('/admin/ad/adDel','Admin\AdController@adDel');//广告展示
+Route::any('/admin/ad/adUp','Admin\AdController@adUp');//广告展示
+Route::any('/admin/ad/aiiDel','Admin\AdController@allDel');//广告展示
 
+//友情链接管理
 Route::any('/admin/foot','Admin\FootController@foot');//友情链接添加
 Route::any('/admin/foot/index','Admin\FootController@index');//友情链接展示
 
