@@ -55,9 +55,12 @@ Route::any('discount/del','Admin\DiscountController@del');//删除
 Route::any('discount/update/{id}','Admin\DiscountController@update');//修改
 Route::any('discount/updatedo','Admin\DiscountController@updatedo');//修改
 Route::get('admin/discount/index','Admin\DiscountController@index');//优惠券展示
+<<<<<<< HEAD
+=======
 
 
 
+>>>>>>> 8b023dd049b3201e22b250e834bd2dfe833f9764
 //商品管理
 Route::any('/admin/goods','Admin\GoodsController@goods');//商品添加页面
 Route::any('/goods/add','Admin\GoodsController@add');//商品添加
@@ -66,6 +69,8 @@ Route::any('/goods/edit','Admin\GoodsController@edit');//商品修改页面
 Route::any('/goods/update','Admin\GoodsController@update');//商品修改
 Route::any('/goods/destroy','Admin\GoodsController@destroy');//商品修改
 Route::any('/goods/index','Admin\GoodsController@index');//商品展示
+<<<<<<< HEAD
+=======
 
 
 //广告管理
@@ -82,6 +87,7 @@ Route::any('/admin/foot/index','Admin\FootController@index');//友情链接展�
 
 
 
+>>>>>>> 8b023dd049b3201e22b250e834bd2dfe833f9764
 // sku
 //属性名
 Route::any('/admin/sku/attr','Admin\SkuController@attr');//属性名添加
@@ -106,6 +112,7 @@ Route::any('users/index','Admin\UserController@index');//展示
 Route::any('users/del','Admin\UserController@del');//删除
 Route::any('users/edit/{admin_id}','Admin\UserController@edit');//修改
 Route::any('users/update','Admin\UserController@update');//执行修改
+Route::any('users/usersdel','Admin\UserController@usersdel');//批量删除
 //RBAC权限节点
 Route::any('based/add','Admin\BasedController@add');//添加
 Route::any('based/do_add','Admin\BasedController@do_add');//执行添加
@@ -113,6 +120,7 @@ Route::any('based/index','Admin\BasedController@index');//首页
 Route::any('based/del','Admin\BasedController@del');//删除
 Route::any('based/edit/{based_id}','Admin\BasedController@edit');//修改
 Route::any('based/update','Admin\BasedController@update');//执行修改
+Route::any('based/bdel','Admin\BasedController@bdel');//批量删除
 //RBAC角色
 Route::any('role/create', 'Admin\RoleController@create');//添加
 Route::any('role/store', 'Admin\RoleController@store');//添加实现
@@ -120,4 +128,5 @@ Route::any('role/index', 'Admin\RoleController@index');//展示
 Route::any('role/del', 'Admin\RoleController@del');//删除
 Route::any('role/edit', 'Admin\RoleController@edit');//修改页面
 Route::any('role/update', 'Admin\RoleController@update');//修改实现
+Route::any('role/roledel','Admin\RoleController@roledel');//批量删除
 

@@ -40,8 +40,10 @@
         </div>
         <div class="box-tools pull-right">
             <div class="has-feedback">
-                角色名称：<input >
-                <button class="btn btn-default" >查询</button>
+                <form>
+                    角色名称：<input type="text" name="role_name" placeholder="请输入角色名称" value="{{$query['role_name']??''}}">
+                    <button class="btn btn-default" type="submit">查询</button>
+                </form>
             </div>
         </div>
 
@@ -51,7 +53,7 @@
             <thead>
             <tr>
                 <th class="" style="padding-right:0px">
-                    <input id="selall" type="checkbox" class="icheckbox_square-blue">
+                    <input id="allbox" type="checkbox" class="icheckbox_square-blue">
                 </th>
                 <th class="sorting_asc">角色ID</th>
                 <th class="sorting">角色名称</th>
@@ -61,7 +63,12 @@
             <tbody>
             @foreach($data as $k=>$v)
                 <tr role_id="{{$v->role_id}}">
-                    <td><input type="checkbox"></td>
+                    <td class="center">
+                        <label>
+                            <input type="checkbox" name="check" class="ace" value="{{$v->role_id}}"/>
+                            <span class="lbl"></span>
+                        </label>
+                    </td>
                     <td>{{$v->role_id}}</td>
                     <td>
                         {{$v->role_name}}
@@ -74,6 +81,7 @@
             @endforeach
             </tbody>
         </table>
+        <input type="button" class="btn bg-olive btn-xs" value="批量删除" id="dels">
         {{ $data->links()}}
     </div>
 
@@ -106,4 +114,56 @@
         var role_id=$(this).parents('tr').attr('role_id');
         location.href="/role/edit?role_id="+role_id;
     })
+    $(function(){
+        // 全选
+        // 给老大得复选框一个点击事件
+        $("#allbox").click(function(){
+            var _this = $(this);
+            // 循环下面所有得复选框
+            $("input[name='check']").each(function(){
+                // 判断老大是否时选中状态
+                if (_this.prop("checked") == true) {
+                    $(this).prop('checked', true);
+                } else {
+                    $(this).prop('checked', false);
+                }
+            });
+        });
+
+        // 批量删除
+        $("#dels").click(function(){
+            // 是否删除
+            if (window.confirm('是否删除')) {
+                // 获取所有被选中得值
+                var str = ''; // 定义一个字符串用来装选中得id
+                $("input[name='check']").each(function(){
+                    // 判断是否被选中
+                    if ($(this).prop('checked') == true) {
+                        // 拼接字符串，用，作为分隔符
+                        str = str + $(this).val() +',';
+                        console.log(str);
+                    }
+                });
+                var strIds = str.substr(0, str.length-1);
+                // alert(strIds);
+                // 如果字符串中没有任何的ID就不走后台ajax
+                if (strIds == '') return false;
+                $.ajax({
+                    url:'/role/roledel',
+                    data: {'strIds': strIds},
+                    dataType: 'json',
+                    type: "post",
+                    success: function(res){
+                        if(res.errno==200){
+                            alert('删除成功');
+                            location.href="/role/index";
+                        }else{
+                            alert('操作失败');
+                        }
+                    }
+                });
+            }
+        });
+
+    });
 </script>

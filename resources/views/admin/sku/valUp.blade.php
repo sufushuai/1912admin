@@ -20,7 +20,7 @@
     <a class="btn btn-primary"  href="/admin/sku/valIndex"><i class="fa fa-save"></i>返回</a>
 </div>
 <div class="box-header with-border">
-    <h1 class="box-title">属性值添加</h1>
+    <h1 class="box-title">属性值修改</h1>
 
 </div>
 <section class="content">
@@ -31,10 +31,18 @@
                     <div class="row data-type">
                         <div class="col-md-2 title">属性值名称</div>
                         <div class="col-md-10 data">
+                            <input type="hidden" value="{{$data->val_id}}">
                             <input type="text" class="form-control"  placeholder="属性值名称" name="val_name" value="{{$data->val_name}}">
                         </div>
-                        <input type="hidden"  name="val_id" value="{{$data->val_id}}">
-
+                        <div class="col-md-2 title">属性名</div>
+                        <div class="col-md-10 data">
+                            <select name="attr_id" class="form-control" >
+                                <option value="0">--请选择--</option>
+                                @foreach($skuattr as $k=>$v)
+                                    <option value="{{$v->attr_id}}">{{$v->attr_name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -51,6 +59,7 @@
     $("#but").bind('click',function(){
         var val_name=$("input[name='val_name']").val()
         var val_id=$("input[name='val_id']").val()
+        var attr_id=$("select[name='attr_id']").val()
         if(val_name==''){
             alert('必填');
             return false;
@@ -60,7 +69,7 @@
         $.ajax({
             url:"/admin/sku/valUp/".val_id,
             type:'post',
-            data:{'val_name':val_name},
+            data:{'val_name':val_name,attr_id:attr_id},
             dataType:'json',
             success:function(res){
                 if(res.error==0){
