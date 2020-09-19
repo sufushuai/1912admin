@@ -71,9 +71,9 @@ Route::any('/goods/index','Admin\GoodsController@index');//商品展示
 //广告管理
 Route::any('/admin/ad','Admin\AdController@ad');//广告添加
 Route::any('/admin/ad/index','Admin\AdController@index');//广告展示
-Route::any('/admin/ad/adDel','Admin\AdController@adDel');//广告展示
-Route::any('/admin/ad/adUp','Admin\AdController@adUp');//广告展示
-Route::any('/admin/ad/aiiDel','Admin\AdController@allDel');//广告展示
+Route::any('/admin/ad/adDel/{id}','Admin\AdController@adDel');//广告展示
+Route::any('/admin/ad/adUp/{id}','Admin\AdController@adUp');//广告展示
+Route::any('/admin/ad/allDel','Admin\AdController@allDel');//广告展示
 
 //友情链接管理
 Route::any('/admin/foot','Admin\FootController@foot');//友情链接添加

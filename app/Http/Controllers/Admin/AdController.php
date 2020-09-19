@@ -67,22 +67,33 @@ class AdController extends Controller
                 'ad_name'=>$ad_name,
                 'ad_desc'=>$ad_desc,
                 'ad_url'=>$ad_url,
-                'add_time'=>time()
+                'up_time'=>time()
             ];
             //dd($where);
-            $res=ADModel::where($where)->update();
+            $res=ADModel::where('ad_id',$id)->update($where);
 
             if($res){
                 return json_encode(['error'=>0,'msg'=>'修改成功']);
             }
             return json_encode(['error'=>1,'msg'=>'修改失败']);
         }
+        //dd($id);
+        $data=ADModel::where('ad_id',$id)->first();
 
-        $data=ADModel::where(['ad_id',$id])->first();
         return view("admin.ad.adUp",['data'=>$data]);
     }
     //批量删除
     public function allDel(){
-
+        $id=request()->post('strIds');
+        if (empty($id)) {
+            $return=['error'=>1,'msg'=>'数据缺失'];
+            echo json_encode($return);
+        }
+        //dd($id);
+        $del=ADModel::destroy($id);
+        if($del){
+            return json_encode(['error'=>0,'msg'=>'删除成功']);
+        }
+        return json_encode(['error'=>1,'msg'=>'删除失败']);
     }
 }

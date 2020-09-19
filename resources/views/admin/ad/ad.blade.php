@@ -17,7 +17,7 @@
 <body class="hold-transition skin-red sidebar-mini" >
 <!-- 正文区域 -->
 <div class="btn-toolbar list-toolbar">
-    <a class="btn btn-primary"  href="/admin/ad/Index"><i class="fa fa-save"></i>属性名展示</a>
+    <a class="btn btn-primary"  href="/admin/ad/index"><i class="fa fa-save"></i>属性名展示</a>
 </div>
 <div class="box-header with-border">
     <h1 class="box-title">广告添加</h1>
@@ -76,7 +76,6 @@
             alert('必填');
             return false;
         }
-//        alert(attr_name)
 //        return false;
         $.ajax({
             url:"/admin/ad",
