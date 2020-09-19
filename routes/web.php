@@ -55,12 +55,9 @@ Route::any('discount/del','Admin\DiscountController@del');//删除
 Route::any('discount/update/{id}','Admin\DiscountController@update');//修改
 Route::any('discount/updatedo','Admin\DiscountController@updatedo');//修改
 Route::get('admin/discount/index','Admin\DiscountController@index');//优惠券展示
-<<<<<<< HEAD
-=======
 
 
 
->>>>>>> 8b023dd049b3201e22b250e834bd2dfe833f9764
 //商品管理
 Route::any('/admin/goods','Admin\GoodsController@goods');//商品添加页面
 Route::any('/goods/add','Admin\GoodsController@add');//商品添加
@@ -69,8 +66,6 @@ Route::any('/goods/edit','Admin\GoodsController@edit');//商品修改页面
 Route::any('/goods/update','Admin\GoodsController@update');//商品修改
 Route::any('/goods/destroy','Admin\GoodsController@destroy');//商品修改
 Route::any('/goods/index','Admin\GoodsController@index');//商品展示
-<<<<<<< HEAD
-=======
 
 
 //广告管理
@@ -85,10 +80,6 @@ Route::any('/admin/foot','Admin\FootController@foot');//友情链接添加
 Route::any('/admin/foot/index','Admin\FootController@index');//友情链接展示
 
 
-
-
->>>>>>> 8b023dd049b3201e22b250e834bd2dfe833f9764
-// sku
 //属性名
 Route::any('/admin/sku/attr','Admin\SkuController@attr');//属性名添加
 Route::any('/admin/sku/attrIndex','Admin\SkuController@index');//属性名展示

@@ -8,6 +8,7 @@ use App\Model\ADModel;
 
 class AdController extends Controller
 {
+    //添加
     public function ad(){
         if(request()->ajax()&&request()->post()){
             //dd(request()->post());
@@ -36,10 +37,12 @@ class AdController extends Controller
     	return view("admin.ad.ad");
     }
 
+    //展示
     public function index(){
         $data=ADModel::where(['is_del'=>1])->paginate(5);
     	return view("admin.ad.index",['data'=>$data]);
     }
+
     //删除
     public function adDel($id){
 
@@ -49,7 +52,7 @@ class AdController extends Controller
         }
     }
     //修改
-    public function adUp(){
+    public function adUp($id){
         if(request()->ajax()&&request()->post()){
             //dd(request()->post());
             $ad_name=request()->post('ad_name');
@@ -74,7 +77,9 @@ class AdController extends Controller
             }
             return json_encode(['error'=>1,'msg'=>'修改失败']);
         }
-        return view("admin.ad.adUp");
+
+        $data=ADModel::where(['ad_id',$id])->first();
+        return view("admin.ad.adUp",['data'=>$data]);
     }
     //批量删除
     public function allDel(){
