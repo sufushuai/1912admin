@@ -68,10 +68,9 @@ Route::any('/goods/destroy','Admin\GoodsController@destroy');//商品修改
 Route::any('/goods/index','Admin\GoodsController@index');//商品展示
 
 
-<<<<<<< HEAD
-=======
+
+
 //广告管理
->>>>>>> 701b9f4988d22b4e91137d57128d804a550aa2fa
 Route::any('/admin/ad','Admin\AdController@ad');//广告添加
 Route::any('/admin/ad/index','Admin\AdController@index');//广告展示
 Route::any('/admin/ad/adDel/{id}','Admin\AdController@adDel');//广告展示
@@ -83,10 +82,8 @@ Route::any('/admin/foot','Admin\FootController@foot');//友情链接添加
 Route::any('/admin/foot/index','Admin\FootController@index');//友情链接展示
 
 
-<<<<<<< HEAD
+
 // sku
-=======
->>>>>>> 701b9f4988d22b4e91137d57128d804a550aa2fa
 //属性名
 Route::any('/admin/sku/attr','Admin\SkuController@attr');//属性名添加
 Route::any('/admin/sku/attrIndex','Admin\SkuController@index');//属性名展示
@@ -126,17 +123,20 @@ Route::any('role/index', 'Admin\RoleController@index');//展示
 Route::any('role/del', 'Admin\RoleController@del');//删除
 Route::any('role/edit', 'Admin\RoleController@edit');//修改页面
 Route::any('role/update', 'Admin\RoleController@update');//修改实现
-<<<<<<< HEAD
+
 //RBAC用户角色
 Route::any('/adminrole/adminrole/{id}', 'Admin\AdminroleController@adminrole');//用户角色添加
 Route::any('/adminrole/add', 'Admin\AdminroleController@add');//用户角色添加实现
+Route::any('/adminrole/index', 'Admin\AdminroleController@index');//用户角色展示
 //RBAC用户权限
 Route::any('/adminbased/adminbased/{id}', 'Admin\AdminbasedController@adminbased');//用户权限添加
 Route::any('/adminbased/add', 'Admin\AdminbasedController@add');//角色权限添加实现
+Route::any('/adminbased/index', 'Admin\AdminbasedController@index');//角色权限展示
 
 
 
-=======
+
+
 Route::any('role/roledel','Admin\RoleController@roledel');//批量删除
->>>>>>> 701b9f4988d22b4e91137d57128d804a550aa2fa
+
 
