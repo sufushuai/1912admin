@@ -39,30 +39,21 @@
                                 @endforeach
                             </select>
                         </div>
-
-                        <div class="col-md-2 title">属性名</div>
-                        <div class="col-md-10 data">
-                                @foreach($attr as $v)
-                                    <input type="checkbox" value="{{$v->attr_id}}" >
+                        <div class="row data-type" >
+                        @foreach($attr as $v)
+                            <div class="col-md-2 title" >
+                                <input type="hidden" name="attr_id"   value="{{$v->attr_id}}" >
                                 {{$v->attr_name}}
-                                    @endforeach
-                        </div>
-
-                        <div class="col-md-2 title">属性值</div>
-                        <div class="col-md-10 data">
-                                @foreach($val as $v)
-                                    <input type="checkbox" value="{{$v->val_id}}">{{$v->val_name}}
+                            </div>
+                            <div class="col-md-10 data" attr_id="{{$v->attr_id}}">
+                                @foreach($val as $vv)
+                                    @if($v->attr_id==$vv->attr_id)
+                                    <input type="checkbox" value="{{$vv->val_id}}"   class="val_id" >{{$vv->val_name}}
+                                    @endif
                                 @endforeach
-                        </div>
+                            </div>
+                        @endforeach
 
-                        <div class="col-md-2 title">商品库存</div>
-                        <div class="col-md-10 data">
-                            <input type="text" class="form-control"  placeholder="商品库存" name="goods_num">
-                        </div>
-
-                        <div class="col-md-2 title">商品价格</div>
-                        <div class="col-md-10 data">
-                            <input type="text" class="form-control"  placeholder="商品价格" name="goods_price">
                         </div>
 
                     </div>
@@ -79,48 +70,28 @@
 </body>
 </html>
 <script>
-    $("#but").bind('click',function(){
+    $(function(){
+
+        $("#but").bind('click',function(){
+
         var goods_id=$("select[name='goods_id']").val()
-        var attr_id=$("select[name='attr_id']").val()
-        var val_id=$("select[name='val_id']").val()
-        var goods_num=$("input[name='goods_num']").val()
-        var goods_price=$("input[name='goods_price']").val()
+        var attr_id=$(".val_id:checked").parents().attr('attr_id');
+        var sku=[];
+            $(".val_id:checked").each(function(i){
+//                sku.push($(this).parents().attr('attr_id')+':'+$(this).val());
+                sku.push($(this).parents().attr('attr_id')+':'+$(this).val());
+            });
 
-        if(goods_id==''){
-            alert('商品名不能为空');
-            return false;
-        }
-        if(attr_id==''){
-            alert('属性名不能为空');
-            return false;
-        }
-        if(val_id==''){
-            alert('属性值不能为空');
-            return false;
-        }
-        if(goods_num==''){
-            alert('库存不能为空');
-            return false;
-        }
-        if(goods_price==''){
-            alert('价格不能为空');
-            return false;
-        }
-//        alert(goods_price)
-//        return false;
-        $.ajax({
-            url:"/admin/sku/sku",
-            type:'post',
-            data:{'attr_id':attr_id,'val_id':val_id,'goods_id':goods_id,'goods_num':goods_num,'goods_price':goods_price},
-            dataType:'json',
-            success:function(res){
-                if(res.error==0){
-                    alert(res.msg);
-                }else{
-                    alert(res.msg);
+            $.ajax({
+                url:"/admin/sku/sku",
+                type:'post',
+                data:{goods_id:goods_id,sku:sku},
+                dataType:'json',
+                success:function(res){
+                    console.log(res)
                 }
-
-            }
+            })
         })
     })
+
 </script>

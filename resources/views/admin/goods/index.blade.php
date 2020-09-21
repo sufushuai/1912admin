@@ -39,8 +39,10 @@
         </div>
         <div class="box-tools pull-right">
             <div class="has-feedback">
-                商品名称：<input >
-                <button class="btn btn-default" >查询</button>
+                <form >
+                    商品名称：<input type="text" name="name" placeholder="请输入商品名称关键字" value="{{$query['name']??''}}">
+                    <button class="btn btn-default" type="submit">查询</button>
+                </form >
             </div>
         </div>
         <!--工具栏/-->
@@ -89,6 +91,7 @@
                 </td>
             </tr>
              @endforeach
+            <tr><td colspan="5">{{$data->appends($query)->links()}}</td></tr>
             </tbody>
         </table>
         <!--数据列表/-->

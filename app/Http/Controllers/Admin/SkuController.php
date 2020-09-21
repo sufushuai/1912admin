@@ -77,29 +77,32 @@ class SkuController extends Controller
     public function val(request $request){
         if($request->ajax()&&$request->post()){
             $val_name=$request->post('val_name');
+            $attr_id=$request->post('attr_id');
             //dd($val_name);
             $first=SkuVal::where('val_name','=',$val_name)->first();
             if($first){
                 return json_encode(['error'=>2,'msg'=>'属性值已存在']);
             }
 
-            $where= [
+            $data= [
                 'val_name'=>$val_name,
+                'attr_id'=>$attr_id,
                 'add_time'=>time()
             ];
 
-            $res=SkuVal::create($where);
+            $res=SkuVal::create($data);
 
             if($res){
                 return json_encode(['error'=>0,'msg'=>'添加成功']);
             }
             return json_encode(['error'=>1,'msg'=>'添加失败']);
         }
-    	return view("admin.sku.val");
+        $skuattr=SkuAttr::where(["is_del"=>1])->get();
+    	return view("admin.sku.val",compact("skuattr"));
     }
     //属性值展示
      public function valindex(){
-         $val=SkuVal::where(['is_del'=>1])->get();
+         $val=SkuVal::where(['is_del'=>1])->paginate(5);
 
     	 return view("admin.sku.valindex",['val'=>$val]);
     }
@@ -118,9 +121,11 @@ class SkuController extends Controller
     public function valUp(request $request,$id){
         if(request()->ajax()&&$request->post()){
             $val_name=$request->post('val_name');
+            $attr_id=$request->post('attr_id');
 
             $where= [
                 'val_name'=>$val_name,
+                'attr_id'=>$attr_id,
                 'up_time'=>time()
             ];
 
@@ -133,7 +138,8 @@ class SkuController extends Controller
         }
 
         $data=SkuVal::where('val_id',$id)->first();
-        return view("admin.sku.valUp",['data'=>$data]);
+        $skuattr=SkuAttr::where(["is_del"=>1])->get();
+        return view("admin.sku.valUp",['data'=>$data,'skuattr'=>$skuattr]);
     }
 
 
@@ -142,39 +148,20 @@ class SkuController extends Controller
         if($request->ajax()&&$request->post()){
 
             $goods_id=$request->post('goods_id');
-            $attr_id=$request->post('attr_id');
-            $val_id=$request->post('val_id');
-            $goods_num=$request->post('goods_num');
-            $goods_price=$request->post('goods_price');
-           // dd($request->post());
-            $data=[
-                'val_id'=>$val_id,
-                'attr_id'=>$attr_id
-            ];
-            $first=SkuAttrVal::where($data)->first();
-            if($first){
-                return json_encode(['error'=>2,'msg'=>'属性已存在']);
+            $sku=$request->post('sku');
+            print_r($sku);
+            foreach ($sku as $k=>$v) {
+                $a[]=explode(':',$v);
+            }
+            dd($a);
+            foreach ($a as $k1=>$v1) {
+                $b[]=array_merge($v1,$v1);
             }
 
-            $where= [
-                'goods_id'=>$goods_id,
-                'attr_id'=>$attr_id,
-                'val_id'=>$val_id,
-                'goods_num'=>$goods_num,
-                'goods_price'=>$goods_price,
-                'add_time'=>time()
-            ];
-
-            $res=SkuAttrVal::create($where);
-
-            if($res){
-                return json_encode(['error'=>0,'msg'=>'添加成功']);
-            }
-            return json_encode(['error'=>1,'msg'=>'添加失败']);
         }
         $goods=GoodsModel::where(['is_show'=>1])->get();
         $attr=SkuAttr::where(['is_del'=>1])->get();
-        $val=SkuVal::where(['is_del'=>1])->get();
+        $val=SkuVal::leftjoin("sku_attr","sku_attr.attr_id","=","sku_val.attr_id")->get();
     	return view("admin.sku.sku",['attr'=>$attr,'val'=>$val,'goods'=>$goods]);
     }
     //属性展示
@@ -189,7 +176,7 @@ class SkuController extends Controller
     }
     //属性删除
     public function skuDel($id){
-        ;
+
         $del=SkuAttrVal::destroy($id);
         if($del){
             return redirect('/admin/sku/skuIndex');
