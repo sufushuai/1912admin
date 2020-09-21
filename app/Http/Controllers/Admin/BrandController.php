@@ -43,8 +43,14 @@ class BrandController extends CommonController
     }
     //品牌展示
      public function index(){
-        $data = Brand::where(["status"=>1])->get();
-    	return view("admin.brand.index",['data'=>$data]);
+         $name = request()->name;
+         $where=[];
+         if($name){
+             $where[] = ['brand_name','like',"%$name%"];
+         }
+        $data = Brand::where($where)->where(["status"=>1])->paginate(5);
+         $query = request()->all();
+    	return view("admin.brand.index",['data'=>$data,"query"=>$query]);
     }
     //品牌修改页面
     public function edit(Request $request){

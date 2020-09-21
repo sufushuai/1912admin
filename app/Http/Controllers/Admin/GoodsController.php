@@ -71,8 +71,6 @@ class GoodsController extends CommonController
             $where[] = ['goods_name','like',"%$name%"];
         }
         $data = GoodsModel::where($where)->where(['is_del'=>1])->paginate(5);
-
-        //$data = GoodsModel::where(['is_del'=>1],$where)->paginate(5);
         $query = request()->all();
     	return view("admin.goods.index",["data"=>$data,"query"=>$query]);
     }

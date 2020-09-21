@@ -40,8 +40,8 @@
         <div class="box-tools pull-right">
             <div class="has-feedback">
                 <form >
-                商品名称：<input type="text" name="name" placeholder="请输入商品名称关键字" value="{{$query['name']??''}}">
-                <button class="btn btn-default" type="submit">查询</button>
+                    商品名称：<input type="text" name="name" placeholder="请输入商品名称关键字" value="{{$query['name']??''}}">
+                    <button class="btn btn-default" type="submit">查询</button>
                 </form >
             </div>
         </div>
