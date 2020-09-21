@@ -35,6 +35,7 @@
             <tr>
                 <th>属性值ID</th>
                 <th>属性值</th>
+                <th>属性名ID</th>
                 <th>添加时间</th>
                 <th>操作</th>
             </tr>
@@ -45,6 +46,7 @@
                 <tr >
                     <td>{{$v->val_id}}</td>
                     <td>{{$v->val_name}}</td>
+                    <td>{{$v->attr_id}}</td>
                     <td>{{ date( "Y-m-d h-i", $v->add_time)}}</td>
                     <td>
                         <a type="button" class="btn bg-olive btn-xs del" href="{{url('/admin/sku/valDel/'.$v->val_id)}}">删除</a>|
@@ -55,6 +57,7 @@
             </tbody>
 
         </table>
+    {{$val->links()}}
 </div>
 
 </div>
