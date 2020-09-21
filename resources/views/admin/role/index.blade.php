@@ -141,7 +141,7 @@
                     if ($(this).prop('checked') == true) {
                         // 拼接字符串，用，作为分隔符
                         str = str + $(this).val() +',';
-                        console.log(str);
+                        //console.log(str);
                     }
                 });
                 var strIds = str.substr(0, str.length-1);

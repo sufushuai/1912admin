@@ -17,7 +17,7 @@ class GoodsController extends CommonController
         $info=$this->getCateInfo($cate);
     	return view("admin.goods.goods",['brand'=>$brand,'info'=>$info]);
     }
-    //商品添加
+    //商品添加q
     public function add(Request $request){
         $goods_name = request()->post("goods_name");
         $cate_id = request()->post("cate_id");
@@ -71,8 +71,6 @@ class GoodsController extends CommonController
             $where[] = ['goods_name','like',"%$name%"];
         }
         $data = GoodsModel::where($where)->where(['is_del'=>1])->paginate(5);
-
-        //$data = GoodsModel::where(['is_del'=>1],$where)->paginate(5);
         $query = request()->all();
     	return view("admin.goods.index",["data"=>$data,"query"=>$query]);
     }
