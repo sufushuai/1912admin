@@ -56,7 +56,7 @@ class VipController extends Controller
         }
 
      	$vipModel=new vipModel;
-     	$data=$vipModel->where($where)->paginate(2);
+     	$data=$vipModel->where($where)->where('is_del',1)->paginate(2);
          $query=request()->all();
      	// dd($data);
     	return view("admin.vip.index",['data'=>$data,'query'=>$query]);
@@ -65,7 +65,9 @@ class VipController extends Controller
     public function del(){
         $vip_id = request()->vip_id;
         // dd($vip_id);
-        $res = VipModel::destroy($vip_id);
+
+        $res = VipModel::where(['vip_id'=>$vip_id])->update(['is_del'=>2]);
+        // $res = VipModel::destroy($vip_id);
         // dd($res);
         if($res){
             return['code'=>'0','msg'=>"成功"];

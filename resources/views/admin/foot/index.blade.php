@@ -40,8 +40,8 @@
             </div>
         </div>
        <form>
-        <input type="text" name="money">
-        <input type="submit" value="搜索">
+        <input type="text" name="f_name">
+        <button type="button" id="submit">搜索</button>
     </form>
         <!--数据列表-->
         <table id="dataList" class="table table-bordered table-striped table-hover dataTable">
@@ -75,6 +75,9 @@
                 </td>
             </tr>
             @endforeach
+            <tr>
+                <td>{{$data->appends(['f_name'=>$f_name])->links()}}</td>
+            </tr>
             
      
             </tbody>
@@ -113,5 +116,35 @@
             }
 
         })
+
     })
+    //ajax搜索
+    $(document).on('click','#submit',function(){
+        // alert(11);
+        var f_name = $("input[name='f_name']").val();
+        // console.log(f_name);
+        $.ajax({
+            url:"/admin/foot/index",
+            type:'post',
+            data:{f_name:f_name},
+            success:function(res){
+               $("tbody").html(res);
+            }
+        })
+
+    })
+     //ajax 分页
+     $(document).on("click",'.page-item a',function(){
+     //alert('1234');
+
+      var url = $(this).attr('href');
+
+        $.get(url,function(res){
+    
+         $('tbody').html(res);
+
+       });
+       return false;
+     });
+
 </script>
