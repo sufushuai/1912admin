@@ -46,7 +46,7 @@ Route::any('/admin/vip/del','Admin\VipController@del');//vip删除
 Route::any('/admin/vip/uploads','Admin\VipController@uploads');//vip图片上传
 Route::any('/admin/vip/update/{id}','Admin\VipController@update');//vip修改
 Route::any('/admin/vip/updatedo','Admin\VipController@updatedo');//vip修改
-
+Route::any('vip/bdel','Admin\VipController@bdel');//批量删除
 
 //优惠券管理
 Route::get('admin/discount','Admin\DiscountController@discount');//优惠券添加
@@ -55,6 +55,7 @@ Route::any('discount/del','Admin\DiscountController@del');//删除
 Route::any('discount/update/{id}','Admin\DiscountController@update');//修改
 Route::any('discount/updatedo','Admin\DiscountController@updatedo');//修改
 Route::get('admin/discount/index','Admin\DiscountController@index');//优惠券展示
+Route::any('discount/bdel','Admin\DiscountController@bdel');//批量删除
 
 //商品管理
 Route::any('/admin/goods','Admin\GoodsController@goods');//商品添加页面
@@ -65,16 +66,24 @@ Route::any('/goods/update','Admin\GoodsController@update');//商品修改
 Route::any('/goods/destroy','Admin\GoodsController@destroy');//商品修改
 Route::any('/goods/index','Admin\GoodsController@index');//商品展示
 
-//广告管理
+
+
 Route::any('/admin/ad','Admin\AdController@ad');//广告添加
 Route::any('/admin/ad/index','Admin\AdController@index');//广告展示
 Route::any('/admin/ad/adDel/{id}','Admin\AdController@adDel');//广告展示
 Route::any('/admin/ad/adUp/{id}','Admin\AdController@adUp');//广告展示
-Route::any('/admin/ad/allDel','Admin\AdController@allDel');//广告展示
+Route::any('/admin/ad/allDel','Admin\AdController@allDel');//广告批删
 
 //友情链接管理
 Route::any('/admin/foot','Admin\FootController@foot');//友情链接添加
+Route::any('/admin/foot/adddo','Admin\FootController@adddo');//友情链接添加
 Route::any('/admin/foot/index','Admin\FootController@index');//友情链接展示
+
+Route::any('/admin/foot/del','Admin\FootController@del');//友情链接删除
+Route::any('/foot/update/{id}','Admin\FootController@update');//友情链接修改
+Route::any('/admin/foot/updatedo','Admin\FootController@updatedo');//友情链接修改
+
+
 
 
 //轮播图
@@ -83,7 +92,7 @@ Route::any('/slide/do_add','Admin\SlideController@do_add');//轮播图执行添�
 Route::any('/slide/index','Admin\SlideController@index');//轮播图展示
 Route::any('/slide/slideimg','Admin\SlideController@slideimg');//轮播图文件上传
 
-// sku
+
 
 //属性名
 Route::any('/admin/sku/attr','Admin\SkuController@attr');//属性名添加
@@ -128,9 +137,11 @@ Route::any('role/update', 'Admin\RoleController@update');//修改实现
 //RBAC用户角色
 Route::any('/adminrole/adminrole/{id}', 'Admin\AdminroleController@adminrole');//用户角色添加
 Route::any('/adminrole/add', 'Admin\AdminroleController@add');//用户角色添加实现
+Route::any('/adminrole/index', 'Admin\AdminroleController@index');//用户角色展示
 //RBAC用户权限
 Route::any('/adminbased/adminbased/{id}', 'Admin\AdminbasedController@adminbased');//用户权限添加
 Route::any('/adminbased/add', 'Admin\AdminbasedController@add');//角色权限添加实现
+Route::any('/adminbased/index', 'Admin\AdminbasedController@index');//角色权限展示
 
 
 

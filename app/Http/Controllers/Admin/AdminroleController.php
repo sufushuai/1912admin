@@ -23,6 +23,7 @@ class AdminroleController extends CommonController
           "admin_id" => $admin_id,
           "role_id" => $role_id
         ];
+        dd($data);
         $res = RbacAdminRole::insert($data);
         if($res){
             return $this->success();
@@ -30,7 +31,7 @@ class AdminroleController extends CommonController
             return $this->error("添加失败");
         }
     }
-    public function admin_based(){
-        return view('admin.rbac.admin_based');
+    public function index(){
+        return view('admin.adminrole.index');
     }
 }
