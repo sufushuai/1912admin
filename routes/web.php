@@ -29,7 +29,7 @@ Route::any('cate/update','Admin\CateController@update');//修改逻辑
 
 
 //品牌管理
-Route::any('/admin/brand','Admin\BrandController@brand');//品牌添加页面
+Route::any('/brand/brand','Admin\BrandController@brand');//品牌添加页面
 Route::any('/brand/add','Admin\BrandController@add');//品牌添加
 Route::any('/brand/brandimg','Admin\BrandController@brandimg');//图片添加
 Route::any('/brand/edit','Admin\BrandController@edit');//修改页面
