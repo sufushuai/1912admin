@@ -47,7 +47,7 @@ Route::any('/admin/vip/del','Admin\VipController@del');//vip删除
 Route::any('/admin/vip/uploads','Admin\VipController@uploads');//vip图片上传
 Route::any('/admin/vip/update/{id}','Admin\VipController@update');//vip修改
 Route::any('/admin/vip/updatedo','Admin\VipController@updatedo');//vip修改
-
+Route::any('vip/bdel','Admin\VipController@bdel');//批量删除
 
 
 Route::get('admin/discount','Admin\DiscountController@discount');//优惠券添加
@@ -56,6 +56,7 @@ Route::any('discount/del','Admin\DiscountController@del');//删除
 Route::any('discount/update/{id}','Admin\DiscountController@update');//修改
 Route::any('discount/updatedo','Admin\DiscountController@updatedo');//修改
 Route::get('admin/discount/index','Admin\DiscountController@index');//优惠券展示
+Route::any('discount/bdel','Admin\DiscountController@bdel');//批量删除
 
 
 
@@ -69,16 +70,16 @@ Route::any('/goods/destroy','Admin\GoodsController@destroy');//商品修改
 Route::any('/goods/index','Admin\GoodsController@index');//商品展示
 
 
-Route::any('/admin/goods','Admin\GoodsController@goods');//商品添加
-Route::any('/admin/goods/index','Admin\GoodsController@index');//商品展示
 
 Route::any('/admin/ad','Admin\AdController@ad');//广告添加
 Route::any('/admin/ad/index','Admin\AdController@index');//广告展示
 
 Route::any('/admin/foot','Admin\FootController@foot');//友情链接添加
+Route::any('/admin/foot/adddo','Admin\FootController@adddo');//友情链接添加
 Route::any('/admin/foot/index','Admin\FootController@index');//友情链接展示
-
-
+Route::any('/admin/foot/del','Admin\FootController@del');//友情链接删除
+Route::any('/foot/update/{id}','Admin\FootController@update');//友情链接修改
+Route::any('/admin/foot/updatedo','Admin\FootController@updatedo');//友情链接修改
 
 
 // sku
