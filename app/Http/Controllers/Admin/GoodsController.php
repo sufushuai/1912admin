@@ -17,7 +17,7 @@ class GoodsController extends CommonController
         $info=$this->getCateInfo($cate);
     	return view("admin.goods.goods",['brand'=>$brand,'info'=>$info]);
     }
-    //商品添加
+    //商品添加q
     public function add(Request $request){
         $goods_name = request()->post("goods_name");
         $cate_id = request()->post("cate_id");
