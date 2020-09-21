@@ -90,7 +90,10 @@ class AdController extends Controller
             echo json_encode($return);
         }
         //dd($id);
-        $del=ADModel::destroy($id);
+
+            $del=ADModel::destroy($id);
+
+
         if($del){
             return json_encode(['error'=>0,'msg'=>'删除成功']);
         }
