@@ -114,7 +114,13 @@ class UserController extends Controller
      */
     public function usersdel(){
         $admin_id=request()->post('strIds');
-        $res=RbacUser::destroy($admin_id);
+        //把传来的所有id改为数组形式  explode  字符串转数组
+        $str = explode(",",$admin_id);
+        //利用循环将需要删除的id 一个一个进行执行sql；
+        foreach($str as $k => $v){
+            $res=RbacUser::destroy($admin_id);
+        }
+
         if($res){
             return $this->response(200,'ok');
         }else{

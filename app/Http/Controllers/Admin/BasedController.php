@@ -53,7 +53,7 @@ class BasedController extends Controller
         if($based_name){
             $where[]=['based_name','like',"%$based_name%"];
         }
-        $data=RbacBased::where($where)->paginate(3);
+        $data=RbacBased::where($where)->paginate(6);
         $query = request()->all();
         if($data){
             return view('admin.based.index',['data'=>$data,'query'=>$query]);
@@ -120,7 +120,12 @@ class BasedController extends Controller
      */
     public function bdel(){
         $based_id=request()->post('strIds');
-        $res=RbacBased::destroy($based_id);
+        //把传来的所有id改为数组形式  explode  字符串转数组
+        $str = explode(",",$based_id);
+        //利用循环将需要删除的id 一个一个进行执行sql；
+        foreach($str as $k => $v){
+            $res=RbacBased::destroy($v);
+        }
         if($res){
             return $this->response(200,'ok');
         }else{
