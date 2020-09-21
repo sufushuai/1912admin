@@ -39,7 +39,10 @@
                 </div>
             </div>
         </div>
-
+        <form action="">
+            <input type="text" name="vip_name">
+            <input type="submit" value="搜索">
+        </form>
 
         <!--数据列表-->
         <table id="dataList" class="table table-bordered table-striped table-hover dataTable">
@@ -55,11 +58,13 @@
                 <th class="text-center">操作</th>
             </tr>
             </thead>
-
+                <button class="bdel">删除</button>
             <tbody>
                 @foreach($data as $k=>$v)
             <tr >
-                <td></td>
+                <td>
+                    <input type="checkbox" class="icheckbox_square-blue shan" value="{{$v->vip_id}}">
+                </td>
       
                 <td>{{$v->vip_id}}</td>
                 <td>{{$v->vip_name}}</td>
@@ -73,6 +78,9 @@
                 </td>
             </tr>
             @endforeach
+             <tr>
+                <td colspan="6">{{$data->appends($query)->links()}}</td>
+            </tr>
      
             </tbody>
         </table>
@@ -109,5 +117,33 @@
             }
 
         })
+    })
+
+    $(document).on('click','.bdel',function(){
+        // alert(11)
+       
+        var id=""
+                $(".shan:checked").each(function(reg){
+                        id+= $(this).val()+",";
+                });
+                var ids=id.length-1;
+                 id=id.substr(0,ids);
+                  // console.log(id);
+        $.ajax({
+            url:'/vip/bdel',
+            data:{id:id},
+            type:'post',
+            dataType:'json',
+            success:function(res){
+                if(res.code==0){
+                    alert(res.mag)
+                    location.href="/admin/vip/index"
+                }
+                console.log(res)
+            }
+
+        })
+
+
     })
 </script>
