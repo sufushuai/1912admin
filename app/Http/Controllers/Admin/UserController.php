@@ -40,8 +40,14 @@ class UserController extends Controller
      * 展示页面
      */
     public function index(){
-        $data=RbacUser::paginate(3);
-        return view('admin/users/index',compact('data'));
+        $admin_name = request()->admin_name;
+        $where=[];
+        if($admin_name){
+            $where[]=['admin_name','like',"%$admin_name%"];
+        }
+        $data=RbacUser::where($where)->paginate(3);
+        $query = request()->all();
+        return view('admin/users/index',compact('data','query'));
     }
 
     /**
@@ -96,6 +102,19 @@ class UserController extends Controller
         $admin_name=request()->post('admin_name');
 //       echo $admin_id,$name,$status;die;
         $res=RbacUser::where('admin_id',$admin_id)->update(['admin_name'=>$admin_name]);
+        if($res){
+            return $this->response(200,'ok');
+        }else{
+            return $this->response(1,'fail');
+        }
+    }
+    /**
+     * @return array
+     * 批量删除
+     */
+    public function usersdel(){
+        $admin_id=request()->post('strIds');
+        $res=RbacUser::destroy($admin_id);
         if($res){
             return $this->response(200,'ok');
         }else{

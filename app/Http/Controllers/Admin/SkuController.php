@@ -176,7 +176,7 @@ class SkuController extends Controller
     }
     //属性删除
     public function skuDel($id){
-        ;
+
         $del=SkuAttrVal::destroy($id);
         if($del){
             return redirect('/admin/sku/skuIndex');

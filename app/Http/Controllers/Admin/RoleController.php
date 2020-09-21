@@ -74,11 +74,14 @@ class RoleController extends Controller
      */
     public function index(Request $request)
     {
-//        $where=[
-//            "status"=>1
-//        ];
-        $data=RoleModel::where(["is_del"=>1])->paginate(4);
-        return view("admin.role.index",compact("data"));
+        $role_name = request()->role_name;
+        $where=[];
+        if($role_name){
+            $where[]=['role_name','like',"%$role_name%"];
+        }
+        $data=RoleModel::where($where)->where(["is_del"=>1])->paginate(3);
+        $query = request()->all();
+        return view("admin.role.index",compact("data","query"));
     }
     /**
      *       角色删除
@@ -133,6 +136,19 @@ class RoleController extends Controller
 //                RodeNodeModel::insert($info);
 //            }
 //            return redirect("role/index");
+        }else{
+            return $this->response(1,'fail');
+        }
+    }
+    /**
+     * @return array
+     * 批量删除
+     */
+    public function roledel(){
+        $admin_id=request()->post('strIds');
+        $res=RoleModel::destroy($admin_id);
+        if($res){
+            return $this->response(200,'ok');
         }else{
             return $this->response(1,'fail');
         }
