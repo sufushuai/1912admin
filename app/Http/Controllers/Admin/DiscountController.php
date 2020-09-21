@@ -46,12 +46,12 @@ class DiscountController extends Controller
     }
     public function index(){
         $money=request()->money;
-        $where = [];
+        $where= [];
         if($money){
             $where[]=['money','like',"%$money%"];
         }
 
-    	$data=DiscountModel::where($where)->leftjoin('shop_goods','shop_discount.goods_id','=','shop_goods.goods_id')->orderBy("dis_id","asc")->paginate(2);
+    	$data=DiscountModel::where($where)->where(['shop_discount.is_del'=>1])->leftjoin('shop_goods','shop_discount.goods_id','=','shop_goods.goods_id')->orderBy("dis_id","asc")->paginate(2);
         
         
          $query=request()->all();
@@ -62,7 +62,7 @@ class DiscountController extends Controller
     public function del(){
     	$dis_id=request()->dis_id;
     	// dd($dis_id);
-    	$res = DiscountModel::destroy($dis_id);
+    	$res = DiscountModel::where(['dis_id'=>$dis_id])->update(['is_del'=>2]);
     	// dd($res);
     	if($res){
             return['code'=>'0','mag'=>"成功"];
