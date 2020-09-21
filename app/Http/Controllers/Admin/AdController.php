@@ -89,9 +89,12 @@ class AdController extends Controller
             $return=['error'=>1,'msg'=>'数据缺失'];
             echo json_encode($return);
         }
+        $id=explode(',',$id);
         //dd($id);
+        foreach([$id] as $key=>$val){
+            $del=ADModel::destroy($val);
+        }
 
-            $del=ADModel::destroy($id);
 
 
         if($del){

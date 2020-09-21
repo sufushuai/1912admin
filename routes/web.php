@@ -73,7 +73,7 @@ Route::any('/admin/ad','Admin\AdController@ad');//广告添加
 Route::any('/admin/ad/index','Admin\AdController@index');//广告展示
 Route::any('/admin/ad/adDel/{id}','Admin\AdController@adDel');//广告展示
 Route::any('/admin/ad/adUp/{id}','Admin\AdController@adUp');//广告展示
-Route::any('/admin/ad/allDel','Admin\AdController@allDel');//广告展示
+Route::any('/admin/ad/allDel','Admin\AdController@allDel');//广告批删
 
 //友情链接管理
 Route::any('/admin/foot','Admin\FootController@foot');//友情链接添加
@@ -142,7 +142,6 @@ Route::any('/adminrole/add', 'Admin\AdminroleController@add');//用户角色添�
 //RBAC用户权限
 Route::any('/adminbased/adminbased/{id}', 'Admin\AdminbasedController@adminbased');//用户权限添加
 Route::any('/adminbased/add', 'Admin\AdminbasedController@add');//角色权限添加实现
-
 
 
 Route::any('role/roledel','Admin\RoleController@roledel');//批量删除
