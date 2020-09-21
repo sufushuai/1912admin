@@ -24,7 +24,7 @@
                     <li class="treeview">
                         <a href="#">
                             <i class="fa fa-folder"></i>
-                            <span>管理员管理</span>
+                            <span>用户管理</span>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-left pull-right"></i>
                             </span>
@@ -33,12 +33,12 @@
 
                             <li id="admin-login">
                                 <a href="/users/add" target="iframe">
-                                    <i class="fa fa-circle-o"></i>管理员添加
+                                    <i class="fa fa-circle-o"></i>用户添加
                                 </a>
                             </li>
                             <li id="admin-login">
                                 <a href="/users/index" target="iframe">
-                                    <i class="fa fa-circle-o"></i>管理员展示
+                                    <i class="fa fa-circle-o"></i>用户展示
                                 </a>
                             </li>
                         </ul>

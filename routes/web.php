@@ -69,16 +69,11 @@ Route::any('/goods/destroy','Admin\GoodsController@destroy');//商品修改
 Route::any('/goods/index','Admin\GoodsController@index');//商品展示
 
 
-Route::any('/admin/goods','Admin\GoodsController@goods');//商品添加
-Route::any('/admin/goods/index','Admin\GoodsController@index');//商品展示
-
 Route::any('/admin/ad','Admin\AdController@ad');//广告添加
 Route::any('/admin/ad/index','Admin\AdController@index');//广告展示
 
 Route::any('/admin/foot','Admin\FootController@foot');//友情链接添加
 Route::any('/admin/foot/index','Admin\FootController@index');//友情链接展示
-
-
 
 
 // sku
@@ -98,7 +93,7 @@ Route::any('/admin/sku/skuIndex','Admin\SkuController@skuindex');//属性展示
 Route::any('/admin/sku/skuDel/{id}','Admin\SkuController@skuDel');//属性名删除
 Route::any('/admin/sku/skuUp/{id}','Admin\SkuController@skuUp');//属性名编辑
 
-//RBAC管理员
+//RBAC用户
 Route::get('users/add','Admin\UserController@add');//添加
 Route::post('users/score','Admin\UserController@score');//执行添加
 Route::any('users/index','Admin\UserController@index');//展示
@@ -119,4 +114,13 @@ Route::any('role/index', 'Admin\RoleController@index');//展示
 Route::any('role/del', 'Admin\RoleController@del');//删除
 Route::any('role/edit', 'Admin\RoleController@edit');//修改页面
 Route::any('role/update', 'Admin\RoleController@update');//修改实现
+//RBAC用户角色
+Route::any('/adminrole/adminrole/{id}', 'Admin\AdminroleController@adminrole');//用户角色添加
+Route::any('/adminrole/add', 'Admin\AdminroleController@add');//用户角色添加实现
+//RBAC用户权限
+Route::any('/adminbased/adminbased/{id}', 'Admin\AdminbasedController@adminbased');//用户权限添加
+Route::any('/adminbased/add', 'Admin\AdminbasedController@add');//角色权限添加实现
+
+
+
 

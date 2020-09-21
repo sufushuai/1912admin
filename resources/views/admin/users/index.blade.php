@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,6 +46,7 @@
                     <th class="sorting_asc">管理员ID</th>
                     <th class="sorting">管理员名称</th>
                     <th class="sorting">管理员状态</th>
+                    <th class="sorting">角色权限</th>
                     <th class="sorting">操作</th>
                 </tr>
                 </thead>
@@ -57,8 +57,12 @@
                         <td>{{$v->admin_id}}</td>
                         <td>{{$v->admin_name}}</td>
                         <td>{{$v->is_del==1?"普通管理员":"超级管理员"}}</td>
-                        <td><button class="del btn bg-olive btn-xs" >删除</button>
-                            <button class="edit btn bg-olive btn-xs">修改</button>
+                        <td><a href="{{url('/adminrole/adminrole/'.$v->admin_id)}}">角色</a>|
+                            <a href="{{url('/adminbased/adminbased/'.$v->admin_id)}}">权限</a>
+                        </td>
+                        <td>
+                            <button class="edit btn btn-primary" id="edit" type="button">修改</button>
+                            <button data-toggle="modal" onclick="" class="del btn btn-danger del">删除</button>
                         </td>
                     </tr>
                 @endforeach
