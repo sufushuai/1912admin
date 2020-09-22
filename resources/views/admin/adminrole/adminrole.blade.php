@@ -48,24 +48,18 @@
 
 </body>
 </html>
-
 <script>
     $(document).on('click','#button',function(){
-
         var admin_id = $('#admin_id').val();
-        var str = "";
-        $("input[name='ckb']").each(function(){
-            if($(this).is(":checked")){
-                str += "," + $(this).val();
-            }
-            $('#role_id').val();
+        var check =[];
+        $("input[type='checkbox']:checked").each(function(){
+            check.push($(this).val());
         });
-
         $.ajax({
             type:"post",
             dataType:"json",
             url:"/adminrole/add",
-            data:{admin_id:admin_id,role_id:role_id},
+            data:{admin_id:admin_id,role_id:check},
             success:function(res){
                 if(res.code==200){
                     alert("添加成功")

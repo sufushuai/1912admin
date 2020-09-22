@@ -36,7 +36,7 @@
                         <div class="col-md-2 title">角色权限</div>
                         <div class="col-md-10 data2">
                             @foreach($based as $k=>$v)
-                                <input type="checkbox" id="based_id" name="ckb"/>{{$v->based_name}}
+                                <input type="checkbox" id="based_id" name="ckb" value="{{$v->based_id}}" />{{$v->based_name}}
                             @endforeach
                         </div>
                     </div>
@@ -51,20 +51,24 @@
 
 </body>
 </html>
-<script src="/jquery.min.js"></script>
 <script>
     $(document).on('click','#button',function(){
+
         var role_id = $('#role_id').val();
-        var based_id = $('#based_id').val();
+
+        var check =[];
+        $("input[type='checkbox']:checked").each(function(){
+            check.push($(this).val());
+        });
         $.ajax({
             type:"post",
             dataType:"json",
             url:"/adminbased/add",
-            data:{role_id:role_id,based_id:based_id},
+            data:{role_id:role_id,based_id:check},
             success:function(res){
                 if(res.code==200){
                     alert("添加成功")
-                    location.href='/users/index'
+                    location.href='/adminbased/index'
                 }
                 if(res.code==1){
                     alert(res.msg)

@@ -34,7 +34,7 @@
         <div class="pull-left">
             <div class="form-group form-inline">
                 <div class="btn-group">
-                   
+
 
                 </div>
             </div>
@@ -81,23 +81,15 @@
             <tr>
                 <td colspan="6">{{$data->appends($query)->links()}}</td>
             </tr>
-     
+
             </tbody>
         </table>
         <!--数据列表/-->
-
     </div>
     <!-- 数据表格 /-->
-
-
-
-
 </div>
 <!-- /.box-body -->
-
-
 <!-- 编辑窗口 -->
-
 </body>
 </html>
 <script>
@@ -122,7 +114,7 @@
 
     $(document).on('click','.bdel',function(){
         // alert(11)
-       
+
         var id=""
                 $(".shan:checked").each(function(reg){
                         id+= $(this).val()+",";
