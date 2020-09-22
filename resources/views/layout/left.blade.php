@@ -130,7 +130,7 @@
                         <ul class="treeview-menu">
 
                             <li id="admin-login">
-                                <a href="/admin/brand" target="iframe">
+                                <a href="/brand/brand" target="iframe">
                                     <i class="fa fa-circle-o"></i>品牌添加
                                 </a>
                             </li>
