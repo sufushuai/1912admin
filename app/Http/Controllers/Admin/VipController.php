@@ -56,7 +56,7 @@ class VipController extends Controller
         }
 
      	$vipModel=new vipModel;
-     	$data=$vipModel->where($where)->where('is_del',1)->paginate(2);
+     	$data=$vipModel->where($where)->where('is_del',1)->paginate(3);
          $query=request()->all();
      	// dd($data);
     	return view("admin.vip.index",['data'=>$data,'query'=>$query]);

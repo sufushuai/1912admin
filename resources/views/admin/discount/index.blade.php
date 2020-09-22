@@ -47,11 +47,9 @@
         <table id="dataList" class="table table-bordered table-striped table-hover dataTable">
             <thead>
             <tr>
-                <th class="" style="padding-right:0px">
-                    <input type="checkbox" class="icheckbox_square-blue">
-                </th>
                 <th class="sorting_asc">id</th>
                 <th class="sorting">商品</th>
+                <th class="sorting">优惠logo</th>
                 <th class="sorting">优惠金额</th>
                 <th class="sorting">添加时间</th>
                 <th class="sorting">过期时间</th>
@@ -61,12 +59,12 @@
             <button class="bdel">删除</button>
             <tbody>
                 @foreach($data as $k=>$v)
-            <tr >
-                <td>
-                     <input type="checkbox" class="icheckbox_square-blue shan" value="{{$v->dis_id}}">
-                </td>
+            <tr>
                 <td>{{$v->dis_id}}</td>
                 <td>{{$v->goods_name}}</td>
+                <td>
+                    <img src="{{$v->dis_logo}}" width="80px">
+                </td>
                 <td>
                     {{$v->money}}
                 </td>
@@ -148,5 +146,22 @@
 
     })
 </script>
+
+<script>
+    $(document).ready(function(){
+        $("#vip_logo").uploadify({
+            uploader:"/admin/discount/uploads",
+            swf:"/admin/uploadify/uploadify.swf",
+            onUploadSuccess:function(res,data,msg){
+                var imgPath  = data;
+                var imgstr = "<img src='"+imgPath+"' controls='controls' style='width:80px;height:60px;'>";
+                $("#vip_logo").val(imgPath);
+                $(".showimg").append(imgstr);
+                
+            }
+        })
+    })
+</script>
+
 
 

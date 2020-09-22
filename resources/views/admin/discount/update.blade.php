@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="/admin/css/style.css">
     <script src="/admin/plugins/jQuery/jquery-2.2.3.min.js"></script>
     <script src="/admin/plugins/bootstrap/js/bootstrap.min.js"></script>
+     <script src="/admin/uploadify/jquery.js"></script>
+    <link rel="stylesheet" href="/admin/uploadify/uploadify.css">
+    <script src="/admin/uploadify/jquery.uploadify.js"></script>
 </head>
 <body class="hold-transition skin-red sidebar-mini" >
 <!-- 正文区域 -->
@@ -35,6 +38,13 @@
                                 @endforeach
                             </select>
                         </div>
+                         <div class="showimg"></div>
+                            <div class="col-md-2 title">优惠券图标</div>
+                            <div class="col-md-10 data">
+                                <input type="file" class="form-control" id="dis_logo"  placeholder="优惠券logo" name="dis_logo" value="">
+                                <input type="hidden" id="dis_logo">
+                                <span class="showimg"></span>
+                            </div>
                         <div class="col-md-2 title">优惠金额</div>
                         <div class="col-md-10 data">
                             <input type="text" class="form-control"  placeholder="优惠金额" name="money"  value="{{$data->money}}">
@@ -63,11 +73,12 @@
              var goods_id = $("select[name='goods_id']").val();
              var money = $("input[name='money']").val();
              var time_out = $("input[name='time_out']").val();
+             var dis_logo = $("#dis_logo").val();
               //console.log(goods_id);
             // console.log("money");
             $.ajax({
                 url:"/discount/updatedo",
-                data:{goods_id:goods_id,money:money,dis_id:dis_id,time_out:time_out},
+                data:{goods_id:goods_id,money:money,dis_id:dis_id,time_out:time_out,dis_logo:dis_logo},
                 type:"post",
                 dataType:"json",
                  success:function(res){
@@ -79,5 +90,20 @@
                  }
             })
            
+    })
+</script>
+<script>
+    $(document).ready(function(){
+        $("#dis_logo").uploadify({
+            uploader:"/admin/discount/uploads",
+            swf:"/admin/uploadify/uploadify.swf",
+            onUploadSuccess:function(res,data,msg){
+                var imgPath  = data;
+                var imgstr = "<img src='"+imgPath+"' controls='controls' style='width:80px;height:60px;'>";
+                $("#dis_logo").val(imgPath);
+                $(".showimg").append(imgstr);
+                
+            }
+        })
     })
 </script>
