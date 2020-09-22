@@ -60,7 +60,7 @@ Route::any('discount/bdel','Admin\DiscountController@bdel');//批量删除
 //商品管理
 Route::any('/admin/goods','Admin\GoodsController@goods');//商品添加页面
 Route::any('/goods/add','Admin\GoodsController@add');//商品添加
-Route::any('/goods/goodsimg','Admin\GoodsController@add');//商品图片添加
+Route::any('/goods/goodsimg','Admin\GoodsController@goodsimg');//商品图片添加
 Route::any('/goods/edit','Admin\GoodsController@edit');//商品修改页面
 Route::any('/goods/update','Admin\GoodsController@update');//商品修改
 Route::any('/goods/destroy','Admin\GoodsController@destroy');//商品修改
@@ -133,7 +133,7 @@ Route::any('role/index', 'Admin\RoleController@index');//展示
 Route::any('role/del', 'Admin\RoleController@del');//删除
 Route::any('role/edit', 'Admin\RoleController@edit');//修改页面
 Route::any('role/update', 'Admin\RoleController@update');//修改实现
-
+Route::any('role/roledel','Admin\RoleController@roledel');//批量删除
 //RBAC用户角色
 Route::any('/adminrole/adminrole/{id}', 'Admin\AdminroleController@adminrole');//用户角色添加
 Route::any('/adminrole/add', 'Admin\AdminroleController@add');//用户角色添加实现
@@ -143,8 +143,5 @@ Route::any('/adminbased/adminbased/{id}', 'Admin\AdminbasedController@adminbased
 Route::any('/adminbased/add', 'Admin\AdminbasedController@add');//角色权限添加实现
 Route::any('/adminbased/index', 'Admin\AdminbasedController@index');//角色权限展示
 
-
-
-Route::any('role/roledel','Admin\RoleController@roledel');//批量删除
 
 
