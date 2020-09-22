@@ -33,7 +33,7 @@
                         <div class="col-md-2 title">商品名称</div>
                         <div class="col-md-10 data">
                             <select name="goods_id">
-                                <option>-请选择-</option>
+                                <option value="0">-请选择-</option>
                                 @foreach($goods as $v)
                                     <option value="{{$v->goods_id}}">{{$v->goods_name}}</option>
                                 @endforeach
@@ -45,10 +45,10 @@
                                 <input type="hidden" name="attr_id"   value="{{$v->attr_id}}" >
                                 {{$v->attr_name}}
                             </div>
-                            <div class="col-md-10 data" attr_id="{{$v->attr_id}}">
+                            <div class="col-md-10 data">
                                 @foreach($val as $vv)
                                     @if($v->attr_id==$vv->attr_id)
-                                    <input type="checkbox" value="{{$vv->val_id}}"   class="val_id" >{{$vv->val_name}}
+                                    <input type="checkbox" value="{{$vv->val_id}}" attr_id="{{$v->attr_id}}"  class="val_id" >{{$vv->val_name}}
                                     @endif
                                 @endforeach
                             </div>
@@ -71,24 +71,46 @@
 </html>
 <script>
     $(function(){
-
         $("#but").bind('click',function(){
 
         var goods_id=$("select[name='goods_id']").val()
-        var attr_id=$(".val_id:checked").parents().attr('attr_id');
+        var attr_id=$(".val_id:checked").parents().attr('attr_id')
+        var val_id=$('.val_id').val()
         var sku=[];
+        var sku1=[];
+        var sku2=[];
             $(".val_id:checked").each(function(i){
-//                sku.push($(this).parents().attr('attr_id')+':'+$(this).val());
-                sku.push($(this).parents().attr('attr_id')+':'+$(this).val());
+                if($(this).attr('attr_id')==1){
+                    sku.push($(this).val());
+                }
             });
-
+            $(".val_id:checked").each(function(i){
+                if($(this).attr('attr_id')==2){
+                    sku1.push($(this).val());
+                }
+            });
+            $(".val_id:checked").each(function(i){
+                if($(this).attr('attr_id')==3){
+                    sku2.push($(this).val());
+                }
+            });
+//            sku='';
+//            $('attr').each(function(){
+//                if($(this).prop('checked')==true){
+//                    sku=sku+attr_id+':'+$(this).val()+',';
+//                }
+//            })
+//            alert(sku);
             $.ajax({
                 url:"/admin/sku/sku",
                 type:'post',
-                data:{goods_id:goods_id,sku:sku},
+                data:{goods_id:goods_id,sku:sku,sku1:sku1,sku2:sku2},
                 dataType:'json',
                 success:function(res){
-                    console.log(res)
+                   if(res.code){
+                       alert(res.msg)
+                       location.href="/admin/sku/skuIndex";
+                   }
                 }
             })
         })

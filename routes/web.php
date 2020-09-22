@@ -84,6 +84,9 @@ Route::any('/slide/index','Admin\SlideController@index');//轮播图展示
 Route::any('/slide/slideimg','Admin\SlideController@slideimg');//轮播图文件上传
 
 // sku
+Route::any('/dikaer','Admin\SkuController@dikaer');//属性名添加
+
+
 
 //属性名
 Route::any('/admin/sku/attr','Admin\SkuController@attr');//属性名添加
@@ -99,7 +102,7 @@ Route::any('/admin/sku/valUp/{id}','Admin\SkuController@valUp');//属性名编�
 Route::any('/admin/sku/sku','Admin\SkuController@sku');//属性添加
 Route::any('/admin/sku/skuIndex','Admin\SkuController@skuindex');//属性展示
 Route::any('/admin/sku/skuDel/{id}','Admin\SkuController@skuDel');//属性名删除
-Route::any('/admin/sku/skuUp/{id}','Admin\SkuController@skuUp');//属性名编辑
+Route::any('/admin/sku/skuUp','Admin\SkuController@skuUp');//属性名编辑
 
 //RBAC用户
 Route::get('users/add','Admin\UserController@add');//添加
