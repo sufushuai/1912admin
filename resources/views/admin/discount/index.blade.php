@@ -47,9 +47,6 @@
         <table id="dataList" class="table table-bordered table-striped table-hover dataTable">
             <thead>
             <tr>
-                <th class="" style="padding-right:0px">
-                    <input type="checkbox" class="icheckbox_square-blue">
-                </th>
                 <th class="sorting_asc">id</th>
                 <th class="sorting">商品</th>
                 <th class="sorting">优惠logo</th>
@@ -62,10 +59,7 @@
             <button class="bdel">删除</button>
             <tbody>
                 @foreach($data as $k=>$v)
-            <tr >
-                <td>
-                     <input type="checkbox" class="icheckbox_square-blue shan" value="{{$v->dis_id}}">
-                </td>
+            <tr>
                 <td>{{$v->dis_id}}</td>
                 <td>{{$v->goods_name}}</td>
                 <td>
