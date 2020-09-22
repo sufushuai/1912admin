@@ -24,15 +24,24 @@ class FootController extends Controller
         }
     }
     public function index(){
-    	$data = FootModel::get();
+        $f_name=request()->f_name;
+        // dd($f_name);
+        $where=[];
+        if($f_name){
+            $where[]=['f_name','like',"%$f_name%"];
+        }
+    	$data = FootModel::where($where)->where('is_del',1)->paginate(2);
     	// dd($data);
-    	return view("admin.foot.index",['data'=>$data]);
+        if(request()->ajax()){
+           return  view("admin.foot.indexajax",['data'=>$data,'f_name'=>$f_name]);
+        }
+    	return view("admin.foot.index",['data'=>$data,'f_name'=>$f_name]);
     }
 
     public function  del(){
     	$foot_id = request()->foot_id;
     	// dd($foot_id);
-    	$res = FootModel::destroy($foot_id);
+    	$res = FootModel::where(['foot_id'=>$foot_id])->update(['is_del'=>2]);
     	if($res){
             return['code'=>'0','mag'=>"成功"];
         }else{

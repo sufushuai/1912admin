@@ -145,8 +145,14 @@ class RoleController extends Controller
      * 批量删除
      */
     public function roledel(){
-        $admin_id=request()->post('strIds');
-        $res=RoleModel::destroy($admin_id);
+        $role_id=request()->post('strIds');
+        //把传来的所有id改为数组形式  explode  字符串转数组
+        $str = explode(",",$role_id);
+        //利用循环将需要删除的id 一个一个进行执行sql；
+        foreach($str as $k => $v){
+            $res=RoleModel::destroy($role_id);
+        }
+
         if($res){
             return $this->response(200,'ok');
         }else{
