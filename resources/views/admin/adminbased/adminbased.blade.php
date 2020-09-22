@@ -36,7 +36,7 @@
                         <div class="col-md-2 title">角色权限</div>
                         <div class="col-md-10 data2">
                             @foreach($based as $k=>$v)
-                                <input type="checkbox" id="based_id" name="ckb" value="{{$v->based_id}}" />{{$v->based_name}}
+                                <input type="checkbox" id="based_id" name="ckb"/>{{$v->based_name}}
                             @endforeach
                         </div>
                     </div>

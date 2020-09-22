@@ -41,6 +41,16 @@
                                     <i class="fa fa-circle-o"></i>用户展示
                                 </a>
                             </li>
+                            <li id="admin-login">
+                                <a href="/adminrole/index" target="iframe">
+                                    <i class="fa fa-circle-o"></i>用户角色展示
+                                </a>
+                            </li>
+                            <li id="admin-login">
+                                <a href="/adminbased/index" target="iframe">
+                                    <i class="fa fa-circle-o"></i>角色权限展示
+                                </a>
+                            </li>
                         </ul>
                     </li>
                     <li class="treeview">

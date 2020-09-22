@@ -49,16 +49,25 @@ class VipController extends Controller
 
 
      public function index(){
+        $vip_name = request()->vip_name;
+        $where=[];
+        if($vip_name){
+            $where[]=['vip_name','like',"%$vip_name%"];
+        }
+
      	$vipModel=new vipModel;
-     	$data=$vipModel->get();
+     	$data=$vipModel->where($where)->where('is_del',1)->paginate(3);
+         $query=request()->all();
      	// dd($data);
-    	return view("admin.vip.index",['data'=>$data]);
+    	return view("admin.vip.index",['data'=>$data,'query'=>$query]);
     }
 
     public function del(){
         $vip_id = request()->vip_id;
         // dd($vip_id);
-        $res = VipModel::destroy($vip_id);
+
+        $res = VipModel::where(['vip_id'=>$vip_id])->update(['is_del'=>2]);
+        // $res = VipModel::destroy($vip_id);
         // dd($res);
         if($res){
             return['code'=>'0','msg'=>"成功"];
@@ -66,6 +75,26 @@ class VipController extends Controller
             return['code'=>'1','msg'=>"失败"];
         }
     }
+
+     public function bdel(){
+        $id=request()->id;
+        // dd($id);
+        $id=explode(",",$id);
+        // dd($id);
+        foreach($id as $k=>$v){
+            $res = VipModel::destroy($v);      
+        }
+      
+        // dd($res);
+        if($res){
+            return['code'=>'0','mag'=>"成功"];
+        }else{
+            return['code'=>'1','mag'=>"失败"];
+        }
+
+    }
+
+
     public function update($id){
         $data = VipModel::where('vip_id',$id)->first();
         return view('admin.vip.update',['data'=>$data]);
