@@ -60,7 +60,7 @@ Route::any('discount/bdel','Admin\DiscountController@bdel');//批量删除
 //商品管理
 Route::any('/admin/goods','Admin\GoodsController@goods');//商品添加页面
 Route::any('/goods/add','Admin\GoodsController@add');//商品添加
-Route::any('/goods/goodsimg','Admin\GoodsController@add');//商品图片添加
+Route::any('/goods/goodsimg','Admin\GoodsController@goodsimg');//商品图片添加
 Route::any('/goods/edit','Admin\GoodsController@edit');//商品修改页面
 Route::any('/goods/update','Admin\GoodsController@update');//商品修改
 Route::any('/goods/destroy','Admin\GoodsController@destroy');//商品修改
