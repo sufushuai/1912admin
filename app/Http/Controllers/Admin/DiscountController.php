@@ -78,7 +78,7 @@ class DiscountController extends Controller
             $where[]=['money','like',"%$money%"];
         }
 
-    	$data=DiscountModel::where($where)->where(['shop_discount.is_del'=>1])->leftjoin('shop_goods','shop_discount.goods_id','=','shop_goods.goods_id')->orderBy("dis_id","asc")->paginate(2);
+    	$data=DiscountModel::where($where)->where(['shop_discount.is_del'=>1])->leftjoin('shop_goods','shop_discount.goods_id','=','shop_goods.goods_id')->orderBy("dis_id","asc")->paginate(4);
         
         
          $query=request()->all();
