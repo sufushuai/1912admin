@@ -32,11 +32,9 @@
                         </div>
                         <div class="col-md-2 title">角色名称</div>
                         <div class="col-md-10 data">
-                            <select class="form-control" name="role_name" id="role_id">
                                 @foreach($role as $k=>$v)
-                                    <option value="{{$v->role_id}}">{{$v->role_name}}</option>
+                                    <input type="checkbox" id="role_id" name="ckb" value="{{$v->role_id}}" />{{$v->role_name}}
                                 @endforeach
-                            </select>
                         </div>
                     </div>
                 </div>
@@ -50,20 +48,22 @@
 
 </body>
 </html>
-<script src="/jquery.min.js"></script>
 <script>
     $(document).on('click','#button',function(){
         var admin_id = $('#admin_id').val();
-        var role_id = $('#role_id').val();
+        var check =[];
+        $("input[type='checkbox']:checked").each(function(){
+            check.push($(this).val());
+        });
         $.ajax({
             type:"post",
             dataType:"json",
             url:"/adminrole/add",
-            data:{admin_id:admin_id,role_id:role_id},
+            data:{admin_id:admin_id,role_id:check},
             success:function(res){
                 if(res.code==200){
                     alert("添加成功")
-                    location.href='/users/index'
+                    location.href='/adminrole/index'
                 }
                 if(res.code==1){
                     alert(res.msg)

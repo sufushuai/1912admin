@@ -41,6 +41,16 @@
                                     <i class="fa fa-circle-o"></i>用户展示
                                 </a>
                             </li>
+                            <li id="admin-login">
+                                <a href="/adminrole/index" target="iframe">
+                                    <i class="fa fa-circle-o"></i>用户角色展示
+                                </a>
+                            </li>
+                            <li id="admin-login">
+                                <a href="/adminbased/index" target="iframe">
+                                    <i class="fa fa-circle-o"></i>角色权限展示
+                                </a>
+                            </li>
                         </ul>
                     </li>
                     <li class="treeview">
@@ -120,7 +130,7 @@
                         <ul class="treeview-menu">
 
                             <li id="admin-login">
-                                <a href="/admin/brand" target="iframe">
+                                <a href="/brand/brand" target="iframe">
                                     <i class="fa fa-circle-o"></i>品牌添加
                                 </a>
                             </li>
@@ -231,7 +241,7 @@
                         <ul class="treeview-menu">
 
                             <li id="admin-login">
-                                <a href="/admin/discount" target="iframe">
+                                <a href="/discount/discount" target="iframe">
                                     <i class="fa fa-circle-o"></i>优惠券添加
                                 </a>
                             </li>
@@ -253,7 +263,7 @@
                         <ul class="treeview-menu">
 
                             <li id="admin-login">
-                                <a href="/admin/goods" target="iframe">
+                                <a href="/goods/goods" target="iframe">
                                     <i class="fa fa-circle-o"></i>商品添加
                                 </a>
                             </li>
