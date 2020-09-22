@@ -20,12 +20,14 @@ class DiscountController extends Controller
     	$goods_id = request()->post('goods_id');
     	$money = request()->post('money');
         $time_out = request()->post('time_out');
+        $dis_logo = request()->post('dis_logo');
         // dd($time_out);
     	
     	$data = [
     		'goods_id'=>$goods_id,
     		'money'=>$money,
             'time_out'=>strtotime($time_out),
+            'dis_logo'=>$dis_logo,
     	];
     	// dd($data);
     	$DisModel = new DiscountModel;
@@ -33,6 +35,7 @@ class DiscountController extends Controller
     	$DisModel->money=$data['money'];
     	$DisModel->add_time=time();
     	$DisModel->time_out=$data['time_out'];
+        $DisModel->dis_logo=$data['dis_logo'];
     	$res = $DisModel->save();
     	
     	// dd($res);
@@ -43,6 +46,30 @@ class DiscountController extends Controller
         }
     
     	
+    }
+
+    //文件更新
+    public function uploads(){
+        $fileinfo=$_FILES['Filedata'];
+        // dd($fileinfo);
+        $tmpname=$fileinfo['tmp_name'];
+        $ext=explode(".", $fileinfo['name'])[1];
+        // dd($ext);
+        $newFile=md5(uniqid()).".".$ext;
+        $newFilePath="./uploads/".Date("Y/m/d",time());
+        if(!is_dir($newFilePath)){
+          mkdir($newFilePath,777,true);
+        }
+        // dd($newFilePath);
+        $newFilePath=$newFilePath.$newFile;
+        // dd($newFilePath);
+
+        move_uploaded_file($tmpname,$newFilePath);
+        $newFilePath=Ltrim($newFilePath,".");
+            // dd($newFilePath);
+
+        echo $newFilePath;
+
     }
     public function index(){
         $money=request()->money;
@@ -101,6 +128,7 @@ class DiscountController extends Controller
         $goods_id=request()->post('goods_id');
         $dis_id = request()->post('dis_id');
         $time_out = request()->post('time_out');
+        $dis_logo = request()->post('dis_logo');
         //dd($dis_id);
         $money = request()->post('money');
         
@@ -109,6 +137,7 @@ class DiscountController extends Controller
             'money'=>$money,
             'add_time'=>time(),
             'time_out'=>strtotime($time_out),
+            'dis_logo'=>$dis_logo,
         ];
         $where=[
             ['dis_id','=',$dis_id]
