@@ -59,14 +59,14 @@
         // console.log(vip_name)
         // console.log(vip_img)
         $.ajax({
-            url:"/admin/vip/adddo",
+            url:"/vip/adddo",
             data:{vip_name:vip_name,vip_logo:vip_logo},
             dataType:"json",
             type:"post",
             success:function(res){
                 if(res.code==0){
                     alert(res.mag)
-                    location.href="/admin/vip/index"
+                    location.href="/vip/index"
                 }
             }
         })
@@ -76,14 +76,14 @@
 <script>
     $(document).ready(function(){
         $("#vip_logo").uploadify({
-            uploader:"/admin/vip/uploads",
+            uploader:"/vip/uploads",
             swf:"/admin/uploadify/uploadify.swf",
             onUploadSuccess:function(res,data,msg){
                 var imgPath  = data;
                 var imgstr = "<img src='"+imgPath+"' controls='controls' style='width:80px;height:60px;'>";
                 $("#vip_logo").val(imgPath);
                 $(".showimg").append(imgstr);
-                
+
             }
         })
     })

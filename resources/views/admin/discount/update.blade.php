@@ -85,24 +85,24 @@
                      //alert(res);
                     if(res.code=='0'){
                         alert(res.mag)
-                        location.href='/admin/discount/index'
+                        location.href='/discount/index'
                     }
                  }
             })
-           
+
     })
 </script>
 <script>
     $(document).ready(function(){
         $("#dis_logo").uploadify({
-            uploader:"/admin/discount/uploads",
+            uploader:"/discount/uploads",
             swf:"/admin/uploadify/uploadify.swf",
             onUploadSuccess:function(res,data,msg){
                 var imgPath  = data;
                 var imgstr = "<img src='"+imgPath+"' controls='controls' style='width:80px;height:60px;'>";
                 $("#dis_logo").val(imgPath);
                 $(".showimg").append(imgstr);
-                
+
             }
         })
     })

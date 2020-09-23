@@ -153,12 +153,12 @@
                         <ul class="treeview-menu">
 
                             <li id="admin-login">
-                                <a href="/admin/vip" target="iframe">
+                                <a href="/vip/vip" target="iframe">
                                     <i class="fa fa-circle-o"></i>会员添加
                                 </a>
                             </li>
                             <li id="admin-login">
-                                <a href="/admin/vip/index" target="iframe">
+                                <a href="/vip/index" target="iframe">
                                     <i class="fa fa-circle-o"></i>会员展示
                                 </a>
                             </li>
@@ -246,7 +246,7 @@
                                 </a>
                             </li>
                             <li id="admin-login">
-                                <a href="/admin/discount/index" target="iframe">
+                                <a href="/discount/index" target="iframe">
                                     <i class="fa fa-circle-o"></i>优惠券展示
                                 </a>
                             </li>

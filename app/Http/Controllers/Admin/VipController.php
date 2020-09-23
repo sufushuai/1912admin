@@ -10,7 +10,7 @@ class VipController extends Controller
      public function vip(){
     	return view("admin.vip.vip");
     }
-    
+
     public function uploads(){
     	$fileinfo=$_FILES['Filedata'];
 	    // dd($fileinfo);
@@ -82,9 +82,9 @@ class VipController extends Controller
         $id=explode(",",$id);
         // dd($id);
         foreach($id as $k=>$v){
-            $res = VipModel::destroy($v);      
+            $res = VipModel::destroy($v);
         }
-      
+
         // dd($res);
         if($res){
             return['code'=>'0','mag'=>"成功"];

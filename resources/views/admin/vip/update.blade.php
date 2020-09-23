@@ -62,14 +62,14 @@
         // console.log(vip_name)
         // console.log(vip_img)
         $.ajax({
-            url:"/admin/vip/updatedo",
+            url:"/vip/updatedo",
             data:{vip_name:vip_name,vip_logo:vip_logo,vip_id:vip_id},
             dataType:"json",
             type:"post",
             success:function(res){
                 if(res.code==0){
                     alert(res.mag)
-                    location.href="/admin/vip/index"
+                    location.href="/vip/index"
                 }
             }
         })
@@ -87,7 +87,7 @@
                 $("#vip_logo").val(imgPath);
                 // $("input[name='img_path']").val(imgPath);
                 $(".showimg").append(imgstr);
-                
+
             }
         })
     })

@@ -11,7 +11,6 @@ class LoginController extends Controller
     public function login(){
         return view('users/login');
     }
-
     public function logindo(Request $request){
 
         $admin_name=$request->post('admin_name');

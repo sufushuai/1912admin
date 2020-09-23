@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
     <script src="../plugins/bootstrap/js/bootstrap.min.js"></script>
-    
+
 </head>
 
 <body class="hold-transition skin-red sidebar-mini" >
@@ -34,7 +34,7 @@
         <div class="pull-left">
             <div class="form-group form-inline">
                 <div class="btn-group">
-                   
+
 
                 </div>
             </div>
@@ -65,13 +65,13 @@
                 <td>
                     <input type="checkbox" class="icheckbox_square-blue shan" value="{{$v->vip_id}}">
                 </td>
-      
+
                 <td>{{$v->vip_id}}</td>
                 <td>{{$v->vip_name}}</td>
-     			 
+
                      <td><img src="{{$v->vip_logo}}" width="80px"></td>
-                    
-                
+
+
                 <td class="text-center">
                     <button type="button" class="btn bg-olive btn-xs del" vip_id="{{$v->vip_id}}" >删除</button>
                     <button type="button" class="btn bg-olive btn-xs" data-toggle="modal" data-target="#editModal"><a href="{{url('/admin/vip/update/'.$v->vip_id)}}">编辑</a></button>
@@ -81,7 +81,7 @@
              <tr>
                 <td colspan="6">{{$data->appends($query)->links()}}</td>
             </tr>
-     
+
             </tbody>
         </table>
         <!--数据列表/-->
@@ -105,14 +105,14 @@
         var vip_id = $(this).attr('vip_id');
         // console.log(vip_id);
         $.ajax({
-            url:'/admin/vip/del',
+            url:'/vip/del',
             data:{vip_id:vip_id},
             type:'post',
             dataType:'json',
             success:function(res){
                 if(res.code==0){
                     alert(res.msg)
-                    location.href="/admin/vip/index"
+                    location.href="/vip/index"
                 }
             }
 
@@ -121,7 +121,7 @@
 
     $(document).on('click','.bdel',function(){
         // alert(11)
-       
+
         var id=""
                 $(".shan:checked").each(function(reg){
                         id+= $(this).val()+",";
@@ -137,7 +137,7 @@
             success:function(res){
                 if(res.code==0){
                     alert(res.mag)
-                    location.href="/admin/vip/index"
+                    location.href="/vip/index"
                 }
                 console.log(res)
             }
