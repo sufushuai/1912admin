@@ -31,11 +31,8 @@ Route::prefix('/cate')->group(function(){
 
 //品牌管理
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 9d9dbc3d3b4e727906ce4727f05fea5a5280cfb3
 Route::prefix('/brand')->middleware('user')->group(function(){
     Route::any('/brand','Admin\BrandController@brand');//品牌添加页面
     Route::any('/add','Admin\BrandController@add');//品牌添加
@@ -45,11 +42,7 @@ Route::prefix('/brand')->middleware('user')->group(function(){
     Route::any('/index','Admin\BrandController@index');//品牌展示
     Route::any('/destroy','Admin\BrandController@destroy');//品牌展示
 });
-<<<<<<< HEAD
 
-
-=======
->>>>>>> 9d9dbc3d3b4e727906ce4727f05fea5a5280cfb3
 
 //VIP管理
 Route::any('/admin/vip','Admin\VipController@vip');//vip添加
@@ -82,12 +75,6 @@ Route::prefix('/goods')->middleware('user')->group(function(){
     Route::any('/index','Admin\GoodsController@index');//商品展示
 });
 
-<<<<<<< HEAD
-
-
-//广告管理
-=======
->>>>>>> 9d9dbc3d3b4e727906ce4727f05fea5a5280cfb3
 Route::any('/admin/ad','Admin\AdController@ad');//广告添加
 Route::any('/admin/ad/index','Admin\AdController@index');//广告展示
 Route::any('/admin/ad/adDel/{id}','Admin\AdController@adDel');//广告展示
@@ -161,7 +148,5 @@ Route::any('/adminrole/index', 'Admin\AdminroleController@index');//用户角色
 Route::any('/adminbased/adminbased/{id}', 'Admin\AdminbasedController@adminbased');//角色权限添加
 Route::any('/adminbased/add', 'Admin\AdminbasedController@add');//角色权限添加实现
 Route::any('/adminbased/index', 'Admin\AdminbasedController@index');//角色权限展示
-<<<<<<< HEAD
-=======
 
->>>>>>> 9d9dbc3d3b4e727906ce4727f05fea5a5280cfb3
+
