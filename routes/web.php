@@ -75,8 +75,11 @@ Route::prefix('/goods')->group(function(){
     Route::any('/destroy','Admin\GoodsController@destroy');//商品修改
     Route::any('/index','Admin\GoodsController@index');//商品展示
 });
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 7eb113291f03d71bc575041fd49cc9508af0a651
 //广告管理
 Route::any('/admin/ad','Admin\AdController@ad');//广告添加
 Route::any('/admin/ad/index','Admin\AdController@index');//广告展示
@@ -100,8 +103,6 @@ Route::any('/slide/slideimg','Admin\SlideController@slideimg');//轮播图文件
 
 // sku
 Route::any('/dikaer','Admin\SkuController@dikaer');//属性名添加
-
-
 //属性名
 Route::any('/admin/sku/attr','Admin\SkuController@attr');//属性名添加
 Route::any('/admin/sku/attrIndex','Admin\SkuController@index');//属性名展示
@@ -119,6 +120,7 @@ Route::any('/admin/sku/skuDel/{id}','Admin\SkuController@skuDel');//属性名删
 Route::any('/admin/sku/skuUp','Admin\SkuController@skuUp');//属性名编辑
 
 //RBAC用户
+<<<<<<< HEAD
 Route::prefix('/users')->group(function(){
     Route::get('/add', 'Admin\UserController@add');//添加
     Route::post('/score', 'Admin\UserController@score');//执行添加
@@ -128,6 +130,15 @@ Route::prefix('/users')->group(function(){
     Route::any('/update', 'Admin\UserController@update');//执行修改
     Route::any('/usersdel', 'Admin\UserController@usersdel');//批量删除
 });
+=======
+Route::get('users/add','Admin\UserController@add');//添加
+Route::post('users/score','Admin\UserController@score');//执行添加
+Route::any('users/index','Admin\UserController@index');//展示
+Route::any('users/del','Admin\UserController@del');//删除
+Route::any('users/edit/{admin_id}','Admin\UserController@edit');//修改
+Route::any('users/update','Admin\UserController@update');//执行修改
+Route::any('users/usersdel','Admin\UserController@usersdel');//批量删除
+>>>>>>> 7eb113291f03d71bc575041fd49cc9508af0a651
 //RBAC权限节点
 Route::prefix('/based')->group(function() {
     Route::any('/add', 'Admin\BasedController@add');//添加
@@ -156,3 +167,8 @@ Route::any('/adminrole/index', 'Admin\AdminroleController@index');//用户角色
 Route::any('/adminbased/adminbased/{id}', 'Admin\AdminbasedController@adminbased');//角色权限添加
 Route::any('/adminbased/add', 'Admin\AdminbasedController@add');//角色权限添加实现
 Route::any('/adminbased/index', 'Admin\AdminbasedController@index');//角色权限展示
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 7eb113291f03d71bc575041fd49cc9508af0a651
