@@ -30,6 +30,10 @@ Route::prefix('/cate')->group(function(){
 });
 
 //品牌管理
+<<<<<<< HEAD
+=======
+
+>>>>>>> c8f0e8949b8f971d6addcc22079d11083189dba0
 Route::prefix('/brand')->middleware('user')->group(function(){
     Route::any('/brand','Admin\BrandController@brand');//品牌添加页面
     Route::any('/add','Admin\BrandController@add');//品牌添加
@@ -39,6 +43,11 @@ Route::prefix('/brand')->middleware('user')->group(function(){
     Route::any('/index','Admin\BrandController@index');//品牌展示
     Route::any('/destroy','Admin\BrandController@destroy');//品牌展示
 });
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> c8f0e8949b8f971d6addcc22079d11083189dba0
 
 //VIP管理
 Route::any('/admin/vip','Admin\VipController@vip');//vip添加
@@ -75,6 +84,7 @@ Route::prefix('/goods')->middleware('user')->group(function(){
 
 //广告管理
 //广告管理
+<<<<<<< HEAD
 Route::any('/admin/goods','Admin\GoodsController@goods');//商品添加页面
 Route::any('/goods/add','Admin\GoodsController@add');//商品添加
 Route::any('/goods/goodsimg','Admin\GoodsController@goodsimg');//商品图片添加
@@ -82,6 +92,9 @@ Route::any('/goods/edit','Admin\GoodsController@edit');//商品修改页面
 Route::any('/goods/update','Admin\GoodsController@update');//商品修改
 Route::any('/goods/destroy','Admin\GoodsController@destroy');//商品修改
 Route::any('/goods/index','Admin\GoodsController@index');//商品展示
+=======
+
+>>>>>>> c8f0e8949b8f971d6addcc22079d11083189dba0
 
 Route::any('/admin/ad','Admin\AdController@ad');//广告添加
 Route::any('/admin/ad/index','Admin\AdController@index');//广告展示
@@ -107,6 +120,8 @@ Route::any('/slide/slideimg','Admin\SlideController@slideimg');//轮播图文件
 
 // sku
 // sku
+Route::any('/dikaer','Admin\SkuController@dikaer');//属性名添加
+
 
 //属性名
 Route::any('/admin/sku/attr','Admin\SkuController@attr');//属性名添加
@@ -122,7 +137,7 @@ Route::any('/admin/sku/valUp/{id}','Admin\SkuController@valUp');//属性名编�
 Route::any('/admin/sku/sku','Admin\SkuController@sku');//属性添加
 Route::any('/admin/sku/skuIndex','Admin\SkuController@skuindex');//属性展示
 Route::any('/admin/sku/skuDel/{id}','Admin\SkuController@skuDel');//属性名删除
-Route::any('/admin/sku/skuUp/{id}','Admin\SkuController@skuUp');//属性名编辑
+Route::any('/admin/sku/skuUp','Admin\SkuController@skuUp');//属性名编辑
 
 //RBAC用户
 
@@ -159,10 +174,16 @@ Route::any('/adminbased/add', 'Admin\AdminbasedController@add');//角色权限�
 Route::any('/adminbased/index', 'Admin\AdminbasedController@index');//角色权限展示
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> c8f0e8949b8f971d6addcc22079d11083189dba0
 
 
 Route::any('role/roledel','Admin\RoleController@roledel');//批量删除
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> c8f0e8949b8f971d6addcc22079d11083189dba0
