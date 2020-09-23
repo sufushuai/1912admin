@@ -40,6 +40,7 @@ Route::prefix('/brand')->group(function(){
     Route::any('/destroy','Admin\BrandController@destroy');//品牌展示
 });
 
+
 //VIP管理
 Route::any('/admin/vip','Admin\VipController@vip');//vip添加
 Route::any('/admin/vip/adddo','Admin\VipController@adddo');//vip添加
@@ -141,4 +142,5 @@ Route::any('/adminrole/index', 'Admin\AdminroleController@index');//用户角色
 Route::any('/adminbased/adminbased/{id}', 'Admin\AdminbasedController@adminbased');//角色权限添加
 Route::any('/adminbased/add', 'Admin\AdminbasedController@add');//角色权限添加实现
 Route::any('/adminbased/index', 'Admin\AdminbasedController@index');//角色权限展示
+
 
