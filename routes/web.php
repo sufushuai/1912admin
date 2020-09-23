@@ -30,10 +30,7 @@ Route::prefix('/cate')->group(function(){
 });
 
 //品牌管理
-<<<<<<< HEAD
-=======
 
->>>>>>> c8f0e8949b8f971d6addcc22079d11083189dba0
 Route::prefix('/brand')->middleware('user')->group(function(){
     Route::any('/brand','Admin\BrandController@brand');//品牌添加页面
     Route::any('/add','Admin\BrandController@add');//品牌添加
@@ -43,11 +40,8 @@ Route::prefix('/brand')->middleware('user')->group(function(){
     Route::any('/index','Admin\BrandController@index');//品牌展示
     Route::any('/destroy','Admin\BrandController@destroy');//品牌展示
 });
-<<<<<<< HEAD
-=======
 
 
->>>>>>> c8f0e8949b8f971d6addcc22079d11083189dba0
 
 //VIP管理
 Route::any('/admin/vip','Admin\VipController@vip');//vip添加
@@ -83,19 +77,6 @@ Route::prefix('/goods')->middleware('user')->group(function(){
 
 
 //广告管理
-//广告管理
-<<<<<<< HEAD
-Route::any('/admin/goods','Admin\GoodsController@goods');//商品添加页面
-Route::any('/goods/add','Admin\GoodsController@add');//商品添加
-Route::any('/goods/goodsimg','Admin\GoodsController@goodsimg');//商品图片添加
-Route::any('/goods/edit','Admin\GoodsController@edit');//商品修改页面
-Route::any('/goods/update','Admin\GoodsController@update');//商品修改
-Route::any('/goods/destroy','Admin\GoodsController@destroy');//商品修改
-Route::any('/goods/index','Admin\GoodsController@index');//商品展示
-=======
-
->>>>>>> c8f0e8949b8f971d6addcc22079d11083189dba0
-
 Route::any('/admin/ad','Admin\AdController@ad');//广告添加
 Route::any('/admin/ad/index','Admin\AdController@index');//广告展示
 Route::any('/admin/ad/adDel/{id}','Admin\AdController@adDel');//广告展示
@@ -172,18 +153,3 @@ Route::any('/adminrole/index', 'Admin\AdminroleController@index');//用户角色
 Route::any('/adminbased/adminbased/{id}', 'Admin\AdminbasedController@adminbased');//角色权限添加
 Route::any('/adminbased/add', 'Admin\AdminbasedController@add');//角色权限添加实现
 Route::any('/adminbased/index', 'Admin\AdminbasedController@index');//角色权限展示
-
-
-<<<<<<< HEAD
-
-=======
->>>>>>> c8f0e8949b8f971d6addcc22079d11083189dba0
-
-
-Route::any('role/roledel','Admin\RoleController@roledel');//批量删除
-
-
-<<<<<<< HEAD
-
-=======
->>>>>>> c8f0e8949b8f971d6addcc22079d11083189dba0
