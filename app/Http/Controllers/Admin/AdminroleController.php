@@ -23,7 +23,8 @@ class AdminroleController extends CommonController
         foreach ($role_id as $k=>$v){
             $data = [
                 "admin_id" => $admin_id,
-                "role_id" => $v
+                "role_id" => $v,
+                "c_time" => time()
             ];
             if(!empty($data)){
                 $first=RbacAdminRole::where($data)->first();

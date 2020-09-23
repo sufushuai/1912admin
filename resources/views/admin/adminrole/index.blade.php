@@ -58,6 +58,7 @@
                     <td><input  type="checkbox" ></td>
                     <td>{{$v->admin_name}}</td>
                     <td>{{rtrim($v->res,",")}}</td>
+                    <td>{{ date( "Y-m-d h-i-s", $v->c_time)}}</td>
                     <td class="text-center">
                         <button class="btn btn-primary" id="edit" type="button">修改</button>
                         <button data-toggle="modal" onclick="" class="btn btn-danger del">删除</button>

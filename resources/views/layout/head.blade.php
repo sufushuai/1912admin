@@ -228,11 +228,14 @@
                                         <small>最后登录 11:20AM</small>
                                     </p>
                                 </li>
-                                
+
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-left">
                                         <a href="#" class="btn btn-default btn-flat">修改密码</a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a href="{{url('admin/login')}}" class="btn btn-default btn-flat">登录</a>
                                     </div>
                                     <div class="pull-right">
                                         <a href="#" class="btn btn-default btn-flat">注销</a>
@@ -246,4 +249,3 @@
             </nav>
         </header>
 
-    

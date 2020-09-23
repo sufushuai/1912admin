@@ -20,17 +20,16 @@ Route::get('/admin/login','Admin\LoginController@login');//登录
 Route::post('/admin/logindo','Admin\LoginController@logindo');//执行登录
 
 //商品分类管理
-Route::prefix('/cate')->middleware('user')->group(function(){
-    Route::any('/create','Admin\CateController@create');//分类添加
+Route::prefix('/cate')->group(function(){
+    Route::any('/create','Admin\CateController@create')->middleware('user');//分类添加
     Route::any('/store','Admin\CateController@store');//添加逻辑
     Route::any('/delete','Admin\CateController@delete');//软删除
-    Route::any('/index','Admin\CateController@index');//分类展示
+    Route::any('/index','Admin\CateController@index')->middleware('user');//分类展示
     Route::any('/edit','Admin\CateController@edit');//分类修改
     Route::any('/update','Admin\CateController@update');//修改逻辑
 });
 
 //品牌管理
-<<<<<<< HEAD
 Route::prefix('/brand')->middleware('user')->group(function(){
     Route::any('/brand','Admin\BrandController@brand');//品牌添加页面
     Route::any('/add','Admin\BrandController@add');//品牌添加
@@ -40,16 +39,6 @@ Route::prefix('/brand')->middleware('user')->group(function(){
     Route::any('/index','Admin\BrandController@index');//品牌展示
     Route::any('/destroy','Admin\BrandController@destroy');//品牌展示
 });
-=======
-Route::any('/brand/brand','Admin\BrandController@brand');//品牌添加页面
-Route::any('/brand/add','Admin\BrandController@add');//品牌添加
-Route::any('/brand/brandimg','Admin\BrandController@brandimg');//图片添加
-Route::any('/brand/edit','Admin\BrandController@edit');//修改页面
-Route::any('/brand/update','Admin\BrandController@update');//修改
-Route::any('/brand/index','Admin\BrandController@index');//品牌展示
-Route::any('/brand/destroy','Admin\BrandController@destroy');//品牌展示
-
->>>>>>> 046e04b4077415f4111f7261d846cd69e5e822eb
 
 //VIP管理
 Route::any('/admin/vip','Admin\VipController@vip');//vip添加
@@ -72,7 +61,6 @@ Route::any('discount/bdel','Admin\DiscountController@bdel');//批量删除
 Route::any('/admin/discount/uploads','Admin\DiscountController@uploads');//优惠券图片上传
 
 //商品管理
-<<<<<<< HEAD
 Route::prefix('/goods')->middleware('user')->group(function(){
     Route::any('/goods','Admin\GoodsController@goods');//商品添加页面
     Route::any('/add','Admin\GoodsController@add');//商品添加
@@ -87,7 +75,6 @@ Route::prefix('/goods')->middleware('user')->group(function(){
 
 //广告管理
 //广告管理
-=======
 Route::any('/admin/goods','Admin\GoodsController@goods');//商品添加页面
 Route::any('/goods/add','Admin\GoodsController@add');//商品添加
 Route::any('/goods/goodsimg','Admin\GoodsController@goodsimg');//商品图片添加
@@ -95,7 +82,6 @@ Route::any('/goods/edit','Admin\GoodsController@edit');//商品修改页面
 Route::any('/goods/update','Admin\GoodsController@update');//商品修改
 Route::any('/goods/destroy','Admin\GoodsController@destroy');//商品修改
 Route::any('/goods/index','Admin\GoodsController@index');//商品展示
->>>>>>> 046e04b4077415f4111f7261d846cd69e5e822eb
 
 Route::any('/admin/ad','Admin\AdController@ad');//广告添加
 Route::any('/admin/ad/index','Admin\AdController@index');//广告展示
@@ -117,14 +103,11 @@ Route::any('/slide/do_add','Admin\SlideController@do_add');//轮播图执行添�
 Route::any('/slide/index','Admin\SlideController@index');//轮播图展示
 Route::any('/slide/slideimg','Admin\SlideController@slideimg');//轮播图文件上传
 
-<<<<<<< HEAD
 
 
 // sku
 // sku
 
-=======
->>>>>>> 046e04b4077415f4111f7261d846cd69e5e822eb
 //属性名
 Route::any('/admin/sku/attr','Admin\SkuController@attr');//属性名添加
 Route::any('/admin/sku/attrIndex','Admin\SkuController@index');//属性名展示
@@ -176,12 +159,10 @@ Route::any('/adminbased/add', 'Admin\AdminbasedController@add');//角色权限�
 Route::any('/adminbased/index', 'Admin\AdminbasedController@index');//角色权限展示
 
 
-<<<<<<< HEAD
 
 
 
 Route::any('role/roledel','Admin\RoleController@roledel');//批量删除
 
 
-=======
->>>>>>> 046e04b4077415f4111f7261d846cd69e5e822eb
+

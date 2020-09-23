@@ -49,6 +49,7 @@
                 </th>
                 <th class="sorting">角色名称</th>
                 <th class="sorting">权限名称</th>
+                <th class="sorting">时间</th>
                 <th class="text-center">操作</th>
             </tr>
             </thead>
@@ -58,6 +59,7 @@
                     <td><input  type="checkbox" ></td>
                     <td>{{$v->role_name}}</td>
                     <td>{{rtrim($v->res,",")}}</td>
+                    <td>{{ date( "Y-m-d h-i-s", $v->c_time)}}</td>
                     <td class="text-center">
                         <button class="btn btn-primary" id="edit" type="button">修改</button>
                         <button data-toggle="modal" onclick="" class="btn btn-danger del">删除</button>

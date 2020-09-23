@@ -23,7 +23,8 @@ class AdminbasedController extends CommonController
         foreach ($based_id as $k=>$v){
             $data = [
                 "role_id" => $role_id,
-                "based_id" => $v
+                "based_id" => $v,
+                "c_time" => time()
             ];
             $res = RbacRoleBased::insert($data);
         }
