@@ -31,18 +31,6 @@
     <div class="table-box">
 
         <!--工具栏-->
-        <div class="pull-left">
-            <div class="form-group form-inline">
-                <div class="btn-group">
-                   
-
-                </div>
-            </div>
-        </div>
-        <form action="">
-            <input type="text" name="vip_name">
-            <input type="submit" value="搜索">
-        </form>
 
         <!--数据列表-->
         <table id="dataList" class="table table-bordered table-striped table-hover dataTable">

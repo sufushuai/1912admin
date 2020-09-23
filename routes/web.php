@@ -21,19 +21,16 @@ Route::post('/admin/logindo','Admin\LoginController@logindo');//执行登录
 
 //商品分类管理
 Route::prefix('/cate')->group(function(){
-    Route::any('/create','Admin\CateController@create')->middleware('user');//分类添加
+    Route::any('/create','Admin\CateController@create');//分类添加
     Route::any('/store','Admin\CateController@store');//添加逻辑
     Route::any('/delete','Admin\CateController@delete');//软删除
-    Route::any('/index','Admin\CateController@index')->middleware('user');//分类展示
+    Route::any('/index','Admin\CateController@index');//分类展示
     Route::any('/edit','Admin\CateController@edit');//分类修改
     Route::any('/update','Admin\CateController@update');//修改逻辑
 });
 
 //品牌管理
-
-
-
-Route::prefix('/brand')->middleware('user')->group(function(){
+Route::prefix('/brand')->group(function(){
     Route::any('/brand','Admin\BrandController@brand');//品牌添加页面
     Route::any('/add','Admin\BrandController@add');//品牌添加
     Route::any('/brandimg','Admin\BrandController@brandimg');//图片添加
@@ -64,7 +61,7 @@ Route::any('discount/bdel','Admin\DiscountController@bdel');//批量删除
 Route::any('/admin/discount/uploads','Admin\DiscountController@uploads');//优惠券图片上传
 
 //商品管理
-Route::prefix('/goods')->middleware('user')->group(function(){
+Route::prefix('/goods')->group(function(){
     Route::any('/goods','Admin\GoodsController@goods');//商品添加页面
     Route::any('/add','Admin\GoodsController@add');//商品添加
     Route::any('/goodsimg','Admin\GoodsController@goodsimg');//商品图片添加
@@ -73,7 +70,7 @@ Route::prefix('/goods')->middleware('user')->group(function(){
     Route::any('/destroy','Admin\GoodsController@destroy');//商品修改
     Route::any('/index','Admin\GoodsController@index');//商品展示
 });
-
+//广告管理
 Route::any('/admin/ad','Admin\AdController@ad');//广告添加
 Route::any('/admin/ad/index','Admin\AdController@index');//广告展示
 Route::any('/admin/ad/adDel/{id}','Admin\AdController@adDel');//广告展示
@@ -96,8 +93,6 @@ Route::any('/slide/slideimg','Admin\SlideController@slideimg');//轮播图文件
 
 // sku
 Route::any('/dikaer','Admin\SkuController@dikaer');//属性名添加
-
-
 //属性名
 Route::any('/admin/sku/attr','Admin\SkuController@attr');//属性名添加
 Route::any('/admin/sku/attrIndex','Admin\SkuController@index');//属性名展示
@@ -115,7 +110,6 @@ Route::any('/admin/sku/skuDel/{id}','Admin\SkuController@skuDel');//属性名删
 Route::any('/admin/sku/skuUp','Admin\SkuController@skuUp');//属性名编辑
 
 //RBAC用户
-
 Route::get('users/add','Admin\UserController@add');//添加
 Route::post('users/score','Admin\UserController@score');//执行添加
 Route::any('users/index','Admin\UserController@index');//展示
