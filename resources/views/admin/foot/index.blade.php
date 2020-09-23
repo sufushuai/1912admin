@@ -41,15 +41,13 @@
         </div>
        <form>
         <input type="text" name="f_name">
-        <button type="button" id="submit">搜索</button>
+        <input type="submit" value="搜索">
     </form>
         <!--数据列表-->
         <table id="dataList" class="table table-bordered table-striped table-hover dataTable">
             <thead>
             <tr>
-                <th class="" style="padding-right:0px">
-                    <input type="checkbox" class="icheckbox_square-blue">
-                </th>
+               
                 <th class="sorting_asc">id</th>
                 <th class="sorting">名称</th>
                 <th class="sorting">跳转地址</th>
@@ -61,7 +59,7 @@
             <tbody>
                 @foreach($data as $k=>$v)
             <tr >
-                <td></td>
+               
                 <td>{{$v->foot_id}}</td>
                 <td>{{$v->f_name}}</td>
                 <td>
@@ -76,7 +74,7 @@
             </tr>
             @endforeach
             <tr>
-                <td>{{$data->appends(['f_name'=>$f_name])->links()}}</td>
+                <td colspan="6">{{$data->appends($query)->links()}}</td>
             </tr>
             
      
@@ -118,33 +116,6 @@
         })
 
     })
-    //ajax搜索
-    $(document).on('click','#submit',function(){
-        // alert(11);
-        var f_name = $("input[name='f_name']").val();
-        // console.log(f_name);
-        $.ajax({
-            url:"/admin/foot/index",
-            type:'post',
-            data:{f_name:f_name},
-            success:function(res){
-               $("tbody").html(res);
-            }
-        })
-
-    })
-     //ajax 分页
-     $(document).on("click",'.page-item a',function(){
-     //alert('1234');
-
-      var url = $(this).attr('href');
-
-        $.get(url,function(res){
-    
-         $('tbody').html(res);
-
-       });
-       return false;
-     });
+   
 
 </script>

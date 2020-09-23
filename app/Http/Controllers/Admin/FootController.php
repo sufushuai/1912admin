@@ -32,10 +32,8 @@ class FootController extends Controller
         }
     	$data = FootModel::where($where)->where('is_del',1)->paginate(2);
     	// dd($data);
-        if(request()->ajax()){
-           return  view("admin.foot.indexajax",['data'=>$data,'f_name'=>$f_name]);
-        }
-    	return view("admin.foot.index",['data'=>$data,'f_name'=>$f_name]);
+         $query=request()->all();
+    	return view("admin.foot.index",['data'=>$data,'query'=>$query]);
     }
 
     public function  del(){
