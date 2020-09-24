@@ -150,7 +150,7 @@ class RoleController extends Controller
         $str = explode(",",$role_id);
         //利用循环将需要删除的id 一个一个进行执行sql；
         foreach($str as $k => $v){
-            $res=RoleModel::destroy($role_id);
+            $res=RoleModel::destroy($v);
         }
 
         if($res){
