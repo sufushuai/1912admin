@@ -10,4 +10,5 @@ class VipModel extends Model
     protected $primaryKey="vip_id";
     public $timestamps=false;
     public $fillable=["vip_name","vip_logo"];
+    
 }
