@@ -8,7 +8,7 @@ use App\Model\RbacUser;
 use App\Model\RbacRole;
 use App\Model\RbacAdminRole;
 
-class AdminroleController extends CommonController
+class  AdminroleController extends CommonController
 {
     //用户角色添加页面
     public function adminrole($id){
