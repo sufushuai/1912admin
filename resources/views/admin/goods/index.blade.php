@@ -78,7 +78,11 @@
                 <td>{{$v->cate_id}}</td>
                 <td>{{$v->brand_id}}</td>
                 <td>@if($v->goods_img)<img src="{{env('.APP_URL')}}{{$v->goods_img}}" width="50" height="50">@endif</td>
-                <td>{{$v->goods_images}}</td>
+                <td>
+                    @foreach($v->goods_images as $kk=>$vv)
+                        <img src="{{$vv}}" width="50" height="50">
+                    @endforeach
+                </td>
                 <td>{{$v->goods_desc}}</td>
                 <td>{{$v->goods_score}}</td>
                 <td>{{$v->is_show==1?"是":"否"}}</td>

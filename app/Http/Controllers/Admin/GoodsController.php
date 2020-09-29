@@ -31,6 +31,7 @@ class GoodsController extends CommonController
         $is_on = request()->post("is_on");
         $is_new = request()->post("is_new");
         //dd($is_show);die;
+
         $data = [
             "goods_name"=>$goods_name,
             "cate_id"=>$cate_id,
@@ -42,7 +43,7 @@ class GoodsController extends CommonController
             "is_show"=>$is_show,
             "is_hot"=>$is_hot,
             "is_on"=>$is_on,
-            "is_new"=>$is_new,
+            "is_new"=>$is_new
         ];
 
         $res = GoodsModel::insert($data);
@@ -57,12 +58,13 @@ class GoodsController extends CommonController
         $arr = $_FILES["Filedata"];
         $tmpName = $arr['tmp_name'];
         $ext = explode(".",$arr['name'])[1];
-        $newFileName = md5(time()).".".$ext;
+        $newFileName = md5(rand(10000,99999)).".".$ext;
         $newFilePath = "./uploads/".$newFileName;
         move_uploaded_file($tmpName,$newFilePath);
         $newFilePath = trim($newFilePath,".");
         echo $newFilePath;
     }
+
     //商品展示
     public function index(){
         $name = request()->name;
@@ -71,6 +73,11 @@ class GoodsController extends CommonController
             $where[] = ['goods_name','like',"%$name%"];
         }
         $data = GoodsModel::where($where)->where(['is_del'=>1])->paginate(5);
+
+        foreach($data as &$v){
+            $v['goods_images']=trim( $v['goods_images'],',');
+            $v['goods_images'] = explode(',',$v['goods_images']);
+    }
         $query = request()->all();
     	return view("admin.goods.index",["data"=>$data,"query"=>$query]);
     }
