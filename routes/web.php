@@ -74,6 +74,7 @@ Route::prefix('/goods')->group(function(){
     Route::any('/update','Admin\GoodsController@update');//商品修改
     Route::any('/destroy','Admin\GoodsController@destroy');//商品修改
     Route::any('/index','Admin\GoodsController@index');//商品展示
+
 });
 
 //广告管理

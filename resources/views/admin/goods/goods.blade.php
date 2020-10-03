@@ -22,6 +22,7 @@
 <div class="box-header with-border">
     <h1 class="box-title">商品添加</h1>
 </div>
+<span class="img" style="display:none"></span>
 <section class="content">
     <div class="box-body">
         <div class="nav-tabs-custom">
@@ -56,7 +57,8 @@
                         </div>
                         <div class="col-md-2 title">商品相册</div>
                         <div class="col-md-10 data">
-                            <input type="file" class="form-control"  placeholder="商品相册" name="goods_images" value="">
+                            <input type="file" class="form-control" id="uploadifys" placeholder="商品相册"  value="">
+                            <input type="hidden" name="goods_images">
                         </div>
                         <div class="col-md-2 title">商品简介</div>
                         <div class="col-md-10 data">
@@ -108,11 +110,24 @@
             }
         })
     });
+    $(document).ready(function(){
+        $("#uploadifys").uploadify({
+            uploader: "/goods/goodsimg",
+            swf: "/admin/uploadify/uploadify.swf",
+            onUploadSuccess:function(res,data,msg){
+                var imgPath = data;
+                var imgstr = "<img src='"+imgPath+"'  controls='controls' style='width:80px;height:60px;'>";
+               $('.img').append(data+',');
+
+            }
+        })
+    });
     $(document).on('click','#button',function(){
         var goods_name = $('input[name="goods_name"]').val();
         var cate_id = $('#cate_id').val();
         var brand_id = $('#brand_id').val();
         var goods_img = $('input[name="goods_img"]').val();
+        var goods_img2 = $('.img').text();
         var goods_images = $('input[name="goods_images"]').val();
         var goods_desc = $('textarea[name="goods_desc"]').val();
         var goods_score = $('input[name="goods_score"]').val();
@@ -126,7 +141,7 @@
             url:"/goods/add",
             data:{goods_name:goods_name,cate_id:cate_id,
                 brand_id:brand_id, goods_img:goods_img,
-                goods_images:goods_images,goods_desc:goods_desc,
+                goods_images:goods_img2,goods_desc:goods_desc,
                 goods_score:goods_score,is_show:is_show,
                 is_hot:is_hot,is_on:is_on,is_new:is_new},
             success:function(res){
