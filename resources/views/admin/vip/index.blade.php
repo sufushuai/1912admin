@@ -31,7 +31,7 @@
     <div class="table-box">
 
         <!--工具栏-->
-<<<<<<< HEAD
+
         <div class="pull-left">
             <div class="form-group form-inline">
                 <div class="btn-group">
@@ -44,8 +44,7 @@
             <input type="text" name="vip_name">
             <input type="submit" value="搜索">
         </form>
-=======
->>>>>>> 7eb113291f03d71bc575041fd49cc9508af0a651
+
 
         <!--数据列表-->
         <table id="dataList" class="table table-bordered table-striped table-hover dataTable">
