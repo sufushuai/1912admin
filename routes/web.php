@@ -128,6 +128,7 @@ Route::prefix('/users')->group(function(){
     Route::any('/usersdel', 'Admin\UserController@usersdel');//批量删除
 });
 
+<<<<<<< HEAD
 Route::get('users/add','Admin\UserController@add');//添加
 Route::post('users/score','Admin\UserController@score');//执行添加
 Route::any('users/index','Admin\UserController@index');//展示
@@ -135,6 +136,10 @@ Route::any('users/del','Admin\UserController@del');//删除
 Route::any('users/edit/{admin_id}','Admin\UserController@edit');//修改
 Route::any('users/update','Admin\UserController@update');//执行修改
 Route::any('users/usersdel','Admin\UserController@usersdel');//批量删除
+=======
+
+
+>>>>>>> 79c7e8b3ec8af30c102a8144474995a0d122d8ee
 
 //RBAC权限节点
 Route::prefix('/based')->group(function() {

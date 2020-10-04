@@ -50,7 +50,7 @@
 <!-- 正文区域 /-->
 </body>
 </html>
-<script src="/jquery.min.js"></script>
+
     <script>
     $(document).ready(function() {
         $('#add').click(function () {
