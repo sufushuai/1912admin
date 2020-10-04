@@ -69,7 +69,7 @@ class  AdminroleController extends CommonController
            // dd($admin_id);
             foreach($admin_id as $kk=>$vv){
                 $role = RbacRole::where("role_id",$vv->role_id)->first();
-                $data[$k]["res"].= $role->role_name.",";
+                $data[$k]["res"].= $role['role_name'].",";
             }
         }
         return view('admin.adminrole.index',['data'=>$data]);

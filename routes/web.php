@@ -77,9 +77,6 @@ Route::prefix('/goods')->group(function(){
 
 });
 
-
-
-
 //广告管理
 Route::any('/admin/ad','Admin\AdController@ad');//广告添加
 Route::any('/admin/ad/index','Admin\AdController@index');//广告展示
@@ -130,6 +127,8 @@ Route::prefix('/users')->group(function(){
     Route::any('/update', 'Admin\UserController@update');//执行修改
     Route::any('/usersdel', 'Admin\UserController@usersdel');//批量删除
 });
+
+
 
 
 //RBAC权限节点
